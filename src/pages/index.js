@@ -1,3 +1,4 @@
+
 import Navbar from "../components/Navbar";
 import Hero from "../components/Principal";
 import Principal from "../components/Principal";

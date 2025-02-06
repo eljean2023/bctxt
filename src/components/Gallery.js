@@ -1,5 +1,127 @@
 import { useState, useEffect } from "react";
 import { Dialog } from "@headlessui/react";
+
+const images = [
+  { id: 1, src: "/images/accounting.jpg", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configurations" },
+  { id: 2, src: "/images/schedule.jpg", title: "Scheduling", description: "Full Scheduling System including Appointments, Estimates, Vehicles Arriving, Vehicles Starting Production and Vehicles Being Delivered" },
+  { id: 3, src: "/images/mediamanachement.jpg", title: "Media Management", description: "Technician Tracking and Management Connecting the Back of the Shop to the Front Office." },
+  { id: 4, src: "/images/tecnicianTracking.jpeg", title: "Technician Tracking", description: "The calming waves of the deep blue ocean." },
+  { id: 5, src: "/images/jobCosting.jpeg", title: "Job Costing", description: "Job cost repair orders easily against your sale. Ensure you are profiting on every job." },
+  { id: 6, src: "/images/partmanagement.jpg", title: "Parts Management", description: "Manage purchase orders, parts invoices, vendor discounts and more." },
+  { id: 7, src: "/images/quickstimate.jpg", title: "Quick Estimate", description: "Quick Estimating for PDR & Menu Priced Items plus Quick Easy Photo Management." },
+  { id: 8, src: "/images/externalComunication.jpeg", title: "External Communications", description: "Automated Communications & Online Customer Portals Keeps Customers Updated On The Status Of The Vehicle Repair." },
+  { id: 9, src: "/images/internationCommunication.jpg", title: "Internal Communications", description: "Communicate directly with staff via internal messages. Update multiple staff members within seconds on repair orders or non-repair order related issues and updates." },
+  { id: 10, src: "/images/accounting.jpg", title: "Accounting", description: "Accounts Receivable Management and Accounting Integrations to a variety of Accounting Systems" },
+  { id: 11, src: "/images/multistorelocation.jpg", title: "Multi Store Locations", description: "Multiple Locations Management including Central Management, Ability to easily transfer files between locations and much more" },
+  { id: 12, src: "/images/dealership-e1570837755549.jpeg", title: "Dealer System Integration", description: "Integrated PBS Dealer Management System. Manage your Collision Shop better and remove the double entry between systems" },
+  { id: 13, src: "/images/painScaleInterface.png", title: "Paint Scale Interfaces", description: "Automated Paint Job Costing from Akzo Nobel, BASF and PPG Paint Scales" },
+  { id: 14, src: "/images/googlesurvey.png", title: "CSI - Google Survey", description: "Google Reviews and more with Integration to One Local and Podium." },
+  { id: 15, src: "/images/rentalCarInterface.png", title: "Rental Car Interface", description: "Save time and duplicate entry by updating statuses with ARMS Integration." },
+];
+
+export default function GalleryComponent() {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [scrollY, setScrollY] = useState(0);
+  const [isSticky, setIsSticky] = useState(false);
+
+  const navItems = [
+    "Accounting",
+    "Scheduling",
+    "Production",
+    "Multi-Store",
+    "Parts",
+    "Parts Tracking",
+    "Job Costing",
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      setIsSticky(window.scrollY >= 40); // Detect when the navbar becomes sticky at `top-40`
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div
+      className={`container mx-auto p-6 transition-colors duration-500 ${
+        isSticky ? "bg-white" : "bg-gray-900"
+      }`}
+    >
+      {/* Sticky Navbar 
+      <nav
+        className={`sticky top-40 z-10 shadow-md rounded-lg p-4 mb-6 transition-colors duration-500 ${
+          isSticky ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+        }`}
+      >
+        <div className="flex items-center justify-center space-x-6">
+          {navItems.map((item) => (
+            <span key={item} className="text-lg font-semibold hover:text-orange-500 cursor-pointer">
+              {item}
+            </span>
+          ))}
+        </div>
+      </nav>
+*/}
+      {/* Grid Layout for Gallery */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {images.map((image) => (
+          <div
+            key={image.id}
+            className="relative group cursor-pointer transition-opacity duration-700"
+            onClick={() => setSelectedImage(image)}
+          >
+            {/* Gallery Card with Image */}
+            <div className="rounded-lg shadow-lg overflow-hidden relative">
+              <img
+                src={image.src}
+                alt={image.title}
+                className="w-full h-72 object-cover transition-transform transform group-hover:scale-105 group-hover:shadow-2xl"
+              />
+              {/* Learn More Overlay (Shows on Hover) */}
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-white text-lg font-semibold bg-orange-500 px-4 py-2 rounded-md">
+                  Learn More
+                </span>
+              </div>
+            </div>
+            {/* Image Title and Description */}
+            <div className="mt-3 text-center">
+              <h3 className="text-xl md:text-2xl font-bold text-orange-500">
+                {image.title}
+              </h3>
+              <p className="text-base md:text-lg text-gray-900">
+                {image.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Modal Popup */}
+      {selectedImage && (
+        <Dialog open={true} onClose={() => setSelectedImage(null)} className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+          <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-4xl overflow-auto max-h-[80vh] relative">
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="text-4xl font-bold">{selectedImage.title}</h1>
+              <p className="text-lg text-gray-600 mt-4">{selectedImage.description}</p>
+              <button onClick={() => setSelectedImage(null)} className="mt-6 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600">
+                Close
+              </button>
+            </div>
+          </Dialog.Panel>
+        </Dialog>
+      )}
+    </div>
+  );
+}
+
+
+
+/*
+import { useState, useEffect } from "react";
+import { Dialog } from "@headlessui/react";
 import VerticalSlider from "@/components/VerticalSlider";
 
 const images = [
@@ -45,7 +167,7 @@ export default function GalleryComponent() {
 
   return (
     <div className="container mx-auto p-6">
-      {/* Sticky Navbar */}
+      {/* Sticky Navbar *//*}
       <nav className="sticky top-40 z-10 bg-white shadow-md rounded-lg p-4 mb-6">
         <div className="flex items-center justify-center space-x-6">
           {navItems.map((item) => (
@@ -53,7 +175,7 @@ export default function GalleryComponent() {
               {item}
             </span>
           ))}
-          {/* Dropdown for "..." */}
+          {/* Dropdown for "..." *//*}
           <div className="relative">
             <button
               onMouseMove={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -81,10 +203,9 @@ export default function GalleryComponent() {
           </div>
         </div>
       </nav>
-
       
 
-      {/* Grid Layout for Gallery */}
+      {/* Grid Layout for Gallery *//*}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {images.map((image, index) => {
           const fadeThreshold = 700; // Adjust this to control when fading starts
@@ -98,21 +219,21 @@ export default function GalleryComponent() {
               style={{ opacity: Math.max(fadeOpacity, 0) }}
               onClick={() => setSelectedImage(image)}
             >
-              {/* Gallery Card with Image */}
+              {/* Gallery Card with Image *//*}
               <div className="rounded-lg shadow-lg overflow-hidden relative">
                 <img
                   src={image.src}
                   alt={image.title}
                   className="w-full h-72 object-cover transition-transform transform group-hover:scale-105 group-hover:shadow-2xl"
                 />
-                {/* Learn More Overlay (Shows on Hover) */}
+                {/* Learn More Overlay (Shows on Hover) *//*}
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-white text-lg font-semibold bg-orange-500 px-4 py-2 rounded-md">
                     Learn More
                   </span>
                 </div>
               </div>
-              {/* Image Title and Description */}
+              {/* Image Title and Description *//*}
               <div className="mt-3 text-center">
                 <h3 className="text-xl md:text-2xl font-bold text-orange-500">
                   {image.title}
@@ -126,7 +247,7 @@ export default function GalleryComponent() {
         })}
       </div>
 
-      {/* Modal Popup */}
+      {/* Modal Popup *//*}
       {selectedImage && (
         <Dialog open={true} onClose={() => setSelectedImage(null)} className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
           <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-4xl overflow-auto max-h-[80vh] relative">
@@ -145,7 +266,7 @@ export default function GalleryComponent() {
 }
 
 
-
+*/
 
 
 /*
