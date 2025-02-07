@@ -9,6 +9,7 @@ const texts = [
   {
     title: "Customized For YOUR Workflow",
     subtitle: "Customize Key Aspects Of The System. Reporting, Departments, Business Rules & Workflows",
+    button: true,
   },
 ];
 

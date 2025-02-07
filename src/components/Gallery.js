@@ -1,8 +1,11 @@
+"use client";
 import { useState, useEffect } from "react";
 import { Dialog } from "@headlessui/react";
+import dynamic from "next/dynamic"; 
+const Production = dynamic(() => import("@/pages/production"), { ssr: false });
 
 const images = [
-  { id: 1, src: "/images/accounting.jpg", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configurations" },
+  { id: 1, src: "/images/accounting.jpg", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configuration" },
   { id: 2, src: "/images/schedule.jpg", title: "Scheduling", description: "Full Scheduling System including Appointments, Estimates, Vehicles Arriving, Vehicles Starting Production and Vehicles Being Delivered" },
   { id: 3, src: "/images/mediamanachement.jpg", title: "Media Management", description: "Technician Tracking and Management Connecting the Back of the Shop to the Front Office." },
   { id: 4, src: "/images/tecnicianTracking.jpeg", title: "Technician Tracking", description: "The calming waves of the deep blue ocean." },
@@ -21,101 +24,78 @@ const images = [
 
 export default function GalleryComponent() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [scrollY, setScrollY] = useState(0);
-  const [isSticky, setIsSticky] = useState(false);
-
-  const navItems = [
-    "Accounting",
-    "Scheduling",
-    "Production",
-    "Multi-Store",
-    "Parts",
-    "Parts Tracking",
-    "Job Costing",
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-      setIsSticky(window.scrollY >= 40); // Detect when the navbar becomes sticky at `top-40`
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <div
-      className={`container mx-auto p-6 transition-colors duration-500 ${
-        isSticky ? "bg-white" : "bg-gray-900"
-      }`}
-    >
-      {/* Sticky Navbar 
-      <nav
-        className={`sticky top-40 z-10 shadow-md rounded-lg p-4 mb-6 transition-colors duration-500 ${
-          isSticky ? "bg-gray-900 text-white" : "bg-white text-gray-900"
-        }`}
-      >
-        <div className="flex items-center justify-center space-x-6">
-          {navItems.map((item) => (
-            <span key={item} className="text-lg font-semibold hover:text-orange-500 cursor-pointer">
-              {item}
-            </span>
-          ))}
-        </div>
-      </nav>
-*/}
-      {/* Grid Layout for Gallery */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="container mx-auto p-6 bg-white transition-none">
+
+<div className="mt-3 text-center">
+              <h1 className="text-xl md:text-2xl rounded-xl font-bold text-gray-500 mb-5 ">Connecting The Dots Through The Collision Repair Process</h1>
+              <p className="text-base md:text-lg text-gray-600 mb-10">Helping Collision Repair Facilities Exceed By Connecting Their Shops To The Future With The Right Technology. No Two Repair Shops Are The Same So Why Be Forced Into A Process By Other Body Shop Management Systems</p>
+       
+        
+      </div>
+      {/* Gallery Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 border-color-orange">
         {images.map((image) => (
           <div
             key={image.id}
             className="relative group cursor-pointer transition-opacity duration-700"
             onClick={() => setSelectedImage(image)}
           >
-            {/* Gallery Card with Image */}
             <div className="rounded-lg shadow-lg overflow-hidden relative">
               <img
                 src={image.src}
                 alt={image.title}
                 className="w-full h-72 object-cover transition-transform transform group-hover:scale-105 group-hover:shadow-2xl"
               />
-              {/* Learn More Overlay (Shows on Hover) */}
+              {/* Learn More Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <span className="text-white text-lg font-semibold bg-orange-500 px-4 py-2 rounded-md">
                   Learn More
                 </span>
               </div>
             </div>
-            {/* Image Title and Description */}
+            {/* Image Title & Description */}
             <div className="mt-3 text-center">
-              <h3 className="text-xl md:text-2xl font-bold text-orange-500">
-                {image.title}
-              </h3>
-              <p className="text-base md:text-lg text-gray-900">
-                {image.description}
-              </p>
+              <h3 className="text-xl md:text-2xl font-bold text-orange-500">{image.title}</h3>
+              <p className="text-base md:text-lg text-gray-600">{image.description}</p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Modal Popup */}
+      {/* ✅ Modal Popup */}
       {selectedImage && (
-        <Dialog open={true} onClose={() => setSelectedImage(null)} className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+        <Dialog open={true} onClose={() => setSelectedImage(null)} className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
           <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-4xl overflow-auto max-h-[80vh] relative">
-            <div className="flex flex-col justify-center items-center">
-              <h1 className="text-4xl font-bold">{selectedImage.title}</h1>
-              <p className="text-lg text-gray-600 mt-4">{selectedImage.description}</p>
-              <button onClick={() => setSelectedImage(null)} className="mt-6 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600">
-                Close
-              </button>
-            </div>
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
+            >
+              ✕
+            </button>
+
+            {/* ✅ If "Production" is selected, show Production.js */}
+            {selectedImage.title === "Production" ? (
+              <Production />
+            ) : (
+              <div className="flex flex-col justify-center items-center">
+                <h1 className="text-4xl font-bold">{selectedImage.title}</h1>
+                <p className="text-lg text-gray-600 mt-4">{selectedImage.description}</p>
+                <button onClick={() => setSelectedImage(null)} className="mt-6 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600">
+                  Close
+                </button>
+              </div>
+            )}
           </Dialog.Panel>
         </Dialog>
       )}
     </div>
   );
 }
+
+
 
 
 

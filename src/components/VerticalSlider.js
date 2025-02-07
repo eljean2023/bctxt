@@ -4,6 +4,59 @@ import { useState, useEffect } from "react";
 
 // Local images inside "public/images" folder
 const images = [
+  "/Production1.png",
+  "/Production2.jpg",
+  "/QB-online.png",
+  "/SAGE50C.jpg",
+  "/Production3.png",
+];
+
+export default function HorizontalImageSlider() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Define transition animation for horizontal movement
+  const variants = {
+    enter: { x: "100%", opacity: 0 },
+    center: { x: "0%", opacity: 1 },
+    exit: { x: "-100%", opacity: 0 },
+  };
+
+  return (
+    <div className="relative w-[500px] h-[300px] overflow-hidden rounded-2xl shadow-lg border border-white mx-auto">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={index}
+          src={images[index]}
+          alt={`Slider Image ${index + 1}`}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          variants={variants}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute w-full h-full object-contain rounded-2xl"
+        />
+      </AnimatePresence>
+    </div>
+  );
+}
+
+
+/*
+
+"use client"; // Required for Next.js App Router
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+
+// Local images inside "public/images" folder
+const images = [
   "/Production1.png", 
   "/Production2.jpg",
   "/QB-online.png", // Third Image
@@ -47,3 +100,5 @@ export default function VerticalImageSlider() {
       </div>
     );
   }
+
+  */

@@ -59,8 +59,8 @@ export default function Navbar() {
           className="object-contain"
         />
 
-        {/* Phone Number */}
-        <h1 className="text-2xl font-bold text-orange-500">1-888-691-6887</h1>
+         {/* Phone Number */}
+         <h1 className="text-2xl font-bold text-orange-500">1-888-691-6887</h1>
 
         {/* Links Menu */}
         <div className="hidden md:flex space-x-6 text-lg font-medium">
@@ -92,6 +92,7 @@ export default function Navbar() {
                   <li className="py-2 px-4 cursor-pointer hover:bg-orange-500 hover:text-black">
                     <a href="#">JOB COSTING</a>
                   </li>
+                
 
                   {/* Sub-dropdown for Tracking Parts */}
                   <li className="relative group">
@@ -145,8 +146,7 @@ export default function Navbar() {
                       </div>
                     )}
                   </li>
-
-                 
+                    
                 </ul>
               </div>
             )}
