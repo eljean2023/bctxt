@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import DemoModal from "./DemoModal"; // Import the reusable modal
 
 const texts = [
   {
@@ -18,6 +19,8 @@ export default function Principal() {
   const [isFixed, setIsFixed] = useState(false);
   const videoRef = useRef(null);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % texts.length);
@@ -25,7 +28,9 @@ export default function Principal() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
+{/*
+  
+    useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
 
@@ -40,6 +45,8 @@ export default function Principal() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
+  */}
 
   return (
     <div className="relative w-full">
@@ -59,15 +66,18 @@ export default function Principal() {
       {/* Hero Content with Text */}
       <div className="relative z-30 flex items-center justify-center h-screen text-white text-center">
         <div className="max-w-3xl p-5">
-          <h1 className="text-5xl md:text-6xl font-extrabold">{texts[currentText].title}</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white">{texts[currentText].title}</h1>
           {texts[currentText].subtitle && (
             <p className="text-lg md:text-xl mt-2">{texts[currentText].subtitle}</p>
           )}
           {texts[currentText].button && (
-            <button className="mt-4 px-6 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition">
+            <button onClick={() => setIsModalOpen(true)} className="mt-4 px-6 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition">
               SCHEDULE A DEMONSTRATION
             </button>
           )}
+          
+      {/* Reusable Modal */}
+      <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
       </div>
 
@@ -86,10 +96,6 @@ export default function Principal() {
     </div>
   );
 }
-
-
-
-
 
 
 

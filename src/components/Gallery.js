@@ -1,8 +1,152 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import dynamic from "next/dynamic"; 
+import dynamic from "next/dynamic";
+
 const Production = dynamic(() => import("@/pages/production"), { ssr: false });
+const ContactUs = dynamic(() => import("@/pages/contactUs"), { ssr: false });
+
+const images = [
+  { id: 1, src: "/images/accounting.jpg", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configuration." },
+  { id: 2, src: "/images/schedule.jpg", title: "Scheduling", description: "Full Scheduling System including Appointments, Estimates, Vehicles Arriving, Vehicles Starting Production and Vehicles Being Delivered." },
+  { id: 3, src: "/images/mediamanachement.jpg", title: "Media Management", description: "Technician Tracking and Management Connecting the Back of the Shop to the Front Office." },
+  { id: 4, src: "/images/tecnicianTracking.jpeg", title: "Technician Tracking", description: "The calming waves of the deep blue ocean." },
+  { id: 5, src: "/images/jobCosting.jpeg", title: "Job Costing", description: "Job cost repair orders easily against your sale. Ensure you are profiting on every job." },
+  { id: 6, src: "/images/partmanagement.jpg", title: "Parts Management", description: "Manage purchase orders, parts invoices, vendor discounts and more." },
+  { id: 7, src: "/images/quickstimate.jpg", title: "Quick Estimate", description: "Quick Estimating for PDR & Menu Priced Items plus Quick Easy Photo Management." },
+  { id: 8, src: "/images/externalComunication.jpeg", title: "External Communications", description: "Automated Communications & Online Customer Portals Keeps Customers Updated On The Status Of The Vehicle Repair." },
+  { id: 9, src: "/images/internationCommunication.jpg", title: "Internal Communications", description: "Communicate directly with staff via internal messages. Update multiple staff members within seconds on repair orders or non-repair order related issues and updates." },
+  { id: 10, src: "/images/accounting.jpg", title: "Accounting", description: "Accounts Receivable Management and Accounting Integrations to a variety of Accounting Systems." },
+  { id: 11, src: "/images/multistorelocation.jpg", title: "Multi Store Locations", description: "Multiple Locations Management including Central Management, Ability to easily transfer files between locations and much more." },
+  { id: 12, src: "/images/dealership-e1570837755549.jpeg", title: "Dealer System Integration", description: "Integrated PBS Dealer Management System. Manage your Collision Shop better and remove the double entry between systems." },
+  { id: 13, src: "/images/painScaleInterface.png", title: "Paint Scale Interfaces", description: "Automated Paint Job Costing from Akzo Nobel, BASF and PPG Paint Scales." },
+  { id: 14, src: "/images/googlesurvey.png", title: "CSI - Google Survey", description: "Google Reviews and more with Integration to One Local and Podium." },
+  { id: 15, src: "/images/rentalCarInterface.png", title: "Rental Car Interface", description: "Save time and duplicate entry by updating statuses with ARMS Integration." },
+];
+
+export default function Gallery({ setIsModalOpen }) {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [contactModal, setContactModal] = useState(false);
+
+  return (
+    <div className="container mx-auto p-6 bg-white transition-none">
+      {/* Gallery Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {images.map((image) => (
+          <div
+            key={image.id}
+            className="relative group cursor-pointer transition-opacity duration-700"
+            onClick={() => {
+              setSelectedImage(image);
+              setIsModalOpen(true); // Apply blur effect
+            }}
+          >
+            <div className="rounded-lg shadow-lg overflow-hidden relative">
+              <img
+                src={image.src}
+                alt={image.title}
+                className="w-full h-72 object-cover transition-transform transform group-hover:scale-105 group-hover:shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-white text-lg font-semibold bg-orange-500 px-4 py-2 rounded-md">
+                  Learn More
+                </span>
+              </div>
+            </div>
+            <div className="mt-3 text-center">
+              <h3 className="text-xl md:text-2xl font-bold text-orange-500">{image.title}</h3>
+              <p className="text-base md:text-lg text-gray-600">{image.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Modal Popup */}
+      {selectedImage && (
+        <Dialog
+          open={true}
+          onClose={() => {
+            setSelectedImage(null);
+            setIsModalOpen(false); // Remove blur effect
+          }}
+          className="fixed inset-0 flex items-center justify-center z-50"
+        >
+          <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-5xl overflow-auto max-h-[80vh] relative">
+            <button
+              onClick={() => {
+                setSelectedImage(null);
+                setIsModalOpen(false); // Remove blur effect
+              }}
+              className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
+            >
+              ✕
+            </button>
+            {selectedImage.title === "Production" ? (
+              <Production />
+            ) : (
+              <div className="flex flex-col justify-center items-center">
+                <h1 className="text-4xl font-bold">{selectedImage.title}</h1>
+                <ul className="list-disc text-lg text-gray-600 mt-4 pl-6">
+                  {selectedImage.description.split(". ").map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
+                </ul>
+
+                {/* Close Button */}
+                <button
+                  onClick={() => {
+                    setSelectedImage(null);
+                    setIsModalOpen(false);
+                  }}
+                  className="mt-6 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600"
+                >
+                  Close
+                </button>
+
+                {/* Schedule a Demo Button */}
+                <button className="mt-3 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
+                  Schedule a Demo
+                </button>
+
+                {/* Contact Us Button */}
+                <button
+                  onClick={() => setContactModal(true)}
+                  className="mt-3 bg-gray-700 text-white py-2 px-4 rounded-full hover:bg-gray-800"
+                >
+                  Contact Us
+                </button>
+              </div>
+            )}
+          </Dialog.Panel>
+        </Dialog>
+      )}
+
+      {/* Contact Us Modal */}
+      {contactModal && (
+        <Dialog open={true} onClose={() => setContactModal(false)} className="fixed inset-0 flex items-center justify-center z-50">
+          <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-4xl overflow-auto max-h-[80vh] relative">
+            <button onClick={() => setContactModal(false)} className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl">
+              ✕
+            </button>
+            <ContactUs />
+          </Dialog.Panel>
+        </Dialog>
+      )}
+    </div>
+  );
+}
+
+
+
+/*
+"use client";
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import dynamic from "next/dynamic";
+
+const Production = dynamic(() => import("@/pages/production"), { ssr: false });
+const ContactUs = dynamic(() => import("@/pages/contactUs"), { ssr: false });
 
 const images = [
   { id: 1, src: "/images/accounting.jpg", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configuration" },
@@ -24,18 +168,12 @@ const images = [
 
 export default function GalleryComponent() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [contactModal, setContactModal] = useState(false);
 
   return (
     <div className="container mx-auto p-6 bg-white transition-none">
-
-<div className="mt-3 text-center">
-              <h1 className="text-xl md:text-2xl rounded-xl font-bold text-gray-500 mb-5 ">Connecting The Dots Through The Collision Repair Process</h1>
-              <p className="text-base md:text-lg text-gray-600 mb-10">Helping Collision Repair Facilities Exceed By Connecting Their Shops To The Future With The Right Technology. No Two Repair Shops Are The Same So Why Be Forced Into A Process By Other Body Shop Management Systems</p>
-       
-        
-      </div>
-      {/* Gallery Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 border-color-orange">
+      {/* Gallery Grid *//*}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {images.map((image) => (
           <div
             key={image.id}
@@ -48,14 +186,12 @@ export default function GalleryComponent() {
                 alt={image.title}
                 className="w-full h-72 object-cover transition-transform transform group-hover:scale-105 group-hover:shadow-2xl"
               />
-              {/* Learn More Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <span className="text-white text-lg font-semibold bg-orange-500 px-4 py-2 rounded-md">
                   Learn More
                 </span>
               </div>
             </div>
-            {/* Image Title & Description */}
             <div className="mt-3 text-center">
               <h3 className="text-xl md:text-2xl font-bold text-orange-500">{image.title}</h3>
               <p className="text-base md:text-lg text-gray-600">{image.description}</p>
@@ -64,30 +200,44 @@ export default function GalleryComponent() {
         ))}
       </div>
 
-      {/* ✅ Modal Popup */}
+      {/* Modal Popup *//*}
       {selectedImage && (
         <Dialog open={true} onClose={() => setSelectedImage(null)} className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
-          <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-4xl overflow-auto max-h-[80vh] relative">
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
-            >
-              ✕
-            </button>
-
-            {/* ✅ If "Production" is selected, show Production.js */}
+          <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-5xl overflow-auto max-h-[80vh] relative">
+            <button onClick={() => setSelectedImage(null)} className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl">✕</button>
             {selectedImage.title === "Production" ? (
               <Production />
             ) : (
               <div className="flex flex-col justify-center items-center">
                 <h1 className="text-4xl font-bold">{selectedImage.title}</h1>
-                <p className="text-lg text-gray-600 mt-4">{selectedImage.description}</p>
+                <ul className="list-disc text-lg text-gray-600 mt-4 pl-6">
+                  {selectedImage.description.split('. ').map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
+                </ul>
                 <button onClick={() => setSelectedImage(null)} className="mt-6 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600">
                   Close
                 </button>
+                {/* Schedule a Demo Button *//*}
+                <button className="mt-3 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
+                  Schedule a Demo
+                </button>
+                {/* Contact Us Button *//*}
+                <button onClick={() => setContactModal(true)} className="mt-3 bg-gray-700 text-white py-2 px-4 rounded-full hover:bg-gray-800">
+                  Contact Us
+                </button>
               </div>
             )}
+          </Dialog.Panel>
+        </Dialog>
+      )}
+
+      {/* Contact Us Modal *//*}
+      {contactModal && (
+        <Dialog open={true} onClose={() => setContactModal(false)} className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+          <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-4xl overflow-auto max-h-[80vh] relative">
+            <button onClick={() => setContactModal(false)} className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl">✕</button>
+            <ContactUs />
           </Dialog.Panel>
         </Dialog>
       )}
@@ -95,6 +245,42 @@ export default function GalleryComponent() {
   );
 }
 
+
+
+/*
+
+ {/* ✅ Modal Popup 
+ {selectedImage && (
+    <Dialog open={true} onClose={() => setSelectedImage(null)} className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+      <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-4xl overflow-auto max-h-[80vh] relative">
+        {/* Close Button *//*}
+        <button
+          onClick={() => setSelectedImage(null)}
+          className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
+        >
+          ✕
+        </button>
+
+        {/* ✅ If "Production" is selected, show Production.js *//*}
+        {selectedImage.title === "Scheduling" ? (
+          <Scheduling />
+        ) : (
+          <div className="flex flex-col justify-center items-center">
+            <h1 className="text-4xl font-bold">{selectedImage.title}</h1>
+            <p className="text-lg text-gray-600 mt-4">{selectedImage.description}</p>
+            <button onClick={() => setSelectedImage(null)} className="mt-6 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600">
+              Close
+            </button>
+          </div>
+        )}
+      </Dialog.Panel>
+    </Dialog>
+  )}
+
+
+
+
+*/
 
 
 

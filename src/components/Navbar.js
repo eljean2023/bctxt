@@ -54,19 +54,23 @@ export default function Navbar() {
         <Image
           src="/BCLogo1.png"
           alt="ModernBrand Logo"
-          width={380}
+          width={280}
           height={40}
           className="object-contain"
         />
 
          {/* Phone Number */}
-         <h1 className="text-2xl font-bold text-orange-500">1-888-691-6887</h1>
+           {/*<h1 className="text-2xl font-bold text-orange-500">1-888-691-6887</h1>*/}
 
         {/* Links Menu */}
         <div className="hidden md:flex space-x-6 text-lg font-medium">
           <a href="#" className="hover:text-orange-500 transition">ACCOUNTING</a>
           <a href="#" className="hover:text-orange-500 transition">SCHEDULE</a>
           <a href="#" className="hover:text-orange-500 transition">PRODUCTION</a>
+          <a href="#" className="hover:text-orange-500 transition">MULTI-STORE</a>
+          <a href="#" className="hover:text-orange-500 transition">PARTS</a>
+     
+
 
           {/* Dropdown for Extra Links */}
           <div className="relative" ref={dropdownRef}>
@@ -80,12 +84,6 @@ export default function Navbar() {
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 bg-gray-900 text-white p-4 rounded-lg shadow-lg w-48">
                 <ul>
-                <li className="py-2 px-4 cursor-pointer hover:bg-orange-500 hover:text-black">
-                    <a href="#">MULTI-STORE</a>
-                  </li>
-                  <li className="py-2 px-4 cursor-pointer hover:bg-orange-500 hover:text-black">
-                    <a href="#">PARTS</a>
-                  </li>
                   <li className="py-2 px-4 cursor-pointer hover:bg-orange-500 hover:text-black">
                     <a href="#">PARTS TRACKING</a>
                   </li>
