@@ -8,21 +8,21 @@ const Production = dynamic(() => import("@/pages/production"), { ssr: false });
 const ContactUs = dynamic(() => import("@/pages/contact"), { ssr: false });
 
 const images = [
-  { id: 1, src: "/images/accounting.jpg", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configuration." },
-  { id: 2, src: "/images/schedule.jpg", title: "Scheduling", description: "Full Scheduling System including Appointments, Estimates, Vehicles Arriving, Vehicles Starting Production and Vehicles Being Delivered." },
-  { id: 3, src: "/images/mediamanachement.jpg", title: "Media Management", description: "Technician Tracking and Management Connecting the Back of the Shop to the Front Office." },
-  { id: 4, src: "/images/tecnicianTracking.jpeg", title: "Technician Tracking", description: "The calming waves of the deep blue ocean." },
+  { id: 1, src: "/images/Production.png", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configuration." },
+  { id: 2, src: "/images/Schedule.png", title: "Scheduling", description: "Full Scheduling System including Appointments, Estimates, Vehicles Arriving, Vehicles Starting Production and Vehicles Being Delivered." },
+  { id: 3, src: "/images/MediaManagement.png", title: "Media Management", description: "Technician Tracking and Management Connecting the Back of the Shop to the Front Office." },
+  { id: 4, src: "/images/TechConnect.png", title: "Technician Tracking", description: "The calming waves of the deep blue ocean." },
   { id: 5, src: "/images/jobCosting.jpeg", title: "Job Costing", description: "Job cost repair orders easily against your sale. Ensure you are profiting on every job." },
-  { id: 6, src: "/images/partmanagement.jpg", title: "Parts Management", description: "Manage purchase orders, parts invoices, vendor discounts and more." },
-  { id: 7, src: "/images/quickstimate.jpg", title: "Quick Estimate", description: "Quick Estimating for PDR & Menu Priced Items plus Quick Easy Photo Management." },
-  { id: 8, src: "/images/externalComunication.jpeg", title: "External Communications", description: "Automated Communications & Online Customer Portals Keeps Customers Updated On The Status Of The Vehicle Repair." },
-  { id: 9, src: "/images/internationCommunication.jpg", title: "Internal Communications", description: "Communicate directly with staff via internal messages. Update multiple staff members within seconds on repair orders or non-repair order related issues and updates." },
+  { id: 6, src: "/images/PartsManagement.png", title: "Parts Management", description: "Manage purchase orders, parts invoices, vendor discounts and more." },
+  { id: 7, src: "/images/QuickEstimate.png", title: "Quick Estimate", description: "Quick Estimating for PDR & Menu Priced Items plus Quick Easy Photo Management." },
+  { id: 8, src: "/images/ExternalCommunicatons.png", title: "External Communications", description: "Automated Communications & Online Customer Portals Keeps Customers Updated On The Status Of The Vehicle Repair." },
+  { id: 9, src: "/images/Internal Communications.png", title: "Internal Communications", description: "Communicate directly with staff via internal messages. Update multiple staff members within seconds on repair orders or non-repair order related issues and updates." },
   { id: 10, src: "/images/accounting.jpg", title: "Accounting", description: "Accounts Receivable Management and Accounting Integrations to a variety of Accounting Systems." },
-  { id: 11, src: "/images/multistorelocation.jpg", title: "Multi Store Locations", description: "Multiple Locations Management including Central Management, Ability to easily transfer files between locations and much more." },
-  { id: 12, src: "/images/dealership-e1570837755549.jpeg", title: "Dealer System Integration", description: "Integrated PBS Dealer Management System. Manage your Collision Shop better and remove the double entry between systems." },
-  { id: 13, src: "/images/painScaleInterface.png", title: "Paint Scale Interfaces", description: "Automated Paint Job Costing from Akzo Nobel, BASF and PPG Paint Scales." },
-  { id: 14, src: "/images/googlesurvey.png", title: "CSI - Google Survey", description: "Google Reviews and more with Integration to One Local and Podium." },
-  { id: 15, src: "/images/rentalCarInterface.png", title: "Rental Car Interface", description: "Save time and duplicate entry by updating statuses with ARMS Integration." },
+  { id: 11, src: "/images/Multi Store Locations.png", title: "Multi Store Locations", description: "Multiple Locations Management including Central Management, Ability to easily transfer files between locations and much more." },
+  { id: 12, src: "/images//Dealership.png", title: "Dealer System Integration", description: "Integrated PBS Dealer Management System. Manage your Collision Shop better and remove the double entry between systems." },
+  { id: 13, src: "/images/Paint Scale Interface.png", title: "Paint Scale Interfaces", description: "Automated Paint Job Costing from Akzo Nobel, BASF and PPG Paint Scales." },
+  { id: 14, src: "/images/CSI.png", title: "CSI - Google Survey", description: "Google Reviews and more with Integration to One Local and Podium." },
+  { id: 15, src: "/images/RentalCar.png", title: "Rental Car Interface", description: "Save time and duplicate entry by updating statuses with ARMS Integration." },
 ];
 
 export default function Gallery({ setIsModalOpen }) {
