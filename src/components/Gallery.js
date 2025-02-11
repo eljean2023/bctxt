@@ -5,7 +5,7 @@ import { Dialog } from "@headlessui/react";
 import dynamic from "next/dynamic";
 
 const Production = dynamic(() => import("@/pages/production"), { ssr: false });
-const ContactUs = dynamic(() => import("@/pages/contactUs"), { ssr: false });
+const ContactUs = dynamic(() => import("@/pages/contact"), { ssr: false });
 
 const images = [
   { id: 1, src: "/images/accounting.jpg", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configuration." },
