@@ -44,6 +44,17 @@ export default function Gallery({ setIsModalOpen }) {
   
     return (
       <div className="container mx-auto p-6 bg-white transition-none">
+
+<div className="text-center my-10">
+  <h2 className="text-5xl md:text-6xl font-bold text-gray-500">
+    Connecting The Dots Through The Collision Repair Process
+  </h2>
+  <p className="text-lg md:text-xl text-gray-600 mt-6 max-w-3xl mx-auto">
+  Helping Collision Repair Facilities Exceed By Connecting Their Shops To The Future With The Right Technology. No Two Repair Shops Are The Same So Why Be Forced Into A Process By Other Body Shop Management Systems
+  </p>
+</div>
+
+
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {images.map((image) => (
