@@ -3,35 +3,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-    '/Production1.png',
-    '/Production2.jpg',
-    '/Production3.png',
-    '/Production5.png',
+    '/externalCommunication1.jpg',
+    '/externalCommunication2.jpg',
+    '/externalCommunication3.jpg',
   // Add more images as needed
 ];
 
 export default function ImageSlider() {
-  const [visibleImages, setVisibleImages] = useState(images.slice(0, 3));
+  const [visibleImages] = useState(images.slice(0, 3));
 
-  /*
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisibleImages((prev) => {
-        const lastIndex = images.indexOf(prev[prev.length - 1]);
-        const nextImage = images[(lastIndex + 1) % images.length];
-        console.log("Next Image:", nextImage);  // Log to check the image
-
-        return [...prev.slice(1), nextImage];
-      });
-    }, 6000); // Every 6 seconds, remove one from the left and add one to the right
-
-    return () => clearInterval(interval);
-  }, []);
-
-  
-  */
-  
   return (
     <div className="relative w-full flex justify-center items-center  py-6">  {/* bg-gray-100 */}
       <div className="flex space-x-4 screen-full overflow-hidden">
@@ -41,7 +21,7 @@ export default function ImageSlider() {
               key={img}
               src={img}
               alt={`Slide ${index}`}
-              className="w-1/3 h-auto rounded-lg shadow-lg overflow-hidden"   
+              className="w-1/3 h-auto rounded-lg shadow-lg overflow-hidden"
               layout // Helps with smooth transitions
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

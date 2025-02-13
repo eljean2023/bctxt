@@ -5,7 +5,21 @@ import { Dialog } from "@headlessui/react";
 import dynamic from "next/dynamic";
 
 const Production = dynamic(() => import("@/pages/production"), { ssr: false });
-const ContactUs = dynamic(() => import("@/pages/contact"), { ssr: false });
+const Scheduling = dynamic(() => import("@/pages/scheduling"), { ssr: false })
+const MediaManagement = dynamic(() => import("@/pages/mediaManagement"), { ssr: false })
+const TechTracking = dynamic(() => import("@/pages/techTracking"), { ssr: false })
+const JobCosting = dynamic(() => import("@/pages/jobCosting"), { ssr: false })
+const Parts = dynamic(() => import("@/pages/partsManagement"), { ssr: false })
+const Accounting = dynamic(() => import("@/pages/accounting"), { ssr: false })
+const QuickStimate = dynamic(() => import("@/pages/quickStimate"), { ssr: false })
+const ExternalCommunication = dynamic(() => import("@/pages/externalCommunication"), { ssr: false })
+const InternalCommunication = dynamic(() => import("@/pages/internalCommucation"), { ssr: false })
+const MultiLocation = dynamic(() => import("@/pages/multiLocation"), { ssr: false })
+const DealerShip = dynamic(() => import("@/pages/dealerShipConnect"), { ssr: false })
+const PaintScaleInterface = dynamic(() => import("@/pages/paintScaleInterface"), { ssr: false })
+const CSISurvey= dynamic(() => import("@/pages/csi"), { ssr: false })
+const RentaCarInterface= dynamic(() => import("@/pages/rentalCarInterface"), { ssr: false })
+
 
 const images = [
   { id: 1, src: "/images/Production.png", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configuration." },
@@ -26,117 +40,281 @@ const images = [
 ];
 
 export default function Gallery({ setIsModalOpen }) {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [contactModal, setContactModal] = useState(false);
-
-  return (
-    <div className="container mx-auto p-6 bg-white transition-none">
-      {/* Gallery Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {images.map((image) => (
-          <div
-            key={image.id}
-            className="relative group cursor-pointer transition-opacity duration-700"
-            onClick={() => {
-              setSelectedImage(image);
-              setIsModalOpen(true); // Apply blur effect
-            }}
-          >
-            <div className="rounded-lg shadow-lg overflow-hidden relative">
-              <img
-                src={image.src}
-                alt={image.title}
-                className="w-full h-72 object-cover transition-transform transform group-hover:scale-105 group-hover:shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white text-lg font-semibold bg-orange-500 px-4 py-2 rounded-md">
-                  Learn More
-                </span>
-              </div>
-            </div>
-            <div className="mt-3 text-center">
-              <h3 className="text-xl md:text-2xl font-bold text-orange-500">{image.title}</h3>
-              <p className="text-base md:text-lg text-gray-600">{image.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Modal Popup */}
-      {selectedImage && (
-        <Dialog
-          open={true}
-          onClose={() => {
-            setSelectedImage(null);
-            setIsModalOpen(false); // Remove blur effect
-          }}
-          className="fixed inset-0 flex items-center justify-center z-50"
-        >
-          <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-5xl overflow-auto max-h-[80vh] relative">
-            <button
+    const [selectedImage, setSelectedImage] = useState(null);
+  
+    return (
+      <div className="container mx-auto p-6 bg-white transition-none">
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {images.map((image) => (
+            <div
+              key={image.id}
+              className="relative group cursor-pointer transition-opacity duration-700"
               onClick={() => {
-                setSelectedImage(null);
-                setIsModalOpen(false); // Remove blur effect
+                setSelectedImage(image);
+                setIsModalOpen(true);
               }}
-              className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
             >
-              ✕
-            </button>
-            {selectedImage.title === "Production" ? (
-              <Production />
-            ) : (
-              <div className="flex flex-col justify-center items-center">
-                <h1 className="text-4xl font-bold">{selectedImage.title}</h1>
-                <ul className="list-disc text-lg text-gray-600 mt-4 pl-6">
-                  {selectedImage.description.split(". ").map((point, index) => (
-                    <li key={index}>{point}</li>
-                  ))}
-                </ul>
-
-                {/* Close Button */}
-                <button
-                  onClick={() => {
-                    setSelectedImage(null);
-                    setIsModalOpen(false);
-                  }}
-                  className="mt-6 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600"
-                >
-                  Close
-                </button>
-
-                {/* Schedule a Demo Button */}
-                <button className="mt-3 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
-                  Schedule a Demo
-                </button>
-
-                {/* Contact Us Button */}
-                <button
-                  onClick={() => setContactModal(true)}
-                  className="mt-3 bg-gray-700 text-white py-2 px-4 rounded-full hover:bg-gray-800"
-                >
-                  Contact Us
-                </button>
+              <div className="rounded-lg shadow-lg overflow-hidden relative">
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  className="w-full h-72 object-cover transition-transform transform group-hover:scale-105 group-hover:shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-white text-lg font-semibold bg-orange-500 px-4 py-2 rounded-md">
+                    Learn More
+                  </span>
+                </div>
               </div>
-            )}
-          </Dialog.Panel>
-        </Dialog>
-      )}
+              <div className="mt-3 text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-orange-500">{image.title}</h3>
+                <p className="text-base md:text-lg text-gray-600">{image.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+  
+        {/* Modal Popup */}
+        {selectedImage && (
+          <Dialog
+            open={true}
+            onClose={() => {
+              setSelectedImage(null);
+              setIsModalOpen(false);
+            }}
+            className="fixed inset-0 flex items-center justify-center z-50"
+          >
+            <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-5xl overflow-auto max-h-[80vh] relative">
+              {/* Close Button */}
+              <button
+                onClick={() => {
+                  setSelectedImage(null);
+                  setIsModalOpen(false);
+                }}
+                className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
+              >
+                ✕
+              </button>
+  
+              {/* Conditional Rendering for Components */}
+              {selectedImage.title === "Production" ? (
+                <Production />
+              ) : selectedImage.title === "Scheduling" ? (
+                <Scheduling />
+              ) : selectedImage.title === "Media Management" ? (
+                <MediaManagement />
+            ) :  selectedImage.title === "Technician Tracking" ? (
+                <TechTracking />
+            ) :  selectedImage.title === "Job Costing" ? (
+                <JobCosting />
+            ) :  selectedImage.title === "Parts Management" ? (
+                <Parts />
+            ) :  selectedImage.title === "Accounting" ? (
+                    <Accounting />
+            ) :  selectedImage.title === "Quick Estimate" ? (
+                <QuickStimate />
+            ) :  selectedImage.title === "External Communications" ? (
+                <ExternalCommunication />
+            ) :  selectedImage.title === "Internal Communications" ? (
+                <InternalCommunication/>
+            ) :  selectedImage.title === "Multi Store Locations" ? (
+                <MultiLocation />
+            ) : selectedImage.title === "Dealer System Integration" ? (
+                <DealerShip />
+            ) : selectedImage.title === "Paint Scale Interfaces" ? (
+                <PaintScaleInterface />
+            )   : selectedImage.title === "CSI - Google Survey" ? (
+                <CSISurvey />
+            )  : selectedImage.title === "Rental Car Interface" ? (
+                <RentaCarInterface /> 
+            ) : (
+                <div className="flex flex-col justify-center items-center">
+                  <h1 className="text-4xl font-bold">{selectedImage.title}</h1>
+                  <ul className="list-disc text-lg text-gray-600 mt-4 pl-6">
+                    {selectedImage.description.split(". ").map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
+  
+                  {/* Buttons */}
+                  <button
+                    onClick={() => {
+                      setSelectedImage(null);
+                      setIsModalOpen(false);
+                    }}
+                    className="mt-6 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600"
+                  >
+                    Close
+                  </button>
+                </div>
+              )}
+            </Dialog.Panel>
+          </Dialog>
+        )}
+      </div>
+    );
+  }
 
-      {/* Contact Us Modal */}
-      {contactModal && (
-        <Dialog open={true} onClose={() => setContactModal(false)} className="fixed inset-0 flex items-center justify-center z-50">
-          <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-4xl overflow-auto max-h-[80vh] relative">
-            <button onClick={() => setContactModal(false)} className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl">
-              ✕
-            </button>
-            <ContactUs />
-          </Dialog.Panel>
-        </Dialog>
-      )}
-    </div>
-  );
-}
 
+/*
+"use client";
+
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import dynamic from "next/dynamic";
+
+const Production = dynamic(() => import("@/pages/production"), { ssr: false });
+const Scheduling = dynamic(() => import("@/pages/scheduling"), { ssr: false })
+const MediaManagement = dynamic(() => import("@/pages/mediaManagement"), { ssr: false })
+const TechTracking = dynamic(() => import("@/pages/techTracking"), { ssr: false })
+const JobCosting = dynamic(() => import("@/pages/jobCosting"), { ssr: false })
+const Parts = dynamic(() => import("@/pages/partsManagement"), { ssr: false })
+const Accounting = dynamic(() => import("@/pages/accounting"), { ssr: false })
+const QuickStimate = dynamic(() => import("@/pages/quickStimate"), { ssr: false })
+const ExternalCommunication = dynamic(() => import("@/pages/externalCommunication"), { ssr: false })
+const InternalCommunication = dynamic(() => import("@/pages/internalCommucation"), { ssr: false })
+const MultiLocation = dynamic(() => import("@/pages/multiLocation"), { ssr: false })
+const DealerShip = dynamic(() => import("@/pages/dealerShipConnect"), { ssr: false })
+const PaintScaleInterface = dynamic(() => import("@/pages/paintScaleInterface"), { ssr: false })
+const CSISurvey= dynamic(() => import("@/pages/csi"), { ssr: false })
+const RentaCarInterface= dynamic(() => import("@/pages/rentalCarInterface"), { ssr: false })
+
+
+const images = [
+  { id: 1, src: "/images/Production.png", title: "Production", description: "Visual Production Management with Unlimited Departments and Display Board Configuration." },
+  { id: 2, src: "/images/Schedule.png", title: "Scheduling", description: "Full Scheduling System including Appointments, Estimates, Vehicles Arriving, Vehicles Starting Production and Vehicles Being Delivered." },
+  { id: 3, src: "/images/MediaManagement.png", title: "Media Management", description: "Technician Tracking and Management Connecting the Back of the Shop to the Front Office." },
+  { id: 4, src: "/images/TechConnect.png", title: "Technician Tracking", description: "The calming waves of the deep blue ocean." },
+  { id: 5, src: "/images/jobCosting.jpeg", title: "Job Costing", description: "Job cost repair orders easily against your sale. Ensure you are profiting on every job." },
+  { id: 6, src: "/images/PartsManagement.png", title: "Parts Management", description: "Manage purchase orders, parts invoices, vendor discounts and more." },
+  { id: 7, src: "/images/QuickEstimate.png", title: "Quick Estimate", description: "Quick Estimating for PDR & Menu Priced Items plus Quick Easy Photo Management." },
+  { id: 8, src: "/images/ExternalCommunicatons.png", title: "External Communications", description: "Automated Communications & Online Customer Portals Keeps Customers Updated On The Status Of The Vehicle Repair." },
+  { id: 9, src: "/images/Internal Communications.png", title: "Internal Communications", description: "Communicate directly with staff via internal messages. Update multiple staff members within seconds on repair orders or non-repair order related issues and updates." },
+  { id: 10, src: "/images/accounting.jpg", title: "Accounting", description: "Accounts Receivable Management and Accounting Integrations to a variety of Accounting Systems." },
+  { id: 11, src: "/images/Multi Store Locations.png", title: "Multi Store Locations", description: "Multiple Locations Management including Central Management, Ability to easily transfer files between locations and much more." },
+  { id: 12, src: "/images//Dealership.png", title: "Dealer System Integration", description: "Integrated PBS Dealer Management System. Manage your Collision Shop better and remove the double entry between systems." },
+  { id: 13, src: "/images/Paint Scale Interface.png", title: "Paint Scale Interfaces", description: "Automated Paint Job Costing from Akzo Nobel, BASF and PPG Paint Scales." },
+  { id: 14, src: "/images/CSI.png", title: "CSI - Google Survey", description: "Google Reviews and more with Integration to One Local and Podium." },
+  { id: 15, src: "/images/RentalCar.png", title: "Rental Car Interface", description: "Save time and duplicate entry by updating statuses with ARMS Integration." },
+];
+
+export default function Gallery({ setIsModalOpen }) {
+    const [selectedImage, setSelectedImage] = useState(null);
+  
+    return (
+      <div className="container mx-auto p-6 bg-white transition-none">
+        {/* Gallery Grid *//*}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {images.map((image) => (
+            <div
+              key={image.id}
+              className="relative group cursor-pointer transition-opacity duration-700"
+              onClick={() => {
+                setSelectedImage(image);
+                setIsModalOpen(true);
+              }}
+            >
+              <div className="rounded-lg shadow-lg overflow-hidden relative">
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  className="w-full h-72 object-cover transition-transform transform group-hover:scale-105 group-hover:shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-white text-lg font-semibold bg-orange-500 px-4 py-2 rounded-md">
+                    Learn More
+                  </span>
+                </div>
+              </div>
+              <div className="mt-3 text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-orange-500">{image.title}</h3>
+                <p className="text-base md:text-lg text-gray-600">{image.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+  
+        {/* Modal Popup *//*}
+        {selectedImage && (
+          <Dialog
+            open={true}
+            onClose={() => {
+              setSelectedImage(null);
+              setIsModalOpen(false);
+            }}
+            className="fixed inset-0 flex items-center justify-center z-50"
+          >
+            <Dialog.Panel className="bg-white rounded-xl p-8 shadow-lg max-w-5xl overflow-auto max-h-[80vh] relative">
+              {/* Close Button *//*}
+              <button
+                onClick={() => {
+                  setSelectedImage(null);
+                  setIsModalOpen(false);
+                }}
+                className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
+              >
+                ✕
+              </button>
+  
+              {/* Conditional Rendering for Components *//*}
+              {selectedImage.title === "Production" ? (
+                <Production />
+              ) : selectedImage.title === "Scheduling" ? (
+                <Scheduling />
+              ) : selectedImage.title === "Media Management" ? (
+                <MediaManagement />
+            ) :  selectedImage.title === "Technician Tracking" ? (
+                <TechTracking />
+            ) :  selectedImage.title === "Job Costing" ? (
+                <JobCosting />
+            ) :  selectedImage.title === "Parts Management" ? (
+                <Parts />
+            ) :  selectedImage.title === "Accounting" ? (
+                    <Accounting />
+            ) :  selectedImage.title === "Quick Estimate" ? (
+                <QuickStimate />
+            ) :  selectedImage.title === "External Communications" ? (
+                <ExternalCommunication />
+            ) :  selectedImage.title === "Internal Communications" ? (
+                <InternalCommunication/>
+            ) :  selectedImage.title === "Multi Store Locations" ? (
+                <MultiLocation />
+            ) : selectedImage.title === "Dealer System Integration" ? (
+                <DealerShip />
+            ) : selectedImage.title === "Paint Scale Interfaces" ? (
+                <PaintScaleInterface />
+            )   : selectedImage.title === "CSI - Google Survey" ? (
+                <CSISurvey />
+            )  : selectedImage.title === "Rental Car Interface" ? (
+                <RentaCarInterface /> 
+            ) : (
+                <div className="flex flex-col justify-center items-center">
+                  <h1 className="text-4xl font-bold">{selectedImage.title}</h1>
+                  <ul className="list-disc text-lg text-gray-600 mt-4 pl-6">
+                    {selectedImage.description.split(". ").map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
+  
+                  {/* Buttons *//*}
+                  <button
+                    onClick={() => {
+                      setSelectedImage(null);
+                      setIsModalOpen(false);
+                    }}
+                    className="mt-6 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600"
+                  >
+                    Close
+                  </button>
+                </div>
+              )}
+            </Dialog.Panel>
+          </Dialog>
+        )}
+      </div>
+    );
+  }
 
 
 /*

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import ImageSlider from '@/components/sliderScheduling';
+import ImageSlider from '@/components/sliderjobCosting';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
-
-const scheduling = () => {
+const jobCosting = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
-   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
+  const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
@@ -34,23 +33,11 @@ const scheduling = () => {
   return (
     <div className="container mx-auto max-w-dvw px-12">
       
-      {/*
-      
-      {/* Logo Image 
-      <div className="text-center mb-8 bg-black shadow-md rounded-3xl py-5">
-        <img src="/BCLogo1.png" alt="Company Logo" width={280} height={40} className="object-contain mx-auto bg-black-500" />
-      </div>
-      
-      
-      */}
-
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Schedule The Way You Want To -  By Hours, Number of Jobs, Types of Repair & More
+      Control, Manage & Discover Hidden Profits. Job Costing With BodyshopConnect Makes It Simple.
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Schedule all work in process and new repairs with our Capacity Scheduling. 
-      Multiple Views are Available To Customize Both Your Estimate Appointments and Repair Order Scheduling. 
-      Keep on top of Your Dates to help you meet or exceed Your Delivery Targets.
+      Track all Job Costs easily and quickly. Labor or Vendor Costs can be added per Repair Order or on the fly using bulk Job Cost posting screens.
       </h4>
 
       {/* Image Slider */}
@@ -60,40 +47,39 @@ const scheduling = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Vehicle Arrival Scheduling</li>
-            <li className="text-black">Production Scheduling.</li>
-            <li className="text-black">Automate Drop Off Reminders by Email or Text Message</li>
+            <li className="text-black">Parts Management Dashboard</li>
+            <li className="text-black">Parts List By Repair Order</li>
+            <li className="text-black">Outstanding Vendor Credits</li>
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Schedule Appointments</li>
-            <li className="text-black">Schedule Appraisals</li>
-            <li className="text-black">Schedule Other Non Repair Order Appointments</li>
+            <li className="text-black">Order, Receive, Return, Back Order, IOU & More</li>
+            <li className="text-black">Partial Credits, Labor & Cost Credit</li>
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Balance and Maximize your shop's Capacity</li>
-            <li className="text-black">Schedule Production Start Dates</li>
-            <li className="text-black">Customer Delivery Schedule</li>
+            <li className="text-black">Part Labels</li>
+            <li className="text-black">Electronic Check In</li>
           </ul>
         </div>
       </div>
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- ScheduleConnect
+      Customized Solutions From BodyshopConnect -- JobCostConnect
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. ScheduleConnect allows shops to maximize their productivity. We have multiple Schedulers available to use.  Appointment Calendar, Arrival Scheduler, Production Scheduler and Delivery Scheduler. We also allow for customized Display Boards for use at the desktop or large screen TV's located in the shop.
+      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. JobCostConnect allows a shop to break down all Vendor and Labor Costs by profit center in order to see exactly where to focus. Quickly View your net profit to make sure you are staying profitable on all repairs.
       </h4>
 
-      {/* Reusable Modal */}
-      {isModalOpen && (
+                
+     {/* Reusable Modal */}
+     {isModalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center backdrop-blur-lg" onClick={closeModal}>
           <div className="bg-white p-6 rounded-lg w-96 relative" onClick={(e) => e.stopPropagation()}>
             <button onClick={closeModal} className="text-red-500 absolute top-4 right-4 font-bold">
@@ -114,7 +100,32 @@ const scheduling = () => {
           Contact Us
         </button>
       </div>
-     
+
+      {/* Schedule Modal */}
+      {isScheduleModalOpen && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center" onClick={closeScheduleModal}>
+          <div className="bg-white p-6 rounded-lg w-96 relative" onClick={(e) => e.stopPropagation()}>
+            <button onClick={closeScheduleModal} className="text-red-500 absolute top-4 right-4 font-bold">
+              X
+            </button>
+            <h2 className="text-xl font-bold text-gray-700 mb-4">Schedule a Demo</h2>
+            <p>Fill in your details to schedule a demo.</p>
+            <form>
+              <div className="mb-4">
+                <label className="block text-gray-600">Name</label>
+                <input type="text" className="w-full p-2 border rounded" />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-600">Email</label>
+                <input type="email" className="w-full p-2 border rounded" />
+              </div>
+              <button type="submit" className="bg-black text-white py-2 px-6 rounded-lg w-full">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Contact Us Modal */}
       {isContactModalOpen && (
@@ -152,4 +163,4 @@ const scheduling = () => {
 };
 
 
-export default scheduling;
+export default jobCosting;

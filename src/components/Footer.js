@@ -1,5 +1,7 @@
+
 import DemoModal from "./DemoModal"; // Import the reusable modal
 import { useState} from "react";
+
 const Footer = () => {
    const [isModalOpen, setIsModalOpen] = useState(false);
   return (
@@ -40,16 +42,22 @@ const Footer = () => {
         </div>
     
 
-      <div>
+      <div>    {/* Phone Number */}
+     
           <ul className="space-y-2">
-            <li><button onClick={() => setIsModalOpen(true)} className="mt-4 px-6 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition">
+            <li><button onClick={() => setIsModalOpen(true)} className="mt-4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition">
               SCHEDULE A DEMONSTRATION
             </button>
             </li>
-            <li><a onClick={() => setIsModalOpen(true)} className="hover:text-orange-400 transition cursor-pointer">SCHEDULE A DEMONSTRATION</a></li>
+            <li><button className="mt-4 px-14 py-2  text-2xl text-orange-600 font-semibold rounded-full hover:bg-white-600 transition">
+                   1-888-691-6887
+            </button>
+            </li>
+
           </ul>
            {/* Reusable Modal */}
                 <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
         </div>
         </div>
       

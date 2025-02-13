@@ -3,10 +3,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-    '/Production1.png',
-    '/Production2.jpg',
-    '/Production3.png',
-    '/Production5.png',
+    '/mediaManagenent1.jpeg',
+    '/mediaManagenent2.jpg',
+    '/mediaManagenent3.jpg',
   // Add more images as needed
 ];
 
@@ -41,7 +40,7 @@ export default function ImageSlider() {
               key={img}
               src={img}
               alt={`Slide ${index}`}
-              className="w-1/3 h-auto rounded-lg shadow-lg overflow-hidden"   
+              className="w-1/3 h-auto rounded-lg shadow-lg overflow-hidden"
               layout // Helps with smooth transitions
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

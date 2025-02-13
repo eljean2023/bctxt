@@ -41,7 +41,7 @@ export default function HorizontalImageSlider() {
           exit="exit"
           variants={variants}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute w-full h-full object-contain rounded-2xl"
+          className="absolute w-full h-full object-contain rounded-2xl overflow-hidden"
         />
       </AnimatePresence>
     </div>
