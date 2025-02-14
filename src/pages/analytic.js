@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ImageSlider from '@/components/sliderAcccounting';
+import ImageSlider from '@/components/sliderAnalytic';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
-const accounting = () => {
+const analytic = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -14,73 +14,70 @@ const accounting = () => {
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
 
-  const openScheduleModal = () => {
-    setModalType('demo'); // Set modal type to demo
-    setIsModalOpen(true); // Open modal
-  };
-  
-  const openContactModal = () => {
-    setModalType('contact'); // Set modal type to contact
-    setIsModalOpen(true); // Open modal
-  };
-  
-  const closeModal = () => {
-    setIsModalOpen(false); // Close modal
-    setModalType(''); // Reset modal type
-  };
-  
+const openScheduleModal = () => {
+  setModalType('demo'); // Set modal type to demo
+  setIsModalOpen(true); // Open modal
+};
+
+const openContactModal = () => {
+  setModalType('contact'); // Set modal type to contact
+  setIsModalOpen(true); // Open modal
+};
+
+const closeModal = () => {
+  setIsModalOpen(false); // Close modal
+  setModalType(''); // Reset modal type
+};
 
   return (
     <div className="container mx-auto max-w-dvw px-12">
       
+      {/*
+      
+      {/* Logo Image 
+      <div className="text-center mb-8 bg-black shadow-md rounded-3xl py-5">
+        <img src="/BCLogo1.png" alt="Company Logo" width={280} height={40} className="object-contain mx-auto bg-black-500" />
+      </div>
+      
+      
+      */}
+
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Accounting Interfaces, A/R Management. BodyshopConnect's Insurance Bulk Payment Control,  Is The Best In The Industry.
+      Data Analytics
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Simplify Bulk Payments & Receiving Payments On Multiple Repair Orders Never Got Easier!
+      This interface has been built for shops that would like their data pushed to a 3rd party for reports and/or compliance for certain Networks, Paint Companies and/or OE Certification Programs.
       </h4>
 
       {/* Image Slider */}
       <ImageSlider />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 py-8">
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Interface to Acomba X</li>
-            <li className="text-black">Interface to Advantage X</li>
-            <li className="text-black">Interface to QuickBooks Desktop</li>
-            <li className="text-black">Interface to Xero Accounting </li>
+            <li className="text-black">Once authorized will automatically sync key repair metrics. </li>
+            <li className="text-black">Allow Benchmarking between shops in your network.</li>
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Receive Payments for Specific Repair Orders</li>
-            <li className="text-black">Receive Bulk Checks for Multiple Repair Orders</li>
-            <li className="text-black">Outstanding Receivables View Quick & Simple</li>
+            <li className="text-black">Data will sync with Triggers to certain dates selected. (Picked up, Car Ready) </li>
+            <li className="text-black">Reduce data entry. Ensure compliance with your paint company and shop network.  </li>
           </ul>
         </div>
 
-        {/* Right Column */}
-        <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Interface to QuickBooks Online</li>
-            <li className="text-black">Interface to Sage Cloud Accounting</li>
-            <li className="text-black">Interface to Sage Business Works</li>
-            <li className="text-black">Interface to Sage 50 (Simply Accounting)</li>
-          </ul>
-        </div>
+      
       </div>
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- AccountingConnect
+      Customized Solutions From BodyshopConnect -- Data Analytics
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. AccountConnect allows easy management of Accounts Receivables within the management system. In addition AccountConnect interfaces with multiple accounting systems allowing export of Accounts Receivables, Payments and / or Accounts Payable which saves time by removing double entry of data.
+      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.
       </h4>
-
                 
       {/* Reusable Modal */}
       {isModalOpen && (
@@ -97,14 +94,17 @@ const accounting = () => {
 
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
+        {/*
+        
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
           Schedule a Demo
         </button>
+        */}
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
           Contact Us
         </button>
       </div>
-     
+
       {/* Schedule Modal */}
       {isScheduleModalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center" onClick={closeScheduleModal}>
@@ -167,4 +167,4 @@ const accounting = () => {
 };
 
 
-export default accounting;
+export default analytic;

@@ -3,20 +3,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-    '/media1.png',
-    '/media2.png',
-    '/media3.png',
-    '/media4.png',
-    '/media5.png'
-
-  // Add more images as needed
+    '/analytic1.jpg',
+    '/analytic2.jpg',
+    '/analytic3.jpg',
+    '/analytic4.jpg',
 ];
 
 export default function ImageSlider() {
-  const [visibleImages, setVisibleImages] = useState(images.slice(0, 6));
+  const [visibleImages, setVisibleImages] = useState(images.slice(0, 5));
 
-  /*
-  
   useEffect(() => {
     const interval = setInterval(() => {
       setVisibleImages((prev) => {
@@ -31,19 +26,16 @@ export default function ImageSlider() {
     return () => clearInterval(interval);
   }, []);
 
-  
-  */
-  
   return (
-    <div className="relative w-full flex justify-center items-center  py-6">  {/* bg-gray-100 */}
-      <div className="flex space-x-4 screen-full overflow-hidden">
+    <div className="relative w-full flex justify-center items-center bg-white-100 py-6">
+      <div className="flex space-x-4 screen-md overflow-hidden">
         <AnimatePresence>
           {visibleImages.map((img, index) => (
             <motion.img
               key={img}
               src={img}
               alt={`Slide ${index}`}
-              className="w-1/3 h-auto rounded-lg shadow-lg overflow-hidden"
+              className="w-1/5 h-auto rounded-lg shadow-lg overflow-hidden"
               layout // Helps with smooth transitions
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

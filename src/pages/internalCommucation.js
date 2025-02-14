@@ -36,7 +36,7 @@ const internalCummunication = () => {
       Real Time Communication - Internal
       </h1>
       <h3 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      View External Communications
+       {/*   View External Communications */}
       </h3>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
       Internal Chat between all employees (including technicians) Automated push notifications to key persons within the shop as the vehicle moves through the departments and/or event trigger notifications.

@@ -3,7 +3,7 @@ import ImageSlider from '@/components/sliderRentaCarInterface';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
-const painScaleInterface = () => {
+const rentalCar = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -164,4 +164,4 @@ const painScaleInterface = () => {
 };
 
 
-export default painScaleInterface;
+export default rentalCar;

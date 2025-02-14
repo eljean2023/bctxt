@@ -42,46 +42,66 @@ const closeModal = () => {
       
       */}
 
-      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Managing reviews and prompting customers to tell you about great service is not easy.
+      <h1 className="text-3xl font-bold text-center text-gray-400 mb-8">
+      BodyshopConnect Puts You in Drivers Seat Allowing You To Run Your Collision Repair Facility Efficiently
       </h1>
+      <h3 className="text-2xl font-bold text-center text-gray-700 mb-8">
+      Customized Solutions From BodyshopConnect
+      </h3>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Once repair is completed and a vehicle is delivered, the customer will automatically receive a
-review invitation.
+      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the real Collision Repair Process.  We have connections to many 3rd applications. Using the CIECA standard, we are able to import estimates from AdjustRite, Audatex, CCC and Mitchell Estimating systems. These are North America's Premier estimating systems and used by most collision repair facilities.
       </h4>
+      <h3 className="text-2xl  font-bold text-center text-gray-700 mt-2 mb-8">
+      YOU can customize the features of our auto body shop management software.
+      </h3>
+
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-500 text-left pl-0 mb-12">
+  <li className="flex items-start"><span className="mr-2">→</span>Parts Management</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Accounting Interfaces</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Job Costing</li>
+  <li className="flex items-start"><span className="mr-2">→</span>AR Payments Management (Bulk Payment Support)</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Estimating Management & Digital Check-In</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Labor & Time Management</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Production Boards & Real-Time Stats</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Photo, Barcode & Online Photo Integration</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Internal Messaging & Integrated Email</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Intelligent Scheduling (Appointments, Production & Delivery)</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Real-Time Multi-Shop & Single Shop Analytics</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Technician Time Clock</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Estimate/Repair Order Compliance Rules</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Dealer Management System Interface to PBS</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Multi-Shop Connectivity & Central Management</li>
+</ul>
+
+      <p className="font-semibold text-gray-700 text-center text-lg mb-12">
+        We Guarantee Your Satisfaction. Connect With Us for an Online Demonstration at No Cost.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-gray-700 mb-8">Manage YOUR Collision Repair Facility Efficiently</h2>
+      <p className="mb-4 text-gray-700">
+        Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their goals and streamline operations.
+      </p>
+
+      <h5 className="text-xl text-center text-gray-700 mt-2 mb-12">
+        We Guarantee Your Satisfaction. Connect With Us For an Online Demonstration at No Cost.
+        Manage YOUR Collision Repair Facility efficiently with management and workflow solutions that can be customized to fit YOUR needs.  Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their business goals and help them streamline their businesses.
+      </h5>
+
+<ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-500 text-left pl-0 mb-14">
+  <li className="flex items-start"><span className="mr-2">→</span>Create quick estimates and check in customers with ease.</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Customized Reporting & Tools to Maximize Production.</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Track & Manage Technicians' Time and Efficiency.</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Ensure Vehicles are delivered on time.</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Manage Industry KPIs.</li>
+  <li className="flex items-start"><span className="mr-2">→</span>Connect With Multiple Industry Third-Party Applications and Reduce Data Entry.</li>
+</ul>
+
 
       {/* Image Slider */}
-      <ImageSlider />
+    
+     
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-8">
-        {/* Left Column */}
-        <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Automatically Sends Administrative Details </li>
-          </ul>
-        </div>
-
-        {/* Middle Column (Company Logos) */}
-        <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Reduce Data Re-Keying By Allowing Information To Transfer Directly From The Repair Order Into A Customer Survey.</li>
-          </ul>
-        </div>
-
-        {/* Right Column */}
-        <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Information Is Transferred Once Picked Up Date Is Entered. </li>
-          </ul>
-        </div>
-      </div>
-
-      <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- ReviewConnect
-      </h2>
-      <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. ReviewConnect removes 'double entry'.  Integration with both "One Local" software or "Podium" software allows shops to save time by sending specific customers and specific information to their review platforms.
-      </h4>
+      
                 
       {/* Reusable Modal */}
       {isModalOpen && (
@@ -98,9 +118,6 @@ review invitation.
 
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
-        <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
-        </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
           Contact Us
         </button>

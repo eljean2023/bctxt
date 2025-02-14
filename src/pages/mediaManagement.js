@@ -3,7 +3,7 @@ import ImageSlider from '@/components/sliderManagement';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
-const scheduling = () => {
+const mediaManagement = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -173,4 +173,4 @@ const scheduling = () => {
 };
 
 
-export default scheduling;
+export default mediaManagement;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ImageSlider from '@/components/sliderAcccounting';
+import ImageSlider from '@/components/sliderjobCosting';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
-const accounting = () => {
+const support = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -33,57 +33,23 @@ const accounting = () => {
   return (
     <div className="container mx-auto max-w-dvw px-12">
       
-      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Accounting Interfaces, A/R Management. BodyshopConnect's Insurance Bulk Payment Control,  Is The Best In The Industry.
+      <h1 className="text-3xl font-bold text-center text-red-500 mb-5">
+      Online Computer Support
       </h1>
-      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Simplify Bulk Payments & Receiving Payments On Multiple Repair Orders Never Got Easier!
-      </h4>
-
-      {/* Image Slider */}
+      <h5 className="text-xl text-center text-gray-700 mt-2 mb-8">
+      One Of Our Technicians will supply you with a Session ID Number. Please enter the number in the box below and click Connect.
+      Once the file has been downloaded to your computer; you will need to click Run on the application and then click Join when the application opens.
+      </h5>
+     
+      
+{/* 
+      {/* Image Slider *//*}
       <ImageSlider />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-8">
-        {/* Left Column */}
-        <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Interface to Acomba X</li>
-            <li className="text-black">Interface to Advantage X</li>
-            <li className="text-black">Interface to QuickBooks Desktop</li>
-            <li className="text-black">Interface to Xero Accounting </li>
-          </ul>
-        </div>
-
-        {/* Middle Column (Company Logos) */}
-        <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Receive Payments for Specific Repair Orders</li>
-            <li className="text-black">Receive Bulk Checks for Multiple Repair Orders</li>
-            <li className="text-black">Outstanding Receivables View Quick & Simple</li>
-          </ul>
-        </div>
-
-        {/* Right Column */}
-        <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Interface to QuickBooks Online</li>
-            <li className="text-black">Interface to Sage Cloud Accounting</li>
-            <li className="text-black">Interface to Sage Business Works</li>
-            <li className="text-black">Interface to Sage 50 (Simply Accounting)</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- AccountingConnect
-      </h2>
-      <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. AccountConnect allows easy management of Accounts Receivables within the management system. In addition AccountConnect interfaces with multiple accounting systems allowing export of Accounts Receivables, Payments and / or Accounts Payable which saves time by removing double entry of data.
-      </h4>
-
-                
-      {/* Reusable Modal */}
-      {isModalOpen && (
+*/}
+          
+     {/* Reusable Modal */}
+     {isModalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center backdrop-blur-lg" onClick={closeModal}>
           <div className="bg-white p-6 rounded-lg w-96 relative" onClick={(e) => e.stopPropagation()}>
             <button onClick={closeModal} className="text-red-500 absolute top-4 right-4 font-bold">
@@ -104,7 +70,7 @@ const accounting = () => {
           Contact Us
         </button>
       </div>
-     
+
       {/* Schedule Modal */}
       {isScheduleModalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center" onClick={closeScheduleModal}>
@@ -167,4 +133,4 @@ const accounting = () => {
 };
 
 
-export default accounting;
+export default support;
