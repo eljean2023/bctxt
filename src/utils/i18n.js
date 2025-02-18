@@ -1,0 +1,780 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+i18n.use(initReactI18next).init({
+  resources: {
+    en: {
+      translation: {
+        "section1.title": "Connecting To All Aspects Of The Entire Collision Repair Process",
+        "section1.subtitle": "Connect With Us For A Demonstration.",
+        "section2.title": "Customized For YOUR Workflow",
+        "section2.subtitle": "Customize Key Aspects Of The System. Reporting, Departments, Business Rules & Workflows",
+        "schedule_demo": "SCHEDULE A DEMONSTRATION",
+        "Connecting The Dots Through The Collision Repair Process" : "Connecting The Dots Through The Collision Repair Process",
+        "Helping Collision Repair Facilities Exceed By Connecting Their Shops To The Future With The Right Technology. No Two Repair Shops Are The Same So Why Be Forced Into A Process By Other Body Shop Management Systems" : "Helping Collision Repair Facilities Exceed By Connecting Their Shops To The Future With The Right Technology. No Two Repair Shops Are The Same So Why Be Forced Into A Process By Other Body Shop Management Systems",
+        "Visual Production Management with Unlimited Departments and Display Board Configuration." : "Visual Production Management with Unlimited Departments and Display Board Configuration.",
+        "Scheduling" : "Scheduling",
+        "Full Scheduling System including Appointments, Estimates, Vehicles Arriving, Vehicles Starting Production and Vehicles Being Delivered." : "Full Scheduling System including Appointments, Estimates, Vehicles Arriving, Vehicles Starting Production and Vehicles Being Delivered.",
+        "Media Management" : "Media Management",
+        "Technician Tracking and Management Connecting the Back of the Shop to the Front Office." : "Technician Tracking and Management Connecting the Back of the Shop to the Front Office.",
+        "Learn More" : "Learn More",
+        "Technician Tracking" : "Technician Tracking",
+        "The calming waves of the deep blue ocean." : "The calming waves of the deep blue ocean.",
+        "Job Costing" : "Job Costing",
+        "Job cost repair orders easily against your sale. Ensure you are profiting on every job." : "Job cost repair orders easily against your sale. Ensure you are profiting on every job.",
+        "Parts Management" : "Parts Management",
+        "Manage purchase orders, parts invoices, vendor discounts and more." : "Manage purchase orders, parts invoices, vendor discounts and more.",
+        "Quick Estimate" : "Quick Estimate",
+        "Quick Estimating for PDR & Menu Priced Items plus Quick Easy Photo Management." : "Quick Estimating for PDR & Menu Priced Items plus Quick Easy Photo Management.",
+        "External Communications" : "External Communications",
+        "Automated Communications & Online Customer Portals Keeps Customers Updated On The Status Of The Vehicle Repair." : "Automated Communications & Online Customer Portals Keeps Customers Updated On The Status Of The Vehicle Repair.",
+        "Internal Communications" : "Internal Communications",
+        "Communicate directly with staff via internal messages. Update multiple staff members within seconds on repair orders or non-repair order related issues and updates." : "Communicate directly with staff via internal messages. Update multiple staff members within seconds on repair orders or non-repair order related issues and updates.",
+        "Accounting" : "Accounting",
+        "Accounts Receivable Management and Accounting Integrations to a variety of Accounting Systems." : "Accounts Receivable Management and Accounting Integrations to a variety of Accounting Systems.",
+        "Multi Store Locations": "Multi Store Locations",
+        "Multiple Locations Management including Central Management, Ability to easily transfer files between locations and much more." : "Multiple Locations Management including Central Management, Ability to easily transfer files between locations and much more.",
+        "Dealer System Integration" : "Dealer System Integration",
+        "Integrated PBS Dealer Management System. Manage your Collision Shop better and remove the double entry between systems." : "Integrated PBS Dealer Management System. Manage your Collision Shop better and remove the double entry between systems.",
+        "Paint Scale Interfaces": "Paint Scale Interfaces",
+        "Automated Paint Job Costing from Akzo Nobel, BASF and PPG Paint Scales." : "Automated Paint Job Costing from Akzo Nobel, BASF and PPG Paint Scales.",
+        "CSI - Google Survey" : "CSI - Google Survey",
+        "Google Reviews and more with Integration to One Local and Podium.": "Google Reviews and more with Integration to One Local and Podium.",
+        "Rental Car Interface" : "Rental Car Interface",
+        "Save time and duplicate entry by updating statuses with ARMS Integration." : "Save time and duplicate entry by updating statuses with ARMS Integration.",
+        "Your Shop, Your Choice, Maximize Your Production" : "Your Shop, Your Choice, Maximize Your Production",
+        "Track Departments, Statistics, and more with customizable Graphs and other visuals to keep everyone updated and engaged. Plus even more customizable Display boards to get the right information to the right people when they need it." : "Track Departments, Statistics, and more with customizable Graphs and other visuals to keep everyone updated and engaged. Plus even more customizable Display boards to get the right information to the right people when they need it.",
+        "Integration With Akzo's Carbeat™" : "Integration With Akzo's Carbeat™",
+        "No Double Entry. Live Data From YOUR Files." : "No Double Entry. Live Data From YOUR Files.",
+        "Unlimited Departments, Unlimited Customizable Display Boards" : "Unlimited Departments, Unlimited Customizable Display Boards",
+        "Integration To Test Drive Copilot™" : "Integration To Test Drive Copilot™",
+        "Unlimited Departments, Unlimited Customizable Display Boards" : "Unlimited Departments, Unlimited Customizable Display Boards",
+        "Drag and Drop with Touch Screen Technology" : "Drag and Drop with Touch Screen Technology",
+        "Schedule Production Start Dates" : "Schedule Production Start Dates",
+        "Customer Delivery Schedule" : "Customer Delivery Schedule",
+        "Unlimited Job Classes or 'types of repairs" : "Unlimited Job Classes or 'types of repairs",
+        "Customized Solutions From BodyshopConnect -- ProductionConnect" : "Customized Solutions From BodyshopConnect -- ProductionConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same, so why be forced into a process by other body shop management tools available? ProductionConnect allows shops to maximize their productivity. We have unlimited departments and different views to manage files moving through production. We also allow for customized Production Boards for use at the desktop or large screen TVs located in the shop." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same, so why be forced into a process by other body shop management tools available? ProductionConnect allows shops to maximize their productivity. We have unlimited departments and different views to manage files moving through production. We also allow for customized Production Boards for use at the desktop or large screen TVs located in the shop.",
+        "Schedule The Way You Want To - By Hours, Number of Jobs, Types of Repair & More" : "Schedule The Way You Want To - By Hours, Number of Jobs, Types of Repair & More",
+        "Schedule all work in process and new repairs with our Capacity Scheduling. Multiple Views are Available To Customize Both Your Estimate Appointments and Repair Order Scheduling. Keep on top of Your Dates to help you meet or exceed Your Delivery Targets." : "Schedule all work in process and new repairs with our Capacity Scheduling. Multiple Views are Available To Customize Both Your Estimate Appointments and Repair Order Scheduling. Keep on top of Your Dates to help you meet or exceed Your Delivery Targets.",
+        "Vehicle Arrival Scheduling" : "Vehicle Arrival Scheduling",
+        "Production Scheduling." : "Production Scheduling.",
+        "Automate Drop Off Reminders by Email or Text Message" : "Automate Drop Off Reminders by Email or Text Message",
+        "Schedule Appointments" : "Schedule Appointments",
+        "Schedule Appraisals" : "Schedule Appraisals",
+        "Schedule Other Non Repair Order Appointments" : "Schedule Other Non Repair Order Appointments",
+        "Balance and Maximize your shop's Capacity" : "Balance and Maximize your shop's Capacity",
+        "Schedule Production Start Dates" : "Schedule Production Start Dates", 
+        "Customer Delivery Schedule" : "Customer Delivery Schedule",
+        "Customized Solutions From BodyshopConnect -- ScheduleConnect" : "Customized Solutions From BodyshopConnect -- ScheduleConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. ScheduleConnect allows shops to maximize their productivity. We have multiple Schedulers available to use. Appointment Calendar, Arrival Scheduler, Production Scheduler and Delivery Scheduler. We also allow for customized Display Boards for use at the desktop or large screen TV's located in the shop." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. ScheduleConnect allows shops to maximize their productivity. We have multiple Schedulers available to use. Appointment Calendar, Arrival Scheduler, Production Scheduler and Delivery Scheduler. We also allow for customized Display Boards for use at the desktop or large screen TV's located in the shop.",
+        "Schedule a Demo" : "Schedule a Demo",
+        "Contact Us" : "Contact Us",
+        "Full Media Management Including Pictures, Videos, Documents and More" : "Full Media Management Including Pictures, Videos, Documents and More",
+        "Completely Automate the Process of Shooting and Sorting Your Photos with Mobile APPS. No more lost paperwork or pictures. Save time and stay organized with a completely electronic file. Ability to store documents and more for a complete electronic file that can be accessed anywhere ... anytime." : "Completely Automate the Process of Shooting and Sorting Your Photos with Mobile APPS. No more lost paperwork or pictures. Save time and stay organized with a completely electronic file. Ability to store documents and more for a complete electronic file that can be accessed anywhere ... anytime.",
+        "Stay organized by fully documenting your electronic file" : "Stay organized by fully documenting your electronic file",
+        "Visually capture all damage information, including supplements and pre-existing damages" : "Visually capture all damage information, including supplements and pre-existing damages",
+        "Sort and file vehicle photos, videos, documents and more" : "Sort and file vehicle photos, videos, documents and more",
+        "Use barcode technology and easy to use APPS or simply upload directly to a file using any device" : "Use barcode technology and easy to use APPS or simply upload directly to a file using any device",
+        "Reduce Paper and eliminate your manual files for quick access of everything … from anywhere" : "Reduce Paper and eliminate your manual files for quick access of everything … from anywhere",
+        "Multi Store locations can view all the information from individual or central locations" : "Multi Store locations can view all the information from individual or central locations",
+        "Customized Solutions From BodyshopConnect -- MediaConnect" : "Customized Solutions From BodyshopConnect -- MediaConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. MediaConnect allows shops to be able to fully document their files so they can access all the information for single store or multiple locations in one place. Complete third party integration with CosmosSync, Drop Box, Google Drive, One Drive, Own Cloud or Next Cloud.": "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. MediaConnect allows shops to be able to fully document their files so they can access all the information for single store or multiple locations in one place. Complete third party integration with CosmosSync, Drop Box, Google Drive, One Drive, Own Cloud or Next Cloud.",
+        "TechnicianConnect Will Connect The Back Of The Shop To The Front Office." : "TechnicianConnect Will Connect The Back Of The Shop To The Front Office.",
+        "It's more than just a time clock." : "It's more than just a time clock.",
+        "wClock in and out of Repair Orders": "Clock in and out of Repair Orders",
+        "Clock in and out of Other Tasks" : "Clock in and out of Other Tasks",
+        "AView and Add Media" : "AView and Add Media",
+        "View and Update Production Status" : "View and Update Production Status",
+        "View and Update Notess":"View and Update Notess",
+        "View Repair Line Items" : "View Repair Line Items",
+        "View Parts Status" : "View Parts Status",
+        "View History" : "View History",
+        "TWO WAY Internal Messaging" : "TWO WAY Internal Messaging",
+        "Customized Solutions From BodyshopConnect -- TechnicianConnect" : "Customized Solutions From BodyshopConnect -- TechnicianConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. TechnicianConnect ties the back shop to the front office in order to give live time information to the people who need it ... when they need it." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. TechnicianConnect ties the back shop to the front office in order to give live time information to the people who need it ... when they need it.",
+        "Control, Manage & Discover Hidden Profits. Job Costing With BodyshopConnect Makes It Simple." : "Control, Manage & Discover Hidden Profits. Job Costing With BodyshopConnect Makes It Simple.",
+        "Track all Job Costs easily and quickly. Labor or Vendor Costs can be added per Repair Order or on the fly using bulk Job Cost posting screens." : "Track all Job Costs easily and quickly. Labor or Vendor Costs can be added per Repair Order or on the fly using bulk Job Cost posting screens.",
+        
+        "Parts Management Dashboard" : "Parts Management Dashboard",
+        "Parts List By Repair Order" : "Parts List By Repair Order",
+        "Outstanding Vendor Credits" : "Outstanding Vendor Credits",
+        "Order, Receive, Return, Back Order, IOU & More" : "Order, Receive, Return, Back Order, IOU & More",
+        "Partial Credits, Labor & Cost Credit" :  "Partial Credits, Labor & Cost Credit",
+        "Part Labels" : "Part Labels",
+        "Electronic Check In " : "Electronic Check In",
+
+        "Customized Solutions From BodyshopConnect -- JobCostConnect" : "Customized Solutions From BodyshopConnect -- JobCostConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. JobCostConnect allows a shop to break down all Vendor and Labor Costs by profit center in order to see exactly where to focus. Quickly View your net profit to make sure you are staying profitable on all repairs." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. JobCostConnect allows a shop to break down all Vendor and Labor Costs by profit center in order to see exactly where to focus. Quickly View your net profit to make sure you are staying profitable on all repairs.",
+        
+        "Complete Parts Management" : "Complete Parts Management",
+        "Manage All Parts That Come In And Out Of Your Shop. Order, Receive, Return, Back Order, IOU, Partial Credits, And Profit Verification. Track Part Locations By Scanning Parts In And Out With Our Parts Location APP.": "Manage All Parts That Come In And Out Of Your Shop. Order, Receive, Return, Back Order, IOU, Partial Credits, And Profit Verification. Track Part Locations By Scanning Parts In And Out With Our Parts Location APP",
+        
+        "Parts Management Dashboard" : "Parts Management Dashboard",
+        "Parts Location APP" : "Parts Location APP",
+        "Outstanding Vendor Credits" : "Outstanding Vendor Credits",
+        "Part Labels" : "Part Labels",
+        "Electronic Check In" : "Electronic Check In",
+        "Order, Receive, Return, Back Order, IOU & More" : "Order, Receive, Return, Back Order, IOU & More",
+        "Partial Credits, Labor & Cost Credit" : "Partial Credits, Labor & Cost Credit",
+
+        "Customized Solutions From BodyshopConnect -- PartsConnect" : "Customized Solutions From BodyshopConnect -- PartsConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. PartsConnect allows shops to manage the status of their parts quickly and easily.": "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. PartsConnect allows shops to manage the status of their parts quickly and easily.",
+
+        "Create 'Quick Estimates' Easily" : "Create 'Quick Estimates' Easily",
+        "Your shop can set up menu price lists & Paintless Dent Repair Calculations. Using Custom Profiles, Custom Lines & Digital Authorization for Quick Estimates on the go. In addition, the system also includes AUTOMATIC Import and Updates from AdjustRite, Audatex, CCC, WebEst, or Mitchell Estimating Systems saving you time." : "our shop can set up menu price lists & Paintless Dent Repair Calculations. Using Custom Profiles, Custom Lines & Digital Authorization for Quick Estimates on the go. In addition, the system also includes AUTOMATIC Import and Updates from AdjustRite, Audatex, CCC, WebEst, or Mitchell Estimating Systems saving you time.",
+        "Quick Estimating designed for PDR and Menu Priced Items" : "Quick Estimating designed for PDR and Menu Priced Items",
+        "Great for Mobile Repairers and Shops with Fast Lane Specialty Repairs" : "Great for Mobile Repairers and Shops with Fast Lane Specialty Repairs",
+        "Access ‘on the go’ from anywhere with internet access" : "Access ‘on the go’ from anywhere with internet access",
+        "Take Pictures and upload them directly to a file" : "Take Pictures and upload them directly to a file",
+        "Quick and Easy Photo Management" : "Quick and Easy Photo Management",
+        "With or Without the use of bar-codes" : "With or Without the use of bar-codes",
+        "Customized Solutions From BodyshopConnect" : "Customized Solutions From BodyshopConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. Quick Estimate allows a shop to write a quick estimate using Paintless Dent Repair Calculations or Menu Priced Items within the Web application. BodyshopConnect also imports and updates estimates from AdjustRite, Audatex, CCC, WebEst and/or Mitchell Estimating Systems." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. Quick Estimate allows a shop to write a quick estimate using Paintless Dent Repair Calculations or Menu Priced Items within the Web application. BodyshopConnect also imports and updates estimates from AdjustRite, Audatex, CCC, WebEst and/or Mitchell Estimating Systems.",
+        
+        "Real Time Communication-External" : "Real Time Communication-External",
+        "Automated or ‘on the fly’ communications to customers and rental companies Two Way Texting - Send messages to your customer, if they respond it copies the response to the notes on the repair order. Two Way emails - Send automatic or generated emails to update anyone related to the repair. Update the customer, insurance company, rental company and more.Keep everyone in the loop about the status of some or all repairs": "Automated or ‘on the fly’ communications to customers and rental companies Two Way Texting - Send messages to your customer, if they respond it copies the response to the notes on the repair order. Two Way emails - Send automatic or generated emails to update anyone related to the repair. Update the customer, insurance company, rental company and more.Keep everyone in the loop about the status of some or all repairs",
+        "Quickly Notify Customer Of Repair Status":"Quickly Notify Customer Of Repair Status",
+        "Quickly Update Customer of Part Delays, Production Issues and more": "Quickly Update Customer of Part Delays, Production Issues and more",
+        "Automatic Messages Can be Generated When Cars move through Departments": "Automatic Messages Can be Generated When Cars move through Departments",
+        "Messages Are All Documented in the file": "Messages Are All Documented in the file",
+        "Updates Can Be Setup By Company." : "Updates Can Be Setup By Company.",
+        "Two Way Messaging" : "Two Way Messaging",
+        "Customized Solutions From BodyshopConnect -- External Communications" : "Customized Solutions From BodyshopConnect -- External Communications",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.",
+        "Quickly Notify Customer Of Repair Statusl" : "Quickly Notify Customer Of Repair Statusl",
+
+
+        " Real Time Communication - Internal" : " Real Time Communication - Internal",
+        "Internal Chat between all employees (including technicians) Automated push notifications to key persons within the shop as the vehicle moves through the departments and/or event trigger notifications." : "Internal Chat between all employees (including technicians) Automated push notifications to key persons within the shop as the vehicle moves through the departments and/or event trigger notifications.",
+        "In System Messaging, Reduces Inbox Clutter": "In System Messaging, Reduces Inbox Clutter",
+        "Automatically Updated Based On System Rules": "Automatically Updated Based On System Rules",
+        "Tracks Read Receipts": "Tracks Read Receipts",
+        "Integrates With Outlook" : "Integrates With Outlook",
+        "Customized Solutions From BodyshopConnect -- Internal Communications" : "Customized Solutions From BodyshopConnect -- Internal Communications",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Internal communications enables shops to communicate with each other internally, privately, and within BodyshopConnect." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Internal communications enables shops to communicate with each other internally, privately, and within BodyshopConnect.",
+
+
+        /* Accounting*/
+
+        "Accounting Interfaces, A/R Management. BodyshopConnect's Insurance Bulk Payment Control, Is The Best In The Industry." : "Accounting Interfaces, A/R Management. BodyshopConnect's Insurance Bulk Payment Control, Is The Best In The Industry.",
+        "Simplify Bulk Payments & Receiving Payments On Multiple Repair Orders Never Got Easier!" : "Simplify Bulk Payments & Receiving Payments On Multiple Repair Orders Never Got Easier!",
+        "Interface to Acomba X": "Interface to Acomba X",
+        "Interface to Advantage X" : "Interface to Advantage X",
+        "Interface to QuickBooks Desktop" : "Interface to QuickBooks Desktop",
+        "Interface to Xero Accounting" : "Interface to Xero Accounting",
+        "Receive Payments for Specific Repair Orders" : "Receive Payments for Specific Repair Orders",
+        "Receive Bulk Checks for Multiple Repair Orders" : "Receive Bulk Checks for Multiple Repair Orders",
+        "Outstanding Receivables View Quick & Simple" : "Outstanding Receivables View Quick & Simple",
+        "Interface to QuickBooks Online": "Interface to QuickBooks Online",
+        "Interface to Sage Cloud Accounting" : "Interface to Sage Cloud Accounting",
+        "Interface to Sage Business Works" : "Interface to Sage Business Works",
+        "Interface to Sage 50 (Simply Accounting)" : "Interface to Sage 50 (Simply Accounting)",
+        "Customized Solutions From BodyshopConnect -- AccountingConnect" : "Customized Solutions From BodyshopConnect -- AccountingConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. AccountConnect allows easy management of Accounts Receivables within the management system. In addition AccountConnect interfaces with multiple accounting systems allowing export of Accounts Receivables, Payments and / or Accounts Payable which saves time by removing double entry of data." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. AccountConnect allows easy management of Accounts Receivables within the management system. In addition AccountConnect interfaces with multiple accounting systems allowing export of Accounts Receivables, Payments and / or Accounts Payable which saves time by removing double entry of data.",
+
+        /* Multi Store Location  */
+        "Multiple Locations? Manage Easily From One Central Location.": "Multiple Locations? Manage Easily From One Central Location.",
+        "Easily Access the system from anywhere an internet connection exists." : "Easily Access the system from anywhere an internet connection exists.",
+        "Central Multi-Location Management" : "Central Multi-Location Management",
+        "Central Login Access" : "Central Login Access",
+        "Central Administration" : "Central Administration",
+        "Share employees and more between locations" : "Share employees and more between locations",
+        "Ability to transfer files between locations" : "Ability to transfer files between locations",
+        "Search and Access Files anywhere within your organization" : "Search and Access Files anywhere within your organization",
+        "Customized Solutions From BodyshopConnect -- MSOConnect" : "Customized Solutions From BodyshopConnect -- MSOConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. MSOConnect allows Multiple Shop Owners to Centrally Manage and Load Level their shops as needed." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. MSOConnect allows Multiple Shop Owners to Centrally Manage and Load Level their shops as needed.",
+
+
+        /* Dealer System Integration */
+
+        "DealerConnect" : "DealerConnect",
+        "BODYSHOPCONNECT + PBS SYSTEMS GROUP. We Integrate With PBS Dealership Management System" : "BODYSHOPCONNECT + PBS SYSTEMS GROUP. We Integrate With PBS Dealership Management System",
+        "Seamless, bi-directional integration to your PBS Dealer Management System" : "Seamless, bi-directional integration to your PBS Dealer Management System",
+        "Saves valuable time and reduces errors" : "Saves valuable time and reduces errors",
+        "Eliminate Double Entry" : "Eliminate Double Entry",
+        "Enter the information in BodyshopConnect and let everything transfer to the Dealership System" : "Enter the information in BodyshopConnect and let everything transfer to the Dealership System",
+        "Automatically Creates the Repair Order in the PBS Dealer Management System" : "Automatically Creates the Repair Order in the PBS Dealer Management System",
+        "Automatically sends costs" : "Automatically sends costs",
+        "Customized Solutions From BodyshopConnect-DealerConnect" : "Customized Solutions From BodyshopConnect-DealerConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. The DealerConnect Interface to the PBS Dealership Software allows dealers to manage their body shops within BodyshopConnect while not losing any valuable information in their dealership system." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. The DealerConnect Interface to the PBS Dealership Software allows dealers to manage their body shops within BodyshopConnect while not losing any valuable information in their dealership system.",
+        
+
+        /* Paint Scale Interfaces */
+
+        "Paint Scale Interfaces" : "Paint Scale Interfaces",
+        "Automated Job Costs from the Paint Scale. Akzo Nobel, BASF, PPG, Axalta, Sherwin Williams . No More Guessing. Know your true Job Costs. Real-Time." : "Automated Job Costs from the Paint Scale. Akzo Nobel, BASF, PPG, Axalta, Sherwin Williams . No More Guessing. Know your true Job Costs. Real-Time.",
+        "Akzo Nobel™" : "Akzo Nobel™",
+        "BASF™" : "BASF™",
+        "Axalta™"  : "Axalta™",
+        "Avoid Double Entry / Real Time Costing" : "Avoid Double Entry / Real Time Costing",
+        "Sherwin Williams™" : "Sherwin Williams™",
+        "PPG™" : "PPG™",
+        "Customized Solutions From BodyshopConnect -- PaintScaleConnect" : "Customized Solutions From BodyshopConnect -- PaintScaleConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. Shops are different; so why be forced into a process by other body shop management tools available. PaintScaleConnect allows shops to automaically track the cost of their paint per repair" : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. Shops are different; so why be forced into a process by other body shop management tools available. PaintScaleConnect allows shops to automaically track the cost of their paint per repair",
+        
+        /* CSI-Survey */
+
+        "Managing reviews and prompting customers to tell you about great service is not easy." : "Managing reviews and prompting customers to tell you about great service is not easy.",
+        "Once repair is completed and a vehicle is delivered, the customer will automatically receive a review invitation." : "Once repair is completed and a vehicle is delivered, the customer will automatically receive a review invitation.",
+        "Automatically Sends Administrative Details" : " Automatically Sends Administrative Details",
+        "Reduce Data Re-Keying By Allowing Information To Transfer Directly From The Repair Order Into A Customer Survey." : "Reduce Data Re-Keying By Allowing Information To Transfer Directly From The Repair Order Into A Customer Survey.",
+        "Information Is Transferred Once Picked Up Date Is Entered." : "Information Is Transferred Once Picked Up Date Is Entered.",
+        "Customized Solutions From BodyshopConnect -- ReviewConnect" : "Customized Solutions From BodyshopConnect -- ReviewConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. ReviewConnect removes 'double entry'. Integration with both One Local software or Podium software allows shops to save time by sending specific customers and specific information to their review platforms."  : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. ReviewConnect removes 'double entry'. Integration with both One Local software or Podium software allows shops to save time by sending specific customers and specific information to their review platform",
+        
+
+         /* Rental Car Interface */
+
+         "Manage Your Own Fleet. Also, Reduce Time Re-Entering Data Into ARMS for Enterprise" : "Manage Your Own Fleet. Also, Reduce Time Re-Entering Data Into ARMS for Enterprise",
+         "We can create a reservation for you and update the status along the way! By simply requesting us to turn on the ARMS Interface for your Shop and linking different areas of your system through an administration set up we can save you time." : "We can create a reservation for you and update the status along the way! By simply requesting us to turn on the ARMS Interface for your Shop and linking different areas of your system through an administration set up we can save you time.",
+         "Manage your own Courtesy/Loaner Cars." : "Manage your own Courtesy/Loaner Cars.",
+         "Update Enterprise ARMS Automatically." : "Update Enterprise ARMS Automatically.",
+         "Change Statuses ,On The Fly" : "Change Statuses ,On The Fly",
+         "Stop Wasting Time Duplicating Details." : "Stop Wasting Time Duplicating Details.",
+         "Automatically creates rental reservation based on scheduled In dates." : "Automatically creates rental reservation based on scheduled In dates.",
+         "Update The Department In Your Shop & Transfer Real-Time Updates Automatically" : "Update The Department In Your Shop & Transfer Real-Time Updates Automatically",
+         "Update Dates In Your Shop & Transfer Automatically" : "Update Dates In Your Shop & Transfer Automatically",
+         "Customized Solutions From BodyshopConnect -- Rental Car Status Interface" : "Customized Solutions From BodyshopConnect -- Rental Car Status Interface",
+         "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. RentalConnect saves shops time by keeping the rental company informed of the repairs without the need to pick up the phone. Removes the 'double entry' of data into another system." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. RentalConnect saves shops time by keeping the rental company informed of the repairs without the need to pick up the phone. Removes the 'double entry' of data into another system.",
+         
+
+          /* Support */
+
+        "Online Computer Support" : "Online Computer Support",
+        "One Of Our Technicians will supply you with a Session ID Number. Please enter the number in the box below and click Connect. Once the file has been downloaded to your computer; you will need to click Run on the application and then click Join when the application opens." : "One Of Our Technicians will supply you with a Session ID Number. Please enter the number in the box below and click Connect. Once the file has been downloaded to your computer; you will need to click Run on the application and then click Join when the application opens.",
+
+         /* Data Analytic */
+        
+         "Data Analytics" : "Data Analytics",
+         "This interface has been built for shops that would like their data pushed to a 3rd party for reports and/or compliance for certain Networks, Paint Companies and/or OE Certification Programs." : "This interface has been built for shops that would like their data pushed to a 3rd party for reports and/or compliance for certain Networks, Paint Companies and/or OE Certification Programs.",
+         "Once authorized will automatically sync key repair metrics." : "Once authorized will automatically sync key repair metrics.",
+         "Allow Benchmarking between shops in your network." : "Allow Benchmarking between shops in your network.",
+         "Data will sync with Triggers to certain dates selected. (Picked up, Car Ready)" : "Data will sync with Triggers to certain dates selected. (Picked up, Car Ready)",
+         "Reduce data entry. Ensure compliance with your paint company and shop network." : "Reduce data entry. Ensure compliance with your paint company and shop network.",
+         "Customized Solutions From BodyshopConnect -- Data Analytics" : "Customized Solutions From BodyshopConnect -- Data Analytics",
+         "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.",
+ 
+        /* Inventory */
+        "Inventory" : " Inventory",
+        "A two-way interface allowing shops to track inventory. BodyshopConnect will send repair order data to the inventory system and the inventory system will send back the cost data." : "A two-way interface allowing shops to track inventory. BodyshopConnect will send repair order data to the inventory system and the inventory system will send back the cost data.",
+        "Repair order data flows out from BodyshopConnect." :  "Repair order data flows out from BodyshopConnect.",
+        "3M RepairStack™ & Wurth™ SIS will import the repair order data automatically." : "3M RepairStack™ & Wurth™ SIS will import the repair order data automatically.",
+        "Cost data from Leantec and Wurth's inventory systems update the costs of the repair orders in BodyshopConnect." : "Cost data from Leantec and Wurth's inventory systems update the costs of the repair orders in BodyshopConnect.",
+        "Reduce data entry and get more accurate job costs" : "Reduce data entry and get more accurate job costs",
+        "Customized Solutions From BodyshopConnect -- Inventory" : "Customized Solutions From BodyshopConnect -- Inventory",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction." : "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.",
+         
+        
+        /* Privacy Policy*/
+         "Your Privacy Is Important to Us" : "Your Privacy Is Important to Us",
+         "GENERAL" : "GENERAL",
+         "BodyshopConnect by Micazen Consulting & Technologies Inc is very sensitive to the issue of protection of trade secrets and proprietary information. Micazen Consulting & Technologies Inc employees are expected to use good judgment, to adhere to high ethical standards, and to abide by any confidentiality obligations to former employers. Micazen Consulting & Technologies Inc employees shall not use, bring on the premises or otherwise disclose any proprietary or trade secret information of former employers or other third parties. All employees share responsibility to ensure that proper security is maintained." : "BodyshopConnect by Micazen Consulting & Technologies Inc is very sensitive to the issue of protection of trade secrets and proprietary information. Micazen Consulting & Technologies Inc employees are expected to use good judgment, to adhere to high ethical standards, and to abide by any confidentiality obligations to former employers. Micazen Consulting & Technologies Inc employees shall not use, bring on the premises or otherwise disclose any proprietary or trade secret information of former employers or other third parties. All employees share responsibility to ensure that proper security is maintained.",
+         "YOUR CONFIDENTIALITY" : "YOUR CONFIDENTIALITY",
+         "We believe your business is no one else’s. Your privacy is important to you and to us. Therefore, we will protect the information you share with us. To protect your privacy, Micazen Consulting & Technologies Inc follows different principles in accordance with worldwide practices for customer privacy and data protection. We won’t sell or give away your name, mail address, phone number, email address or any other information to anyone. We’ll use state-of-the-art security measures to protect your information from unauthorized users." : "We believe your business is no one else’s. Your privacy is important to you and to us. Therefore, we will protect the information you share with us. To protect your privacy, Micazen Consulting & Technologies Inc follows different principles in accordance with worldwide practices for customer privacy and data protection. We won’t sell or give away your name, mail address, phone number, email address or any other information to anyone. We’ll use state-of-the-art security measures to protect your information from unauthorized users.",
+         "COLLECTION & USE OF PERSONAL INFORMATION" : "COLLECTION & USE OF PERSONAL INFORMATION",
+         "You may be asked to provide your personal information anytime you are in contact with BodyshopConnect or a Micazen affiliated company. Micazen and its affiliates may share this personal information with each other and use it in accordance with this Privacy Policy. Personal Information may include business name, client names, phone numbers, addresses, etc." : "You may be asked to provide your personal information anytime you are in contact with BodyshopConnect or a Micazen affiliated company. Micazen and its affiliates may share this personal information with each other and use it in accordance with this Privacy Policy. Personal Information may include business name, client names, phone numbers, addresses, etc.",
+         "We do not store or retain any Google user data information." : "We do not store or retain any Google user data information.",
+         "PROTECTION OF PERSONAL INFORMATION" : "PROTECTION OF PERSONAL INFORMATION",
+         "Micazen and its affiliates will take every precaution including administrative, technical and physical measures to safeguard your personal information against loss, theft and misuse. BodyshopConnect data uses multiple level encryption platform in order to help safeguard against unauthorized access, disclosure and destruction of your data." : "Micazen and its affiliates will take every precaution including administrative, technical and physical measures to safeguard your personal information against loss, theft and misuse. BodyshopConnect data uses multiple level encryption platform in order to help safeguard against unauthorized access, disclosure and destruction of your data.",
+         "THIRD PARTY APPLICATIONS" : "THIRD PARTY APPLICATIONS",
+         "BodyshopConnect may contain links to third party software applications. Which applications are connected can be viewed in the administration section of your software under the Third Party Application section. Each Third Party Application is different and therefore the transfer of your data to each of the third party applications may contain different personal information. Third Party Applications must be authorized by the user and can be disconnected at any time. It is recommended that you check with the third party provider as to their privacy policy." : "BodyshopConnect may contain links to third party software applications. Which applications are connected can be viewed in the administration section of your software under the Third Party Application section. Each Third Party Application is different and therefore the transfer of your data to each of the third party applications may contain different personal information. Third Party Applications must be authorized by the user and can be disconnected at any time. It is recommended that you check with the third party provider as to their privacy policy.",
+         "APPS & NOTICE TO PARENTS" : "APPS & NOTICE TO PARENTS",
+         "Micazen Consulting & Technologies Inc APPS may access the Camera on your device. The pictures inside the APP cannot access your personal pictures unless you add them through the APP. Parents or guardians: we want to help you guard your children’s privacy. We encourage you to talk to your children about safe and responsible use of their Personal Information while using APPS or the Internet. The Micazen Consulting & Technologies Inc APPS and website does not publish content that is targeted to children." : "Micazen Consulting & Technologies Inc APPS may access the Camera on your device. The pictures inside the APP cannot access your personal pictures unless you add them through the APP. Parents or guardians: we want to help you guard your children’s privacy. We encourage you to talk to your children about safe and responsible use of their Personal Information while using APPS or the Internet. The Micazen Consulting & Technologies Inc APPS and website does not publish content that is targeted to children.",
+         "UPDATES & ENFORCEMENT" : "UPDATES & ENFORCEMENT",
+         "Occasionally, we may change this privacy policy. If for some reason you believe Micazen Consulting & Technologies Inc has not adhered to these principles, please notify us by email at privacy@bodyshopconnect.com and we will do our best to determine and correct the problem promptly. Please make sure the words Privacy Policy are in the Subject line. Thank you." : "Occasionally, we may change this privacy policy. If for some reason you believe Micazen Consulting & Technologies Inc has not adhered to these principles, please notify us by email at privacy@bodyshopconnect.com and we will do our best to determine and correct the problem promptly. Please make sure the words Privacy Policy are in the Subject line. Thank you.",
+         
+          
+         /**Abouuuuuut Ussss */
+         
+         "BodyshopConnect Puts You in Drivers Seat Allowing You To Run Your Collision Repair Facility Efficiently" : " BodyshopConnect Puts You in Drivers Seat Allowing You To Run Your Collision Repair Facility Efficiently",
+         "Customized Solutions From BodyshopConnect" : "Customized Solutions From BodyshopConnect",
+         "yshopConnect by Micazen is an auto body shop management software designed to be customized for the real Collision Repair Process. We have connections to many 3rd applications. Using the CIECA standard, we are able to import estimates from AdjustRite, Audatex, CCC and Mitchell Estimating systems. These are North America's Premier estimating systems and used by most collision repair facilities." : "yshopConnect by Micazen is an auto body shop management software designed to be customized for the real Collision Repair Process. We have connections to many 3rd applications. Using the CIECA standard, we are able to import estimates from AdjustRite, Audatex, CCC and Mitchell Estimating systems. These are North America's Premier estimating systems and used by most collision repair facilities." ,
+         "YOU can customize the features of our auto body shop management software." : "YOU can customize the features of our auto body shop management software.",
+         "Parts Management" : "Parts Management",
+         "Accounting Interfaces" : "Accounting Interfaces",
+         "Job Costing" : "Job Costing",
+         "AR Payments Management (Bulk Payment Support)" : "AR Payments Management (Bulk Payment Support)",
+         "Estimating Management & Digital Check-In" : "Estimating Management & Digital Check-In",
+         "Labor & Time Management" : "Labor & Time Management",
+         "Production Boards & Real-Time Stats" : "Production Boards & Real-Time Stats",
+         "Photo, Barcode & Online Photo Integration" : "Photo, Barcode & Online Photo Integration",
+         "Internal Messaging & Integrated Email" : "Internal Messaging & Integrated Email",
+         "Intelligent Scheduling (Appointments, Production & Delivery)" : "Intelligent Scheduling (Appointments, Production & Delivery)",
+         "Real-Time Multi-Shop & Single Shop Analytics" : "Real-Time Multi-Shop & Single Shop Analytics",
+         "Technician Time Clock" : "Technician Time Clock",
+         "Estimate/Repair Order Compliance Rules" : "Estimate/Repair Order Compliance Rules",
+         "Dealer Management System Interface to PBS" : "Dealer Management System Interface to PBS",
+         "Multi-Shop Connectivity & Central Management": "Multi-Shop Connectivity & Central Management",
+         "We Guarantee Your Satisfaction. Connect With Us for an Online Demonstration at No Cost." : "We Guarantee Your Satisfaction. Connect With Us for an Online Demonstration at No Cost.",
+         "Manage YOUR Collision Repair Facility Efficiently" : "Manage YOUR Collision Repair Facility Efficiently",
+         "Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their goals and streamline operations." : "Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their goals and streamline operations.",
+         "We Guarantee Your Satisfaction. Connect With Us For an Online Demonstration at No Cost. Manage YOUR Collision Repair Facility efficiently with management and workflow solutions that can be customized to fit YOUR needs. Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their business goals and help them streamline their businesses." : "We Guarantee Your Satisfaction. Connect With Us For an Online Demonstration at No Cost. Manage YOUR Collision Repair Facility efficiently with management and workflow solutions that can be customized to fit YOUR needs. Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their business goals and help them streamline their businesses.",
+         "Create quick estimates and check in customers with ease." : "Create quick estimates and check in customers with ease.",
+         "Customized Reporting & Tools to Maximize Production." : "Customized Reporting & Tools to Maximize Production.",
+         "Track & Manage Technicians' Time and Efficiency." : "Track & Manage Technicians' Time and Efficiency.",
+         "Ensure Vehicles are delivered on time." : "Ensure Vehicles are delivered on time.",
+         "Manage Industry KPIs." : "Manage Industry KPIs.",
+         "Connect With Multiple Industry Third-Party Applications and Reduce Data Entry" : "Connect With Multiple Industry Third-Party Applications and Reduce Data Entry",
+         "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the real Collision Repair Process. We have connections to many 3rd applications. Using the CIECA standard, we are able to import estimates from AdjustRite, Audatex, CCC and Mitchell Estimating systems. These are North America's Premier estimating systems and used by most collision repair facilities.": "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the real Collision Repair Process. We have connections to many 3rd applications. Using the CIECA standard, we are able to import estimates from AdjustRite, Audatex, CCC and Mitchell Estimating systems. These are North America's Premier estimating systems and used by most collision repair facilities.",
+         "Manage YOUR Collision Repair Facility efficiently with management and workflow solutions that can be customized to fit YOUR needs.  Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their business goals and help them streamline their businesses." : "Manage YOUR Collision Repair Facility efficiently with management and workflow solutions that can be customized to fit YOUR needs.  Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their business goals and help them streamline their businesses.",
+         "Manage YOUR Collision Repair Facility Efficiently" : "Manage YOUR Collision Repair Facility Efficiently",
+         "Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their goals and streamline operations." : "Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their goals and streamline operations.",
+        
+         /* Navbars */
+    "ACCOUNTING" : "ACCOUNTING",
+    "SCHEDULE" : "SCHEDULE",
+    "PRODUCTION": "PRODUCTION",
+    "MULTI-STORE" : "MULTI-STORE",
+    "PARTS" : "PARTS",
+    "PARTS TRACKING" : "PARTS TRACKING",
+    "JOB Costing": "JOB Costing",
+    "PAINT SCALE" : "PAINT SCALE",
+    "ESTIMATING" : "ESTIMATING",
+    "TECHNICIAN TRACKING" : "TECHNICIAN TRACKING",
+    "DEALERSHIP PAINT SCALE" : "DEALERSHIP PAINT SCALE",
+    "INTERNAL COMMUNICATIONS" : "INTERNAL COMMUNICATIONS",
+    "EXTERNAL COMMUNICATIONS" : "EXTERNAL COMMUNICATIONS",
+    "MEDIA" :"MEDIA",
+    "RENTAL CAR" : "RENTAL CAR",
+    "ANALYTICS" : "ANALYTICS",
+    "INVENTORY" : "INVENTORY",
+    "SUPPORT" : "SUPPORT",
+    "CSI-CONNECT" : "CSI-CONNECT",
+    "PRIVACY POLICY": "PRIVACY POLICY",
+    "SUPPORT" : "SUPPORT",
+    "ABOUT US" : "ABOUT US",
+
+        /* Footer */
+
+    "Accounting" : "Accounting", 
+    "Scheduling" : "Scheduling",  
+    "Production": "Production",
+    "Multi Store Location" : "Multi Store Location",
+    "Parts Management" : "Parts Management",  
+    "JOB Costing": "JOB Costing", 
+    "Paint Scale Interfaces" : "Paint Scale Interfaces",   
+    "Quick EStimate" : "Quick EStimate", 
+    "Technician Tracking" : "Technician Tracking", 
+    "Dealer System Integration" : "Dealer System Integration",  
+    "Internal Communications" : "Internal Communications",  
+    "External Communications" : "External Communications",
+    "Media Management" :"Media Management", 
+    
+    "Rental Car" : "Rental Car",  
+    "CSI-Google Servey" : "CSI-Google Servey", 
+
+    "Contact Us" : "Contact Us",
+    "BodyshopConnect. All Rights Reserved." : "BodyshopConnect. All Rights Reserved.",
+
+    "Support": "Support",
+    "Privacy Policy" : "Privacy Policy",
+    "About Us" : "About Us",
+    
+
+      }
+    },
+    fr: {
+      translation: {
+        "section1.title": "Connexion à tous les aspects du processus de réparation de collision",
+        "section1.subtitle": "Contactez-nous pour une démonstration.",
+        "section2.title": "Personnalisé pour VOTRE flux de travail",
+        "section2.subtitle": "Personnalisez les aspects clés du système. Rapports, départements, règles commerciales et flux de travail.",
+        "schedule_demo": "PLANIFIER UNE DÉMONSTRATION",
+        "Connecting The Dots Through The Collision Repair Process" : "En reliant les points à travers du processus de réparation de collision",
+        "Helping Collision Repair Facilities Exceed By Connecting Their Shops To The Future With The Right Technology. No Two Repair Shops Are The Same So Why Be Forced Into A Process By Other Body Shop Management Systems": "Aider les centres de réparation des collisions à dépasser leurs limites en connectant leurs ateliers à l'avenir avec la bonne technologie. Il n'y a pas deux ateliers de réparation identiques, alors pourquoi être contraints de suivre un processus par d'autres systèmes de gestion d'ateliers de carrosserie",
+        "Visual Production Management with Unlimited Departments and Display Board Configuration." : "Gestion de la production visuel, avec des départements et des configurations pour les tableaux d'affichages illimités.",
+        "Scheduling" : "Planification",
+        "Full Scheduling System including Appointments, Estimates, Vehicles Arriving, Vehicles Starting Production and Vehicles Being Delivered." : "Système de planification complet, comprenant les rendez-vous, les estimations, l'arrivée des véhicules, les véhicules en cours de production et les véhicules livrés",
+        "Media Management" :  "Gestion des médias",
+        "Technician Tracking and Management Connecting the Back of the Shop to the Front Office." : "Suivi et gestion des techniciens qui connecte l'arrière de la boutique au bureau principal.",
+        "Learn More" : "En savoir plus",
+        "Technician Tracking" : "Suivi des techniciens",
+        "The calming waves of the deep blue ocean." : "Suivi et gestion des techniciens qui connecte l'arrière de la boutique au bureau principal.",
+        "Job Costing" : "Coût de travail",
+        "Job cost repair orders easily against your sale. Ensure you are profiting on every job." : "Coût du travail pour les bons de réparation facilement contre ta vente. Assurez-vous de profiter de chaque travail.",
+        "Parts Management" : "Gestion des pièces",
+        "Manage purchase orders, parts invoices, vendor discounts and more." : "Gérez les bons de commande, les factures de pièces, les remises des fournisseurs et plus encore.",
+        "Quick Estimate" : "Estimation rapide",
+        "Quick Estimating for PDR & Menu Priced Items plus Quick Easy Photo Management." : "Estimation rapide pour les PDR et les articles à prix de menu plus Gestion rapide et facile des photos",
+        "External Communications" : "Communications externes",
+        "Automated Communications & Online Customer Portals Keeps Customers Updated On The Status Of The Vehicle Repair." : "Les communications automatisées et les portails en ligne tiennent les clients informés de l'état d'avancement de la réparation du véhicule.",
+        "Internal Communications" : "Communications internes",
+        "Communicate directly with staff via internal messages. Update multiple staff members within seconds on repair orders or non-repair order related issues and updates." : "Communiquer directement avec le personnel par le biais de messages internes. Informer plusieurs membres du personnel en quelques secondes sur les ordres de réparation ou les questions et mises à jour non liées à un ordre de réparation." ,
+        "Accounting" : "Comptabilité",
+        "Accounts Receivable Management and Accounting Integrations to a variety of Accounting Systems.": "Gestion des créances et intégration de la comptabilité à divers systèmes comptables", 
+        "Multi Store Locations" : "Emplacements des magasins",
+        "Multiple Locations Management including Central Management, Ability to easily transfer files between locations and much more." :"Les communications automatisées et les portails en ligne tiennent les clients informés de l'état d'avancement de la réparation du véhicule.",
+        "Dealer System Integration" : "Système de gestion de concession",
+        "Integrated PBS Dealer Management System. Manage your Collision Shop better and remove the double entry between systems." : "Système intégré de gestion des concessionnaires PBS. Gérez mieux votre atelier de carrosserie et supprimez la double entrée entre les systèmes",
+        "Paint Scale Interfaces" : "Interface de balance de peinture",
+        "Automated Paint Job Costing from Akzo Nobel, BASF and PPG Paint Scales." : "Coût des travaux de peinture automatisés d'Akzo Nobel, BASF et PPG Paint Scales",
+        "CSI - Google Survey" : "CSI - Enquête Google",
+        "Google Reviews and more with Integration to One Local and Podium." : "Google Reviews et plus avec Integration to One Local et Podium",
+        "Rental Car Interface" : "Interface pour les voitures de location",
+        "Save time and duplicate entry by updating statuses with ARMS Integration." : "Gagnez du temps et évitez les doubles saisies en mettant à jour les statuts grâce à l'intégration du SGA.",
+        "Your Shop, Your Choice, Maximize Your Production"  : "Votre atelier, votre choix, maximisez votre production",
+        "Track Departments, Statistics, and more with customizable Graphs and other visuals to keep everyone updated and engaged. Plus even more customizable Display boards to get the right information to the right people when they need it." : "Suivez les départements, les statistiques et plus encore avec des graphiques personnalisables et d'autres visuels afin de garder tout le monde à jour et engagé. De plus, des tableaux d'affichage personnalisables pour fournir les bonnes informations aux bonnes personnes quand elles en ont besoin.",
+        "Integration With Akzo's Carbeat™" : "Intégration avec Carbeat™ d'Akzo",
+        "No Double Entry. Live Data From YOUR Files." : "Pas de double entrée. Données en direct de VOS dossiers.",
+        "Unlimited Departments, Unlimited Customizable Display Boards" : "Équilibrez et maximisez la capacité de votre atelier",
+        "Integration To Test Drive Copilot™" : "Intégration pour tester Copilot™",
+        "Unlimited Departments, Unlimited Customizable Display Boards" : "Départements illimités, Nombre illimité de tableaux d'affichage personnalisables",
+        "Drag and Drop with Touch Screen Technology" : "Glisser-déposer avec la technologie d'écran tactile",
+        "Schedule Production Start Dates" : "Planifiez les dates de début de production",
+        "Customer Delivery Schedule" : "Calendrier de livraison aux clients",
+        "Unlimited Job Classes or 'types of repairs" : "Classes de travail ou  types de réparations  illimitées",
+        "Customized Solutions From BodyshopConnect -- ProductionConnect" : "Solutions personnalisées pour BodyshopConnect -- ProductionConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same, so why be forced into a process by other body shop management tools available? ProductionConnect allows shops to maximize their productivity. We have unlimited departments and different views to manage files moving through production. We also allow for customized Production Boards for use at the desktop or large screen TVs located in the shop.": "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? ProductionConnect permet aux ateliers de maximiser leur productivité. Nous avons des départements illimités et des vues différents pour gérer les fichiers dans le processus de production. Nous permettons aussi les Tableaux de Production personnalisées pour les utiliser dans le bureau ou sur les téléviseurs dans l'atelier.",
+        "Schedule The Way You Want To - By Hours, Number of Jobs, Types of Repair & More" : "Planifiez comme vous le souhaitez - par heure, nombre de travaux, types de réparation et plus",
+        "Schedule all work in process and new repairs with our Capacity Scheduling. Multiple Views are Available To Customize Both Your Estimate Appointments and Repair Order Scheduling. Keep on top of Your Dates to help you meet or exceed Your Delivery Targets.":"Planifiez tous les travaux en cours et les nouvelles réparations grâce à notre système de planification des capacités. Plusieurs vues sont disponibles pour personnaliser vos rendez-vous d'estimation et la programmation des ordres de réparation. Gardez le contrôle de vos dates pour vous aider à atteindre ou dépasser vos objectifs de livraison.",
+        "Vehicle Arrival Scheduling" : "Planification des arrivées des véhicules",
+        "Production Scheduling." : "Planification de la production",
+        "Automate Drop Off Reminders by Email or Text Message" : "Automatisez les rappels de dépôt par e-mail ou SMS",
+        "Schedule Appointments" : "Planification de rendez-vous",
+        "Schedule Appraisals" : "Planification des évaluations",
+        "Schedule Other Non Repair Order Appointments" : "Planification d'autres rendez-vous non liés aux bons de réparation",
+        "Balance and Maximize your shop's Capacity" : "Équilibrez et maximisez la capacité de votre atelier",
+        "Schedule Production Start Dates" : "Planifiez les dates de début de production",
+        "Customer Delivery Schedule" : "Calendrier de livraison aux clients",
+        "Customized Solutions From BodyshopConnect -- ScheduleConnect" : "Solutions personnalisées pour BodyshopConnect - ScheduleConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. ScheduleConnect allows shops to maximize their productivity. We have multiple Schedulers available to use. Appointment Calendar, Arrival Scheduler, Production Scheduler and Delivery Scheduler. We also allow for customized Display Boards for use at the desktop or large screen TV's located in the shop." : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? ScheduleConnect permet aux ateliers de maximiser leur productivité. Nous avons plusieurs planificateurs disponibles à utiliser. Calendrier de rendez-vous, Calendrier des arrivées, calendrier de production et calendrier de livraison. Nous autorisons aussi la personnalisation des panneaux d'affichage à utiliser sur le bureau à projeter sur les téléviseurs situés dans l'atelier.",
+        "Schedule a Demo" : "Démonstration de l'annexe A", 
+        "Contact Us" : "Contactez-nous",
+        "Full Media Management Including Pictures, Videos, Documents and More" : "Gestion complète des médias, comprenant des images, des vidéos, des documents et plus encore",
+        "Completely Automate the Process of Shooting and Sorting Your Photos with Mobile APPS. No more lost paperwork or pictures. Save time and stay organized with a completely electronic file. Ability to store documents and more for a complete electronic file that can be accessed anywhere ... anytime." : "Automatisez complètement le processus de prise, de vue, et de tri de vos photos avec des applications mobiles. Plus de paperasse ou d'images perdues. Gagnez du temps et restez organisé avec un fichier entièrement électronique. Ayez la possibilité de stocker des documents et plus encore pour un fichier complètement électronique qui peut être consulté n'importe où ... n'importe quand.",
+        "Stay organized by fully documenting your electronic file" : "Restez organisé en documentant entièrement votre fichier électronique",
+        "Visually capture all damage information, including supplements and pre-existing damages": "Capturez visuellement toutes les informations sur les dommages, y compris les suppléments et les dommages préexistants",
+        "Sort and file vehicle photos, videos, documents and more" : "Triez et classez les photos, vidéos, et documents des véhicules, et plus encore",
+        "Use barcode technology and easy to use APPS or simply upload directly to a file using any device" : "Utilisez la technologie de code-barres et des APPS faciles à utiliser ou téléchargez simplement directement dans un fichier à l'aide de n'importe quel appareil",
+        "Reduce Paper and eliminate your manual files for quick access of everything … from anywhere" : "Réduisez le papier et éliminez vos fichiers manuels pour un accès rapide à tout ... de n'importe où",
+        "Multi Store locations can view all the information from individual or central locations":"Les emplacements multi-magasins peuvent afficher toutes les informations à partir d'emplacements individuels ou centraux",
+        "Customized Solutions From BodyshopConnect -- MediaConnect" : "Solutions personnalisées de BodyshopConnect -- MediaConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. MediaConnect allows shops to be able to fully document their files so they can access all the information for single store or multiple locations in one place. Complete third party integration with CosmosSync, Drop Box, Google Drive, One Drive, Own Cloud or Next Cloud." : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? MediaConnect permet aux ateliers de documenter entièrement leurs fichiers pour qu'ils puissent accéder à toutes les informations pour un seul magasin ou plusieurs emplacements, dans un seul endroit. Intégration complète des Medias avec Cosmos Sync, Drop Box, Google Drive, One Drive, Own Cloud ou Next Cloud.",
+        "TechnicianConnect Will Connect The Back Of The Shop To The Front Office." : "TechnicianConnect connecte l'arrière de l'atelier au bureau principal.",
+        "It's more than just a time clock." : "C'est plus qu'une simple horloge.",
+        "wClock in and out of Repair Orders": "Pointé d'entrée et de sortie des bons de réparation",
+        "Clock in and out of Other Tasks" : " Pointé d'entrée et de sortie des autres tâches",
+        "AView and Add Media" : "Voyez et ajoutez des médias",
+
+        "View and Update Production Status" : "Voyez et mettez à jour l'état de production.",
+        "View and Update Notess":"Vue et mise à jour des notes",
+        "View Repair Line Items" : "Vue des éléments des lignes de réparation",
+        "View Parts Status" : "Vue de l'état des pièces",
+        "View History" : "Vue de l'historique",
+        "TWO WAY Internal Messaging" : "Messagerie interne des DEUX VOIES",
+
+        "Customized Solutions From BodyshopConnect -- TechnicianConnect" : "Solutions personnalisées pour BodyshopConnect - TechnicianConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. TechnicianConnect ties the back shop to the front office in order to give live time information to the people who need it ... when they need it.": "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? TechnicianConnect connecte l'arrière de l'atelier au bureau principal, afin de donner des informations en temps réel aux personnes qui en ont besoin ... quand elles en ont besoin.",
+
+        "Control, Manage & Discover Hidden Profits. Job Costing With BodyshopConnect Makes It Simple." : "Contrôlez, gérez et découvrez des profits cachés. Le calcul du coût de revient avec BodyshopConnect simplifie les choses.",
+        "Track all Job Costs easily and quickly. Labor or Vendor Costs can be added per Repair Order or on the fly using bulk Job Cost posting screens." : "Suivez tous les coûts des travaux facilement et rapidement. Les coûts de main-d'œuvre ou de fournisseurs peuvent être ajoutés par ordre de réparation ou à la volée à l'aide d'écrans de comptabilisation des coûts de travaux en masse.",
+
+        "Parts Management Dashboard" : "Tableau de bord de gestion des pièces",
+        "Parts List By Repair Order" : "Liste des pièces par bon de réparation",
+        "Outstanding Vendor Credits" : "Crédits fournisseurs en attente",
+        "Order, Receive, Return, Back Order, IOU & More" : "Commande, réception, retour, commande en souffrance, Reconnaissance de dette, et plus",
+        "Partial Credits, Labor & Cost Credit" :  "Crédits partiels, crédit de main-d'œuvre et de coût",
+        "Part Labels" : "Étiquettes de pièces",
+        "Electronic Check In " : "vEnregistrement électronique",
+
+        "Customized Solutions From BodyshopConnect -- JobCostConnect" : "Solutions personnalisées pour BodyshopConnect - JobCostConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. JobCostConnect allows a shop to break down all Vendor and Labor Costs by profit center in order to see exactly where to focus. Quickly View your net profit to make sure you are staying profitable on all repairs." : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? JobCostConnect permet à votre atelier de décomposer tous les coûts des fournisseurs et de la main-d'œuvre par centre de profit, afin de discerner exactement où se concentrer. Consultez rapidement votre bénéfice net pour vous assurer de rester rentable en toutes les réparations.",
+
+        "Complete Parts Management" : "Gestion des Pièces",
+        "Manage All Parts That Come In And Out Of Your Shop. Order, Receive, Return, Back Order, IOU, Partial Credits, And Profit Verification. Track Part Locations By Scanning Parts In And Out With Our Parts Location APP." : "Gérer toutes les pièces qui entrent et sortent de votre atelier. Commande, réception, retour, commande différée, reconnaissance de dette, crédits partiels et vérification des bénéfices. Suivez l'emplacement des pièces en les scannant à l'entrée et à la sortie grâce à notre application d'emplacement des pièces.",
+
+        "Parts Management Dashboard" : "Tableau de bord de gestion des pièces",
+        "Parts Location APP" : "Localisation des pièces APP",
+        "Outstanding Vendor Credits": "Crédits fournisseurs en attente",
+        "Part Labels" : "Étiquettes de pièces",
+        "Electronic Check In" : "Enregistrement électronique",
+        "Order, Receive, Return, Back Order, IOU & More" : "Commande, réception, retour, commande en souffrance, Reconnaissance de dette, et plus",
+        "Partial Credits, Labor & Cost Credit" : "Crédits partiels, crédit de main-d'œuvre et de coût",
+
+        "Customized Solutions From BodyshopConnect -- PartsConnect" : "Solutions personnalisées de BodyshopConnect -- PartsConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. PartsConnect allows shops to manage the status of their parts quickly and easily.": "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? PartsConnect permet aux ateliers de gérer rapidement et facilement le statut de vos pièces.",
+
+        "Create 'Quick Estimates' Easily" : "Création facile des «Estimations rapides»",
+        "Your shop can set up menu price lists & Paintless Dent Repair Calculations. Using Custom Profiles, Custom Lines & Digital Authorization for Quick Estimates on the go. In addition, the system also includes AUTOMATIC Import and Updates from AdjustRite, Audatex, CCC, WebEst, or Mitchell Estimating Systems saving you time." : "Votre atelier peut établir des listes de prix et des calculs de réparation de bosses sans peinture. Utiliser des profils personnalisés, des lignes personnalisées et l'autorisation numérique pour des estimations rapides en déplacement. En outre, le système comprend également l'importation et la mise à jour automatiques à partir des systèmes d'estimation AdjustRite, Audatex, CCC, WebEst ou Mitchell, ce qui vous permet de gagner du temps.",
+        "Quick Estimating designed for PDR and Menu Priced Items" : "Estimation rapide conçue pour les RDP et les articles à prix du menu",
+        "Great for Mobile Repairers and Shops with Fast Lane Specialty Repairs" : "Idéal pour les réparateurs mobiles et les magasins avec des réparations spéciales de voie rapide",
+        "Access ‘on the go’ from anywhere with internet access" : "Accédez de n'importe où que vous avez une connexion d'Internet",
+        "Take Pictures and upload them directly to a file" : "Prenez des photos et téléchargez-les directement dans un fichier",
+        "Quick and Easy Photo Management" : "Gestion des photos simple et rapide",
+        "With or Without the use of bar-codes" : "Avec ou sans l'utilisation de codes-barres",
+        "Customized Solutions From BodyshopConnect" : "Solutions personnalisées de BodyshopConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. Quick Estimate allows a shop to write a quick estimate using Paintless Dent Repair Calculations or Menu Priced Items within the Web application. BodyshopConnect also imports and updates estimates from AdjustRite, Audatex, CCC, WebEst and/or Mitchell Estimating Systems." :"BodyshopConnect de Micazen est un logiciel de gestion d'atelier de carrosserie conçu pour être personnalisé en fonction du processus de réparation des collisions. Il n'y a pas deux réparations identiques, alors pourquoi se laisser imposer un processus par d'autres outils de gestion d'atelier de carrosserie disponibles. Quick Estimate permet à un atelier de rédiger un devis rapide en utilisant les calculs de réparation des bosses sans peinture ou les éléments tarifés du menu dans l'application Web. BodyshopConnect importe et met à jour des devis provenant de AdjustRite, Audatex, CCC, WebEst et/ou Mitchell Estimating Systems.",
+        
+         
+        "Real Time Communication-External" : "Communication en temps réel-Externe",
+        "Automated or ‘on the fly’ communications to customers and rental companies Two Way Texting - Send messages to your customer, if they respond it copies the response to the notes on the repair order. Two Way emails - Send automatic or generated emails to update anyone related to the repair. Update the customer, insurance company, rental company and more.Keep everyone in the loop about the status of some or all repairs": "Communications automatisées ou à la volée aux clients et aux sociétés de location Envoi de SMS bidirectionnel - Envoyez des messages à votre client, s'il y répond, il copie la réponse aux notes sur l'ordre de réparation. Courriels bidirectionnels - Envoyez des courriels automatiques ou générés pour mettre à jour toute personne liée à la réparation. Mettez à jour le client, la compagnie d'assurance, la société de location et plus encore.Tenir tout le monde au courant de l'état de certaines ou de toutes les réparations",
+
+        "Quickly Notify Customer Of Repair Status":"Informer rapidement le client de l'état de la réparation",
+        "Quickly Update Customer of Part Delays, Production Issues and more": "Mettez rapidement le client au courant des retards de pièces, des problèmes de production et plus encore",
+        "Automatic Messages Can be Generated When Cars move through Departments": "Des messages automatiques peuvent être générés lorsque les voitures circulent dans les départements",
+        "Messages Are All Documented in the file": "Les messages sont tous documentés dans le dossier",
+        "Updates Can Be Setup By Company." : "Les mises à jour peuvent être organisées par entreprise.",
+        "Two Way Messaging" : "Messagerie bidirectionnelle",
+        "Customized Solutions From BodyshopConnect -- External Communications" : "Solutions personnalisées de BodyshopConnect -- Communications externe",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction." : "BodyshopConnect de Micazen est un logiciel de gestion d'atelier de carrosserie automobile conçu pour être adapté au processus de réparation des collisions. Aucune réparation n'est identique à une autre, alors pourquoi être contraint d'entrer dans un processus par d'autres outils de gestion de carrosserie disponibles. Les communications externes sont essentielles. Des communications automatisées qui tiennent tout le monde informé pendant le processus de réparation permettent non seulement de gagner du temps, mais aussi d'améliorer la satisfaction des clients.",
+        "Quickly Notify Customer Of Repair Statusl" : "Informer rapidement le client de l'état de la réparation",
+
+        "Real Time Communication - Internal" : "Communication en temps réel - Interne",
+        "Internal Chat between all employees (including technicians) Automated push notifications to key persons within the shop as the vehicle moves through the departments and/or event trigger notifications.": "Chat interne entre tous les employés (y compris les techniciens) Notifications push automatisées aux personnes clés de l'atelier lorsque le véhicule passe par les différents services et/ou notifications de déclenchement d'événements.",
+        
+        "In System Messaging, Reduces Inbox Clutter" : "Réduisez le désordre de la boîte de réception avec la messagerie du système",
+        "Automatically Updated Based On System Rules" : "Mise à jour automatique en fonction des règles du système",
+        "Tracks Read Receipts" : "Suivi et lecture des reçus",
+        "Integrates With Outlook" : "Intégration à Outlook",
+        "Customized Solutions From BodyshopConnect -- Internal Communications" : "Solutions personnalisées pour BodyshopConnect - Communications internes",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Internal communications enables shops to communicate with each other internally, privately, and within BodyshopConnect." : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? Les communications internes sont vitales. Les communications internes permettant aux ateliers de se communiquer entre eux de façon interne, privée, et avec BodyshopConnect.",
+
+        /* Accounting  */
+        "Accounting Interfaces, A/R Management. BodyshopConnect's Insurance Bulk Payment Control, Is The Best In The Industry." : "Interfaces comptables, gestion des comptes clients. Le contrôle des paiements groupés d'assurance de BodyshopConnect est le meilleur du secteur.",
+        "Simplify Bulk Payments & Receiving Payments On Multiple Repair Orders Never Got Easier!" : "Simplifier les paiements groupés & Recevoir des paiements sur plusieurs ordres de réparation n'a jamais été aussi facile !",
+        "Interface to Acomba X": "Interface avec Acomba X",
+        "Interface to Advantage X" : "Interface avec Avantage X",
+        "Interface to QuickBooks Desktop" : "Interface pour QuickBooks Desktop",
+        "Interface to Xero Accounting" : "Interface avec Xero Accounting",
+        "Receive Payments for Specific Repair Orders" : "Réception de paiements pour des bons de réparation spécifiques.",
+        "Receive Bulk Checks for Multiple Repair Orders" : "Réception des paiements en chèque groupée pour bons de réparation multiples.",
+        "Outstanding Receivables View Quick & Simple" : "Vue rapide et simple pour Créances en suspens",
+        "Interface to QuickBooks Online": "Interface pour Quickbooks Online",
+        "Interface to Sage Cloud Accounting" : "Interface avec Sage Cloud Accounting",
+        "Interface to Sage Business Works" : "Interface pour Sage Business Works",
+        "Interface to Sage 50 (Simply Accounting)" : "Interface pour Sage 50 (Simple Comptable)",
+        "Customized Solutions From BodyshopConnect -- AccountingConnect" : "Solutions personnalisées pour BodyShopConnect - Accounting Connect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. AccountConnect allows easy management of Accounts Receivables within the management system. In addition AccountConnect interfaces with multiple accounting systems allowing export of Accounts Receivables, Payments and / or Accounts Payable which saves time by removing double entry of data." : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? AccountConnect permet une gestion facile des comptes clients au sein du système de gestion. Aussi, AccountConnect s'interface avec plusieurs systèmes comptables, permettant l'exportation des Comptes des Clients, paiements et / où Comptes des Fournisseurs, ce qui permet de gagner du temps en supprimant la double saisie des données.",
+        
+        /* Multi Store Location  */
+        "Multiple Locations? Manage Easily From One Central Location.": "Plusieurs emplacements? Gérez-les facilement à partir d'un emplacement central.",
+        "Easily Access the system from anywhere an internet connection exists." : "Accédez facilement au système de partout où une connexion Internet existe.",
+        "Central Multi-Location Management" : "Gestion centralisée de Multi-magasins",
+        "Central Login Access" : "Accès centralisé à la connexion",
+        "Central Administration" : "Administration centrale",
+        "Share employees and more between locations" : "Partagez vos employés et plus encore entre les emplacements.",
+        "Ability to transfer files between locations" : "Possibilité de transférer des fichiers d'un lieu à l'autre",
+        "Search and Access Files anywhere within your organization" : "Possibilité de transférer vos fichiers entre les emplacements",
+        "Customized Solutions From BodyshopConnect -- MSOConnect" : "Solutions personnalisées pour BodyshopConnect - MSOConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. MSOConnect allows Multiple Shop Owners to Centrally Manage and Load Level their shops as needed." : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? MSOConnect permet aux propriétaires de multi-magasins de gérer et de charger leurs magasins au besoin, de manière centralisée.",
+        
+        /* Dealer System Integration */
+
+        "DealerConnect" : "DealerConnect",
+        "BODYSHOPCONNECT + PBS SYSTEMS GROUP. We Integrate With PBS Dealership Management System" : "BODYSHOPCONNECT + PBS SYSTEMS GROUP. Nous nous intégrons au système de gestion de concession de PBS",
+        "Seamless, bi-directional integration to your PBS Dealer Management System" : "Intégration transparente et bidirectionnelle à votre système de gestion des concessionnaires PBS",
+        "Saves valuable time and reduces errors" : "Économisez du temps précieux et réduisez des erreurs",
+        "Eliminate Double Entry" : "Éliminez la double entrée",
+        "Enter the information in BodyshopConnect and let everything transfer to the Dealership System" : "Entrez les informations dans BodyshopConnect et laissez tout transférer vers votre système de concession",
+        "Automatically Creates the Repair Order in the PBS Dealer Management System" : "Crée automatiquement l'ordre de réparation dans le système de gestion des concessionnaires PBS",
+        "Automatically sends costs" : "Envoyez les coûts de manière automatique",
+        "Customized Solutions From BodyshopConnect-DealerConnect" : "Solutions personnalisées pour BodyshopConnect - DealerConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. The DealerConnect Interface to the PBS Dealership Software allows dealers to manage their body shops within BodyshopConnect while not losing any valuable information in their dealership system." : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. L'interface DealerConnect vers le système de concession PBS, permet aux concessionnaires de gérer leurs ateliers de carrosserie dans BodyshopConnect sans perdre aucune information précieuse dans leur système de concession.",
+
+
+        /* Paint Scale Interfaces */
+
+        "Paint Scale Interfaces" : "Interface de balance de peinture",
+        "Automated Job Costs from the Paint Scale. Akzo Nobel, BASF, PPG, Axalta, Sherwin Williams . No More Guessing. Know your true Job Costs. Real-Time." : "Automatisation des coûts des travaux à partir de l'échelle de peinture. Akzo Nobel, BASF, PPG, Axalta, Sherwin Williams . Fini les devinettes. Connaissez vos coûts réels. En temps réel.",
+        "Akzo Nobel™" : "Akzo Nobel™",
+        "BASF™" : "BASF™",
+        "Axalta™"  : "Axalta™",
+        "Avoid Double Entry / Real Time Costing" : "Éviter la double entrée / Real Time Costing",
+        "Sherwin Williams™" : "Sherwin Williams™",
+        "PPG™" : "PPG™",
+        "Customized Solutions From BodyshopConnect -- PaintScaleConnect" : "Solutions personnalisées pour BodyshopConnect - PaintScaleConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. Shops are different; so why be forced into a process by other body shop management tools available. PaintScaleConnect allows shops to automaically track the cost of their paint per repair." : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? PaintScaleConnect permet aux ateliers de suivre automatiquement le coût de leur peinture pour chaque réparation.",
+
+
+        /* CSI - Google Survey */
+
+        "Managing reviews and prompting customers to tell you about great service is not easy." : "Gérer les avis et inviter vos clients à vous parler de la qualité du service n'est pas toujours facile.",
+        "Once repair is completed and a vehicle is delivered, the customer will automatically receive a review invitation." : "Une fois la réparation terminée et le véhicule livré, le client recevra automatiquement une invitation à vous évaluer.",
+        "Automatically Sends Administrative Details" : "Envoi automatique des détails administratifs",
+        "Reduce Data Re-Keying By Allowing Information To Transfer Directly From The Repair Order Into A Customer Survey." : "Réduisez la ressaisie des données en permettant le transfert direct des informations du bon de réparation vers une enquête auprès des clients.",
+        "Information Is Transferred Once Picked Up Date Is Entered." : "L'information est transférée une fois que la date d'enlèvement est entrée.",
+        "Customized Solutions From BodyshopConnect -- ReviewConnect" : "Solutions personnalisées pour BodyshopConnect - ReviewConnect",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. ReviewConnect removes 'double entry'. Integration with both One Local software or Podium software allows shops to save time by sending specific customers and specific information to their review platforms."  : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? ReviewConnect évite la «double entrée». L'intégration avec le logiciel One Local ou Podium permet aux ateliers de gagner du temps en envoyant des informations spécifiques aux plates-formes d'évaluation des clients",
+
+
+        /* Rental Car Interface */
+
+        "Manage Your Own Fleet. Also, Reduce Time Re-Entering Data Into ARMS for Enterprise" : "Gérez votre propre flotte. Réduisez également le temps passé à réintroduire des données dans ARMS for Enterprise.",
+        "We can create a reservation for you and update the status along the way! By simply requesting us to turn on the ARMS Interface for your Shop and linking different areas of your system through an administration set up we can save you time." : "Nous pouvons créer une réservation pour vous et mettre à jour le statut en cours de route ! En nous demandant simplement d'activer l'interface ARMS pour votre boutique et en reliant les différentes parties de votre système par le biais d'une configuration administrative, nous pouvons vous faire gagner du temps.",
+        "Manage your own Courtesy/Loaner Cars." : "Gérer vos propres voitures de courtoisie/prêts",
+        "Update Enterprise ARMS Automatically." : "Mettez à jour l'entreprise ARMS de manière automatique",
+        "Change Statuses ,On The Fly" : "Modifiez les statuts «à la volée»",
+        "Stop Wasting Time Duplicating Details." : "Arrêter de perdre du temps à dupliquer les détails",
+        "Automatically creates rental reservation based on scheduled In dates." : "Crée automatiquement une réservation de location sur la base des dates In prévues.",
+        "Update The Department In Your Shop & Transfer Real-Time Updates Automatically" : "Mettez à jour le département dans votre boutique et transférez automatiquement les mises à jour en temps réel",
+        "Update Dates In Your Shop & Transfer Automatically" : "Mettez à jour les dates de votre atelier et transférez-les automatiquement",
+        "Customized Solutions From BodyshopConnect -- Rental Car Status Interface" : "Solutions personnalisées pour BodyshopConnect - Interface de Location des Voitures",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. RentalConnect saves shops time by keeping the rental company informed of the repairs without the need to pick up the phone. Removes the 'double entry' of data into another system." : "BodyshopConnect de Micazen est un logiciel de gestion pour les ateliers de carrosserie, conçu pour être personnalisé pour votre processus de réparation de collision. Il n'y a pas deux réparations identiques, alors pourquoi être forcé dans un processus par d'autres outils de gestion de carrosserie disponibles ? RentalConnect fait gagner du temps aux ateliers en informant l'entreprise de location l'état des réparations sans besoin de décrocher le téléphone. Supprime la «double entrée» des données dans un autre système.",
+
+        /* Support */
+
+        "Online Computer Support" : "Assistance informatique en ligne",
+        "One Of Our Technicians will supply you with a Session ID Number. Please enter the number in the box below and click Connect. Once the file has been downloaded to your computer; you will need to click Run on the application and then click Join when the application opens." : "Un de nos techniciens vous donnera un ID pour la session. Écrivez le code dans la case ci-dessous et cliquez sur Se connecter. Une fois le fichier téléchargé sur votre ordinateur; cliquez sur Run dans l'application, puis sur Join lorsque l'application s'ouvre.",
+
+
+        /* Data Analytic */
+        
+        "Data Analytics" : "Analyse des données",
+        "This interface has been built for shops that would like their data pushed to a 3rd party for reports and/or compliance for certain Networks, Paint Companies and/or OE Certification Programs." : "Cette interface a été conçue pour les magasins qui souhaitent que leurs données soient transmises à une tierce partie pour les rapports et/ou la conformité de certains réseaux, entreprises de peinture et/ou programmes de certification OE.",
+        "Once authorized will automatically sync key repair metrics." : "Une fois autorisé, il synchronisera automatiquement les paramètres de réparation de la clé.",
+        "Allow Benchmarking between shops in your network." : "Autorisez l'évaluation comparative entre les magasins de votre réseau.",
+        "Data will sync with Triggers to certain dates selected. (Picked up, Car Ready)" : "Les données seront synchronisées avec les déclencheurs à certaines dates sélectionnées. (Ramassé, voiture prête)",
+        "Reduce data entry. Ensure compliance with your paint company and shop network." : "Réduire la saisie de données. Assurer la conformité avec votre entreprise de peinture et votre réseau d'ateliers.",
+        "Customized Solutions From BodyshopConnect -- Data Analytics" : "Solutions personnalisées de BodyshopConnect -- Analyse des données",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction." : "BodyshopConnect de Micazen est un logiciel de gestion d'atelier de carrosserie automobile conçu pour être adapté au processus de réparation des collisions. Aucune réparation n'est identique à une autre, alors pourquoi être contraint d'entrer dans un processus par d'autres outils de gestion de carrosserie disponibles. Les communications externes sont essentielles. Des communications automatisées qui tiennent tout le monde informé pendant le processus de réparation permettent non seulement de gagner du temps, mais aussi d'améliorer la satisfaction des clients.",
+
+
+        /* Inventory */
+        "Inventory" : "Inventaire",
+        "A two-way interface allowing shops to track inventory. BodyshopConnect will send repair order data to the inventory system and the inventory system will send back the cost data." : "Une interface bidirectionnelle permettant aux ateliers de suivre l'inventaire. BodyshopConnect envoie les données des ordres de réparation au système d'inventaire et ce dernier renvoie les données relatives aux coûts.",
+        "Repair order data flows out from BodyshopConnect." :  "Les données relatives aux ordres de réparation proviennent de BodyshopConnect..",
+        "3M RepairStack™ & Wurth™ SIS will import the repair order data automatically." : "3M RepairStack™ & Wurth™ SIS importera automatiquement les données de l'ordre de réparation.",
+        "Cost data from Leantec and Wurth's inventory systems update the costs of the repair orders in BodyshopConnect." : "Les données relatives aux coûts provenant des systèmes d'inventaire de Leantec et de Wurth actualisent les coûts des ordres de réparation dans BodyshopConnect.",
+        "Reduce data entry and get more accurate job costs" : "Réduire la saisie de données et obtenir des coûts de travaux plus précis",
+        "Customized Solutions From BodyshopConnect -- Inventory" : "Solutions personnalisées de BodyshopConnect -- Inventaire",
+        "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction." : "BodyshopConnect de Micazen est un logiciel de gestion d'atelier de carrosserie automobile conçu pour être adapté au processus de réparation des collisions. Aucune réparation n'est identique à une autre, alors pourquoi être contraint d'entrer dans un processus par d'autres outils de gestion de carrosserie disponibles. Les communications externes sont essentielles. Des communications automatisées qui tiennent tout le monde informé pendant le processus de réparation permettent non seulement de gagner du temps, mais aussi d'améliorer la satisfaction des clients.",
+
+
+        /* Privacy Policy*/
+        "Your Privacy Is Important to Us" : "Votre confidentialité est importante pour nous",
+        "GENERAL" : "GÉNÉRAL",
+        "BodyshopConnect by Micazen Consulting & Technologies Inc is very sensitive to the issue of protection of trade secrets and proprietary information. Micazen Consulting & Technologies Inc employees are expected to use good judgment, to adhere to high ethical standards, and to abide by any confidentiality obligations to former employers. Micazen Consulting & Technologies Inc employees shall not use, bring on the premises or otherwise disclose any proprietary or trade secret information of former employers or other third parties. All employees share responsibility to ensure that proper security is maintained." : "BodyshopConnect de Micazen Consulting & Technologies, Inc est très sensible à la question de la protection des secrets commerciaux et des informations exclusives. Les employés de Micazen Consulting & Technologies Inc doivent faire preuve de discernement, s'adhérer à des normes éthiques élevées, et respecter toute obligation de confidentialité envers les employeurs précédents. Les employés de Micazen Consulting & Technologies Inc. ne doivent pas utiliser, apporter sur place ou divulguer d'aucune manière que ce soit des informations exclusives ou des secrets commerciaux des employeurs précédents ou des autres tiers. Tous les employés partagent la responsabilité de vous garantir et maintenir une sécurité adéquate.",
+        "YOUR CONFIDENTIALITY" : "VOTRE CONFIDENTIALITÉ",
+        "We believe your business is no one else’s. Your privacy is important to you and to us. Therefore, we will protect the information you share with us. To protect your privacy, Micazen Consulting & Technologies Inc follows different principles in accordance with worldwide practices for customer privacy and data protection. We won’t sell or give away your name, mail address, phone number, email address or any other information to anyone. We’ll use state-of-the-art security measures to protect your information from unauthorized users." : "Nous pensons que votre entreprise n’est pas l'affaire des autres. Votre vie privée est importante pour vous et pour nous. Par conséquent, nous protégerons les informations que vous partagez avec nous. Pour protéger vos confidentialités, Micazen Consulting & Technologies Inc suit différents principes suivants des pratiques mondiales en matière de confidentialité des clients et de protection des données. Nous ne vendrons ni ne donnerons pas votre nom, adresse mail, numéro de téléphone, adresse e-mail ou toute autre information à qui que ce soit.Nous utiliserons des mesures de sécurité de pointe pour protéger vos informations des utilisateurs non autorisés.",
+        "COLLECTION & USE OF PERSONAL INFORMATION" : "COLLECTE ET UTILISATION DES INFORMATIONS PERSONNELLES",
+        "You may be asked to provide your personal information anytime you are in contact with BodyshopConnect or a Micazen affiliated company. Micazen and its affiliates may share this personal information with each other and use it in accordance with this Privacy Policy. Personal Information may include business name, client names, phone numbers, addresses, etc." : "Les informations personnelles sont des données qui peuvent être utilisées pour identifier ou contacter une seule personne de manière unique. Vous pouvez être invité à fournir vos informations personnelles à chaque fois que vous êtes en contact avec BodyshopConnect ou une société affiliée à Micazen. Micazen et ses affiliés peuvent partager ces informations personnelles entre eux et les utiliser selon la politique de confidentialité présente. Les informations personnelles peuvent comprendre le nom de l'entreprise, les noms des clients, les numéros de téléphone, les adresses, et",
+        "We do not store or retain any Google user data information." : "Nous ne stockons ni ne conservons aucune information sur les données des utilisateurs de Google.",
+        "PROTECTION OF PERSONAL INFORMATION" : "APPLICATIONS ET AVIS AUX PARENTS",
+        "Micazen and its affiliates will take every precaution including administrative, technical and physical measures to safeguard your personal information against loss, theft and misuse. BodyshopConnect data uses multiple level encryption platform in order to help safeguard against unauthorized access, disclosure and destruction of your data." : "Les applications de Micazen Consulting & Technologies Inc peuvent accéder à la caméra de votre appareil. Les images à l'intérieur de l'application ne peuvent pas accéder à vos images personnelles au moins que vous ne les ajoutiez pas par l'application. Les données de BodyshopConnect utilisent une plate-forme de cryptage à plusieurs niveaux afin de vous protéger contre l'accès non autorisé, la divulgation et la destruction de vos données.",
+        "THIRD PARTY APPLICATIONS" : "LES DEMANDES DE TIERS",
+        "BodyshopConnect may contain links to third party software applications. Which applications are connected can be viewed in the administration section of your software under the Third Party Application section. Each Third Party Application is different and therefore the transfer of your data to each of the third party applications may contain different personal information. Third Party Applications must be authorized by the user and can be disconnected at any time. It is recommended that you check with the third party provider as to their privacy policy." : "BodyshopConnect peut contenir des liens vers des applications logicielles tierces. Les applications connectées peuvent être consultées dans la section d'administration de votre logiciel sous la rubrique Applications tierces. Chaque application tierce est différente et le transfert de vos données vers chacune d'entre elles peut donc contenir des informations personnelles différentes. Les applications tierces doivent être autorisées par l'utilisateur et peuvent être déconnectées à tout moment. Il est recommandé de vérifier la politique de confidentialité du fournisseur tiers.",
+        "APPS & NOTICE TO PARENTS" : "APPLICATIONS ET AVIS AUX PARENTS",
+        "Micazen Consulting & Technologies Inc APPS may access the Camera on your device. The pictures inside the APP cannot access your personal pictures unless you add them through the APP. Parents or guardians: we want to help you guard your children’s privacy. We encourage you to talk to your children about safe and responsible use of their Personal Information while using APPS or the Internet. The Micazen Consulting & Technologies Inc APPS and website does not publish content that is targeted to children." : "L'APPS de Micazen Consulting & Technologies Inc. peut accéder à la caméra de votre appareil. Les photos à l'intérieur de l'APP ne peuvent pas accéder à vos photos personnelles, sauf si vous les ajoutez par l'intermédiaire de l'APP. Parents ou tuteurs : nous voulons vous aider à protéger la vie privée de vos enfants. Nous vous encourageons à parler à vos enfants de l'utilisation sûre et responsable de leurs informations personnelles lorsqu'ils utilisent l'APPS ou Internet. L'APPS et le site web de Micazen Consulting & Technologies Inc ne publient pas de contenu destiné aux enfants.",
+        "UPDATES & ENFORCEMENT" : "MISES À JOUR ET APPLICATION",
+        "Occasionally, we may change this privacy policy. If for some reason you believe Micazen Consulting & Technologies Inc has not adhered to these principles, please notify us by email at privacy@bodyshopconnect.com and we will do our best to determine and correct the problem promptly. Please make sure the words Privacy Policy are in the Subject line. Thank you." : "Nous pouvons occasionnellement modifier cette politique de confidentialité. Si, pour une raison quelconque, vous pensez que Micazen Consulting & Technologies Inc n'a pas respecté ces principes, veuillez nous en informer par courrier électronique à privacy@bodyshopconnect.com et nous ferons de notre mieux pour déterminer et corriger le problème rapidement. Veuillez vous assurer que les mots ,Politique de confidentialité, figurent dans la ligne Objet. Nous vous remercions.",
+
+         /* Abouuuuuuut Usssssss  */
+
+       "BodyshopConnect Puts You in Drivers Seat Allowing You To Run Your Collision Repair Facility Efficiently": "BodyshopConnect vous met à la place du conducteur pour vous permettre de gérer efficacement votre atelier de réparation des collisions",
+       "BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the real Collision Repair Process. We have connections to many 3rd applications. Using the CIECA standard, we are able to import estimates from AdjustRite, Audatex, CCC and Mitchell Estimating systems. These are North America's Premier estimating systems and used by most collision repair facilities." : "BodyshopConnect de Micazen est un logiciel de gestion de carrosserie automobile conçu pour être adapté au processus réel de réparation des collisions. Nous avons des connexions avec de nombreuses applications tierces. Grâce à la norme CIECA, nous sommes en mesure d'importer des estimations des systèmes AdjustRite, Audatex, CCC et Mitchell Estimating. Ce sont les premiers systèmes d'estimation d'Amérique du Nord et ils sont utilisés par la plupart des installations de réparation de collisions.",
+       "YOU can customize the features of our auto body shop management software." : "VOUS pouvez personnaliser les fonctionnalités de notre logiciel de gestion de carrosserie automobile.",
+       "Parts Management" : "Gestion des pièces",
+       "Job Costing" : "Coût de travail",
+       "AR Payments Management (Bulk Payment Support)": "Gestion des paiements AR (soutien aux paiements en vrac)",
+       "Estimating Management & Digital Check-In" : "Gestion des devis et vérification numérique",
+       "Production Boards & Real-Time Stats": "Tableaux de bord et statistiques en temps réel",
+       "Internal Messaging & Integrated Email" : "Messagerie interne et courrier électronique intégré",
+       "Real-Time Multi-Shop & Single Shop Analytics":"Analyse en temps réel de plusieurs magasins et d'un seul magasin",
+       "Estimate/Repair Order Compliance Rules" : "Règles de conformité des devis et des ordres de réparation",
+       "Multi-Shop Connectivity & Central Management" : "Connectivité multi-établissements et gestion centralisée",
+       "Accounting Interfaces" : "Interfaces comptables",
+       "AR Payments Management (Bulk Payment Support)" : "Gestion des paiements AR (soutien aux paiements en vrac)",
+       "Labor & Time Management" : "Gestion du travail et du temps",
+       "Photo, Barcode & Online Photo Integration" : "Intégration de photos, de codes-barres et de photos en ligne",
+       "Intelligent Scheduling (Appointments, Production & Delivery)" : "Planification intelligente (rendez-vous, production et livraison)",
+       "Technician Time Clock": "Horloge de technicien",
+       "Dealer Management System Interface to PBS" : "Interface entre le système de gestion des concessionnaires et le PBS",
+       "We Guarantee Your Satisfaction. Connect With Us for an Online Demonstration at No Cost." : "Nous garantissons votre satisfaction. Contactez-nous pour une démonstration en ligne gratuite.",
+       "We Guarantee Your Satisfaction. Connect With Us For an Online Demonstration at No Cost. Manage YOUR Collision Repair Facility efficiently with management and workflow solutions that can be customized to fit YOUR needs. Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their business goals and help them streamline their businesses": "Nous garantissons votre satisfaction. Contactez-nous pour une démonstration en ligne sans frais. Gérez efficacement VOTRE atelier de réparation de carrosserie grâce à des solutions de gestion et de flux de travail qui peuvent être personnalisées pour répondre à VOS besoins. Notre vision est de permettre aux ateliers de gérer leurs activités avec des outils qui peuvent être facilement adaptés pour atteindre leurs objectifs commerciaux et les aider à rationaliser leurs activités.",
+       "Create quick estimates and check in customers with ease." : "Créez des devis rapides pour enregistrer votre client et fermer l'entreprise.",
+       "Track & Manage Technicians' Time and Efficiency." : "Suivi et gestion du temps et de l'efficacité des techniciens.",
+       "Manage Industry KPIs." : "Gérer les indicateurs clés de performance de l'industrie",
+       "Customized Reporting & Tools to Maximize Production." : "Rapports et outils personnalisés pour maximiser la production.",
+       "Ensure Vehicles are delivered on time." : "Veiller à ce que les véhicules soient livrés à temps.",
+       "Connect With Multiple Industry Third-Party Applications and Reduce Data Entry." : "Connexion à de multiples applications tierces de l'industrie et réduction de la saisie de données",
+       "Manage YOUR Collision Repair Facility efficiently with management and workflow solutions that can be customized to fit YOUR needs.  Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their business goals and help them streamline their businesses." : "Gérez efficacement VOTRE installation de réparation des collisions grâce à des solutions de gestion et de flux de travail qui peuvent être personnalisées pour répondre à VOS besoins. Notre vision est de permettre aux ateliers de gérer leurs activités avec des outils qui peuvent être facilement adaptés pour répondre à leurs objectifs commerciaux et les aider à rationaliser leurs activités.",
+       "Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their goals and streamline operations.": "",
+       "Manage YOUR Collision Repair Facility Efficiently" : "Gérer efficacement votre atelier de réparation de collisions",
+       "Our vision is to allow shops to manage their businesses with tools that can be easily adapted to meet their goals and streamline operations." : "Gérez efficacement VOTRE installation de réparation des collisions grâce à des solutions de gestion et de flux de travail qui peuvent être personnalisées pour répondre à VOS besoins. Notre vision est de permettre aux ateliers de gérer leurs activités avec des outils qui peuvent être facilement adaptés pour répondre à leurs objectifs commerciaux et les aider à rationaliser leurs activités.",
+        
+        /*Navbar Links */
+    "ACCOUNTING" : "COMPTABILITÉ",
+    "SCHEDULE" : "PLANIFICATION", 
+    "PRODUCTION": "PRODUCTION",
+    "MULTI-STORE" : "MULTI-MAGASINS", 
+    "PARTS" : "PIÈCES", 
+    "PARTS TRACKING" : "SUIVI DES PIECÈS", 
+    "JOB Costing": "COÚT DE TRAVAIL", 
+    "PAINT SCALE" : "ÉCHELLE DE PAINTURE",  
+    "ESTIMATING" : "ESTIMATION", 
+    "TECHNICIAN TRACKING" : "TECHNICIEN", 
+    "DEALERSHIP PAINT SCALE" : "CONCESSIONS", 
+    "INTERNAL COMMUNICATIONS" : "COMMUNICATION INTERNE", 
+    "EXTERNAL COMMUNICATIONS" : "COMMUNICATION EXTERNE",
+    "MEDIA" :"MÉDIAS", 
+    "RENTAL CAR" : "LOCATION VOITURE", 
+    "ANALYTICS" : "ANALYTIQUE", 
+    "INVENTORY" : "INVENTAIRE", 
+    "SUPPORT" : "SOUTIEN",  
+    "CSI-CONNECT" : "CONNEXION ISC", 
+    "PRIVACY POLICY": "POLITIQUE DE CONFIDENTIALITÉ", 
+    "ABOUT US" : "À PROPOS DE NOUS",
+    
+
+    /* Footer Links */
+    
+    "Accounting" : "Comptabilité", 
+    "Scheduling" : "Planification",  
+    "Production": "Production",
+    "Multi Store Location" : "Multi-Magasins",
+    "Parts Management" : "Suivi des Pièces",  
+    "JOB Costing": "Coût de TravailL", 
+    "Paint Scale Interfaces" : "Échelle de Painture",   
+    "Quick EStimate" : "Estimation", 
+    "Technician Tracking" : "Technicien", 
+    "Dealer System Integration" : "Concessions",  
+    "Internal Communications" : "Communication Interne",  
+    "External Communications" : "Communication Externe",
+    "Media Management" :"Médias", 
+    "Rental Car" : "Location Voiture",  
+    "CSI-Google Servey" : "Connexion ISC", 
+
+    "Contact Us" : "Contactez-nous",
+
+    "BodyshopConnect. All Rights Reserved." : "Copyright BodyshopConnect 2024 Tous droits réservés.",
+    
+      "Support": "Soutien",
+      "PRIVACY POLICY": "POLITIQUE DE CONFIDENTIALITÉ", 
+     "Privacy Policy" : "Politique de Confidentialité",
+     "About Us" : "Contactez-nous"
+    
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    }
+    }
+  },
+  lng: "en", // Default language
+  fallbackLng: "en", // Use English if translation is missing
+  interpolation: {
+    escapeValue: false // React already does escaping
+  }
+});
+
+export default i18n;

@@ -3,11 +3,15 @@ import ImageSlider from '@/components/sliderjobCosting';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const support = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -34,14 +38,11 @@ const support = () => {
     <div className="container mx-auto max-w-dvw px-12">
       
       <h1 className="text-3xl font-bold text-center text-red-500 mb-5">
-      Online Computer Support
+       {t("Online Computer Support")}
       </h1>
-      <h5 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      One Of Our Technicians will supply you with a Session ID Number. Please enter the number in the box below and click Connect.
-      Once the file has been downloaded to your computer; you will need to click Run on the application and then click Join when the application opens.
+      <h5 className="text-xl text-center text-gray-700 mt-2 mb-8"> 
+        {t("One Of Our Technicians will supply you with a Session ID Number. Please enter the number in the box below and click Connect. Once the file has been downloaded to your computer; you will need to click Run on the application and then click Join when the application opens.")}
       </h5>
-     
-      
 {/* 
       {/* Image Slider *//*}
       <ImageSlider />
@@ -64,10 +65,10 @@ const support = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+          {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+          {t("Contact Us")}
         </button>
       </div>
 

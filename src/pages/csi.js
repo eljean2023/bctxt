@@ -3,11 +3,15 @@ import ImageSlider from '@/components/sliderCSI';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const csiSurvey = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -42,12 +46,11 @@ const closeModal = () => {
       
       */}
 
-      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Managing reviews and prompting customers to tell you about great service is not easy.
+      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5"> 
+      {t("Managing reviews and prompting customers to tell you about great service is not easy.")}
       </h1>
-      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Once repair is completed and a vehicle is delivered, the customer will automatically receive a
-review invitation.
+      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8"> 
+      {t("Once repair is completed and a vehicle is delivered, the customer will automatically receive a review invitation.")}
       </h4>
 
       {/* Image Slider */}
@@ -57,30 +60,31 @@ review invitation.
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Automatically Sends Administrative Details </li>
+            <li className="text-black">{t("Automatically Sends Administrative Details")}</li> 
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Reduce Data Re-Keying By Allowing Information To Transfer Directly From The Repair Order Into A Customer Survey.</li>
+          <ul className="space-y-2 list-disc pl-6"> 
+            <li className="text-black">{t("Reduce Data Re-Keying By Allowing Information To Transfer Directly From The Repair Order Into A Customer Survey.")}</li>
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Information Is Transferred Once Picked Up Date Is Entered. </li>
+          <ul className="space-y-2 list-disc pl-6"> 
+            <li className="text-black">{t("Information Is Transferred Once Picked Up Date Is Entered.")}</li>
           </ul>
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- ReviewConnect
+      <h2 className="text-3xl font-bold text-center text-gray-500"> 
+      {t("Customized Solutions From BodyshopConnect -- ReviewConnect")}
       </h2>
-      <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. ReviewConnect removes 'double entry'.  Integration with both "One Local" software or "Podium" software allows shops to save time by sending specific customers and specific information to their review platforms.
+      <h4 className="text-xl text-center text-gray-700 mt-2"> 
+        {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. ReviewConnect removes 'double entry'. Integration with both One Local software or Podium software allows shops to save time by sending specific customers and specific information to their review platforms.")}
+      
       </h4>
                 
       {/* Reusable Modal */}
@@ -99,10 +103,10 @@ review invitation.
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+          {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+           {t("Contact Us")}
         </button>
       </div>
 

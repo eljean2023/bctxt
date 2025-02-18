@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import ImageSlider from '@/components/sliderPartsManagement';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
 
 const parts = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -34,11 +38,11 @@ const parts = () => {
   return (
     <div className="container mx-auto max-w-dvw px-12">
       
-      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Complete Parts Management
+      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5"> 
+      {t("Complete Parts Management")}
       </h1>
-      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Manage All Parts That Come In And Out Of Your Shop. Order, Receive, Return, Back Order, IOU, Partial Credits, And Profit Verification. Track Part Locations By Scanning Parts In And Out With Our Parts Location APP.
+      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8"> 
+      {t("Manage All Parts That Come In And Out Of Your Shop. Order, Receive, Return, Back Order, IOU, Partial Credits, And Profit Verification. Track Part Locations By Scanning Parts In And Out With Our Parts Location APP.")}
       </h4>
 
       {/* Image Slider */}
@@ -46,36 +50,37 @@ const parts = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-8">
         {/* Left Column */}
-        <div className="p-6 rounded-lg shadow bg-white">
+        <div className="p-6 rounded-lg shadow bg-white">   {t("Complete Parts Management")}
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Parts Management Dashboard</li>
-            <li className="text-black">Parts Location APP</li>
-            <li className="text-black">Outstanding Vendor Credits</li>
+            <li className="text-black">{t("Parts Management Dashboard")}</li>  
+            <li className="text-black">{t("Parts Location APP")}</li>   
+            <li className="text-black">{t("Outstanding Vendor Credits")}</li>
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Part Labels</li>
-            <li className="text-black">Electronic Check In</li>
+            <li className="text-black">{t("Part Labels")}</li> 
+            <li className="text-black">{t("Electronic Check In")}</li> 
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Order, Receive, Return, Back Order, IOU & More</li>
-            <li className="text-black">Partial Credits, Labor & Cost Credit</li>
+          <ul className="space-y-2 list-disc pl-6"> {t("Part Labels")}
+            <li className="text-black">{t("Order, Receive, Return, Back Order, IOU & More")}</li> 
+            <li className="text-black">{t("Partial Credits, Labor & Cost Credit")}</li> 
           </ul>
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- PartsConnect
+      <h2 className="text-3xl font-bold text-center text-gray-500">  
+      {t("Customized Solutions From BodyshopConnect -- PartsConnect")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. PartsConnect allows shops to manage the status of their parts quickly and easily.
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. PartsConnect allows shops to manage the status of their parts quickly and easily.")}
+      
       </h4>
         
       {/* Reusable Modal */}
@@ -94,10 +99,10 @@ const parts = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+           {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+          {t("Contact Us")}
         </button>
       </div>
 

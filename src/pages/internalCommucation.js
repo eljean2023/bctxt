@@ -3,10 +3,14 @@ import ImageSlider from '@/components/sliderInternalCommucation';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const internalCummunication = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
@@ -32,14 +36,14 @@ const internalCummunication = () => {
   return (
     <div className="container mx-auto max-w-dvw px-12">
 
-      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Real Time Communication - Internal
+      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5"> 
+      {t("Real Time Communication - Internal")}
       </h1>
-      <h3 className="text-3xl font-bold text-center text-gray-500 mb-5">
+      <h3 className="text-3xl font-bold text-center text-gray-500 mb-5">{t("welcome")}
        {/*   View External Communications */}
       </h3>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Internal Chat between all employees (including technicians) Automated push notifications to key persons within the shop as the vehicle moves through the departments and/or event trigger notifications.
+      {t("Internal Chat between all employees (including technicians) Automated push notifications to key persons within the shop as the vehicle moves through the departments and/or event trigger notifications.")}
       </h4>
 
       {/* Image Slider */}
@@ -49,26 +53,26 @@ const internalCummunication = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">In System Messaging, Reduces Inbox Clutter</li>
-            <li className="text-black">Automatically Updated Based On System Rules</li>
+            <li className="text-black">{t("In System Messaging, Reduces Inbox Clutter")}</li> 
+            <li className="text-black"> {t("Automatically Updated Based On System Rules")} </li> 
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Tracks Read Receipts</li>
-            <li className="text-black">Integrates With Outlook </li>
+            <li className="text-black">{t("Tracks Read Receipts")}</li> 
+            <li className="text-black">{t("Integrates With Outlook")}</li>
           </ul>
         </div>
 
       </div>
 
-      <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- Internal Communications
+      <h2 className="text-3xl font-bold text-center text-gray-500"> 
+      {t("Customized Solutions From BodyshopConnect -- Internal Communications")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. External Communications are vital. Internal communications enables shops to communicate with each other internally, privately, and within BodyshopConnect.
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Internal communications enables shops to communicate with each other internally, privately, and within BodyshopConnect.")}
       </h4>
 
                 
@@ -88,10 +92,10 @@ const internalCummunication = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+           {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+           {t("Contact Us")}
         </button>
       </div>
      

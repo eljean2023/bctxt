@@ -3,11 +3,17 @@ import ImageSlider from '@/components/sliderMultiLocation';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
+
 const multiLocation = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -43,10 +49,10 @@ const multiLocation = () => {
       */}
 
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Multiple Locations? Manage Easily From One Central Location.
+       {t("Multiple Locations? Manage Easily From One Central Location.")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Easily Access the system from anywhere an internet connection exists.
+      {t("Easily Access the system from anywhere an internet connection exists.")}
       </h4>
 
       {/* Image Slider */}
@@ -56,33 +62,33 @@ const multiLocation = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Central Multi-Location Management</li>
-            <li className="text-black">Central Login Access</li>
+            <li className="text-black">{t("Central Multi-Location Management")}</li> 
+            <li className="text-black">{t("Central Login Access")}</li> 
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Central Administration</li>
-            <li className="text-black">Share employees and more between locations</li>
+            <li className="text-black">{t("Central Administration")}</li>
+            <li className="text-black"> {t("Share employees and more between locations")}</li>
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Ability to transfer files between locations</li>
-            <li className="text-black">Search and Access Files anywhere within your organization</li>
-          </ul>
+            <li className="text-black">{t("wAbility to transfer files between locations")}</li> 
+            <li className="text-black">{t("Search and Access Files anywhere within your organization")}</li> 
+          </ul> 
         </div>
       </div>
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- MSOConnect
+       {t("Customized Solutions From BodyshopConnect -- MSOConnect")}
       </h2>
-      <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. MSOConnect allows Multiple Shop Owners to Centrally Manage and Load Level their shops as needed.
+      <h4 className="text-xl text-center text-gray-700 mt-2"> 
+        {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. MSOConnect allows Multiple Shop Owners to Centrally Manage and Load Level their shops as needed.")}
       </h4>
 
                 
@@ -102,10 +108,10 @@ const multiLocation = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+          {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+          {t("Contact Us")}
         </button>
       </div>
 

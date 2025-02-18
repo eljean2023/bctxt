@@ -3,10 +3,15 @@ import ImageSlider from '@/components/sliderRentaCarInterface';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const rentalCar = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
@@ -32,11 +37,11 @@ const rentalCar = () => {
  
   return (
     <div className="container mx-auto max-w-dvw px-12">
-      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Manage Your Own Fleet. Also, Reduce Time Re-Entering Data Into ARMS for Enterprise
+      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5"> 
+      {t("Manage Your Own Fleet. Also, Reduce Time Re-Entering Data Into ARMS for Enterprise")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      We can create a reservation for you and update the status along the way! By simply requesting us to turn on the ARMS Interface for your Shop and linking different areas of your system through an administration set up we can save you time.
+      {t("We can create a reservation for you and update the status along the way! By simply requesting us to turn on the ARMS Interface for your Shop and linking different areas of your system through an administration set up we can save you time.")}
       </h4>
 
       {/* Image Slider */}
@@ -46,35 +51,35 @@ const rentalCar = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
         <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Manage your own Courtesy/Loaner Cars.</li>
-            <li className="text-black">Update Enterprise ARMS Automatically.</li>
-            <li className="text-black">Change Statuses "On The Fly"</li>
+            <li className="text-black">{t("Manage your own Courtesy/Loaner Cars.")}</li>
+            <li className="text-black">{t("Update Enterprise ARMS Automatically.")}</li>
+            <li className="text-black">{t("Change Statuses ,On The Fly")}</li>
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Stop Wasting Time Duplicating Details.</li>
-            <li className="text-black">Automatically creates rental reservation based on scheduled In dates. </li>
+            <li className="text-black">{t("Stop Wasting Time Duplicating Details.")}</li>
+            <li className="text-black">{t("Automatically creates rental reservation based on scheduled In dates.")}</li>
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Update The Department In Your Shop & Transfer Real-Time Updates Automatically </li>
-            <li className="text-black">Update Dates In Your Shop & Transfer Automatically  </li>
+            <li className="text-black">{t("Update The Department In Your Shop & Transfer Real-Time Updates Automatically")}</li>
+            <li className="text-black">{t("Update Dates In Your Shop & Transfer Automatically")}</li> 
           </ul>
         </div>
       </div>
       
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- Rental Car Status Interface
+      {t("Customized Solutions From BodyshopConnect -- Rental Car Status Interface")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. RentalConnect saves shops time by keeping the rental company informed of the repairs without the need to pick up the phone. Removes the 'double entry' of data into another system.
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. RentalConnect saves shops time by keeping the rental company informed of the repairs without the need to pick up the phone. Removes the 'double entry' of data into another system.")}
       </h4>
 
                 
@@ -94,10 +99,10 @@ const rentalCar = () => {
        {/* Buttons */}
        <div className="text-center my-8 flex justify-center gap-4">
          <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-           Schedule a Demo
+           {t("Schedule a Demo")}
          </button>
          <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-           Contact Us
+            {t("Contact Us")}
          </button>
        </div>
       

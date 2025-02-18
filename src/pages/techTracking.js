@@ -3,12 +3,16 @@ import ImageSlider from '@/components/sliderTechTracking';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
- 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const techTraking = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -35,10 +39,10 @@ const techTraking = () => {
     <div className="container mx-auto max-w-dvw px-12">
       
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      TechnicianConnect Will Connect The Back Of The Shop To The Front Office.
+      {t("TechnicianConnect Will Connect The Back Of The Shop To The Front Office.")}
       </h1>
-      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      It's more than just a time clock.
+      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">  
+      {t("It's more than just a time clock.")}
       </h4>
 
       {/* Image Slider */}
@@ -48,36 +52,36 @@ const techTraking = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Clock in and out of Repair Orders</li>
-            <li className="text-black">Clock in and out of Other Tasks</li>
-            <li className="text-black">AView and Add Media</li>
+            <li className="text-black">{t("wClock in and out of Repair Orders")}</li>  
+            <li className="text-black">{t("Clock in and out of Other Tasks")} </li> 
+            <li className="text-black">{t("AView and Add Media")}</li> 
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">View and Update Production Status</li>
-            <li className="text-black">View and Update Notes</li>
-            <li className="text-black">View Repair Line Items</li>
+            <li className="text-black">{t("View and Update Production Status")}</li> 
+            <li className="text-black">{t("View and Update Notess")}</li> 
+            <li className="text-black">{t("View Repair Line Items")} </li> 
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">View Parts Status</li>
-            <li className="text-black">View History</li>
-            <li className="text-black">TWO WAY Internal Messaging</li>
+            <li className="text-black">{t("View Parts Status")}</li> 
+            <li className="text-black">{t("View History")}</li>  
+            <li className="text-black">{t("TWO WAY Internal Messaging")}</li> 
           </ul>
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- TechnicianConnect
+      <h2 className="text-3xl font-bold text-center text-gray-500"> 
+      {t("Customized Solutions From BodyshopConnect -- TechnicianConnect")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. TechnicianConnect ties the back shop to the front office in order to give live time information to the people who need it ... when they need it.
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. TechnicianConnect ties the back shop to the front office in order to give live time information to the people who need it ... when they need it.")}.
       </h4>
 
                 
@@ -97,11 +101,11 @@ const techTraking = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+          {t("tSchedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
-        </button>
+           {t("Contact Us")}
+        </button> 
       </div>
 
 

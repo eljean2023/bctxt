@@ -3,9 +3,14 @@ import ImageSlider from '@/components/sliderPro';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
+
 const Production = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
+  const { t, i18n } = useTranslation();
 
   const openScheduleModal = () => {
     setModalType('demo'); // Set modal type to demo
@@ -25,11 +30,11 @@ const Production = () => {
   return (
     <div className="container mx-auto max-w-dvw px-12">
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-        Your Shop, Your Choice, Maximize Your Production
+      {t("Your Shop, Your Choice, Maximize Your Production")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-        Track Departments, Statistics, and more with customizable Graphs and other visuals to keep everyone updated and engaged.
-        Plus even more customizable Display boards to get the right information to the right people when they need it.
+      {t("Track Departments, Statistics, and more with customizable Graphs and other visuals to keep everyone updated and engaged. Plus even more customizable Display boards to get the right information to the right people when they need it.")}
+     
       </h4>
 
       {/* Image Slider */}
@@ -39,37 +44,36 @@ const Production = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Integration With Akzo's Carbeat™</li>
-            <li className="text-black">No Double Entry. Live Data From YOUR Files.</li>
-            <li className="text-black">Unlimited Departments, Unlimited Customizable Display Boards</li>
+            <li className="text-black">{t("Integration With Akzo's Carbeat™")}</li>
+            <li className="text-black">{t("No Double Entry. Live Data From YOUR Files.")}</li>
+            <li className="text-black">{t("Unlimited Departments, Unlimited Customizable Display Boards")}</li> 
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Integration To Test Drive Copilot™</li>
-            <li className="text-black">Unlimited Departments, Unlimited Customizable Display Boards</li>
-            <li className="text-black">Drag and Drop with Touch Screen Technology</li>
+            <li className="text-black">{t("Integration To Test Drive Copilot™")}</li> 
+            <li className="text-black">{t("Unlimited Departments, Unlimited Customizable Display Boards")}</li>
+            <li className="text-black">{t("Drag and Drop with Touch Screen Technology")}</li> 
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Schedule Production Start Dates</li>
-            <li className="text-black">Customer Delivery Schedule</li>
-            <li className="text-black">Unlimited Job Classes or 'types of repairs'</li>
+          <ul className="space-y-2 list-disc pl-6"> 
+            <li className="text-black">{t("Schedule Production Start Dates")}</li>
+            <li className="text-black">{t("Customer Delivery Schedule")}</li> 
+            <li className="text-black">{t("Unlimited Job Classes or 'types of repairs")}</li> 
           </ul>
         </div>
       </div>
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-        Customized Solutions From BodyshopConnect -- ProductionConnect
+      {t("Customized Solutions From BodyshopConnect -- ProductionConnect")}
       </h2>
-      <h4 className="text-xl text-center text-gray-700 mt-2">
-        BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same, so why be forced into a process by other body shop management tools available? 
-        ProductionConnect allows shops to maximize their productivity. We have unlimited departments and different views to manage files moving through production. We also allow for customized Production Boards for use at the desktop or large screen TVs located in the shop.
+      <h4 className="text-xl text-center text-gray-700 mt-2"> 
+        {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same, so why be forced into a process by other body shop management tools available? ProductionConnect allows shops to maximize their productivity. We have unlimited departments and different views to manage files moving through production. We also allow for customized Production Boards for use at the desktop or large screen TVs located in the shop.")}
       </h4>
 
       {/* Reusable Modal */}
@@ -88,10 +92,10 @@ const Production = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+            {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+           {t("Contact Us")}
         </button>
       </div>
     </div>

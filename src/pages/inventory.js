@@ -3,11 +3,15 @@ import ImageSlider from '@/components/sliderInventory';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const inventory = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -43,10 +47,10 @@ const closeModal = () => {
       */}
 
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Inventory
+        {t("Inventory")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      A two-way interface allowing shops to track inventory. BodyshopConnect will send repair order data to the inventory system and the inventory system will send back the cost data.
+      {t("A two-way interface allowing shops to track inventory. BodyshopConnect will send repair order data to the inventory system and the inventory system will send back the cost data.")}
       </h4>
 
       {/* Image Slider */}
@@ -56,27 +60,27 @@ const closeModal = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Repair order data flows out from BodyshopConnect. </li>
-            <li className="text-black">3M RepairStack™  & Wurth™  SIS will import the repair order data automatically.</li>
+            <li className="text-black">{t("Repair order data flows out from BodyshopConnect.")}</li>   
+            <li className="text-black">{t("3M RepairStack™ & Wurth™ SIS will import the repair order data automatically.")} </li> 
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Cost data from Leantec and Wurth's inventory systems update the costs of the repair orders in BodyshopConnect. </li>
-            <li className="text-black">Reduce data entry and get more accurate job costs </li>
+            <li className="text-black">{t("Cost data from Leantec and Wurth's inventory systems update the costs of the repair orders in BodyshopConnect.")}</li>
+            <li className="text-black">{t("Reduce data entry and get more accurate job costs")}  </li> 
           </ul>
         </div>
 
       
       </div>
 
-      <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- Inventory
+      <h2 className="text-3xl font-bold text-center text-gray-500"> 
+       {t("Customized Solutions From BodyshopConnect -- Inventory")} 
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.")} 
       </h4>
                 
       {/* Reusable Modal */}
@@ -101,7 +105,7 @@ const closeModal = () => {
         </button>
         */}
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+         {t("Contact Us")}
         </button>
       </div>
 

@@ -3,11 +3,17 @@ import ImageSlider from '@/components/sliderDealerShip';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const dealerShip = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { t, i18n } = useTranslation();
+
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -33,10 +39,10 @@ const dealerShip = () => {
   return (
     <div className="container mx-auto max-w-dvw px-12">
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      DealerConnect
+        {t("DealerConnect")}
       </h1>
-      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      BODYSHOPCONNECT  +  PBS SYSTEMS GROUP. We Integrate With PBS Dealership Management System
+      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8"> 
+        {t("BODYSHOPCONNECT + PBS SYSTEMS GROUP. We Integrate With PBS Dealership Management System")}
       </h4>
 
       {/* Image Slider */}
@@ -46,33 +52,33 @@ const dealerShip = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Seamless, bi-directional integration to your PBS Dealer Management System</li>
-            <li className="text-black">Saves valuable time and reduces errors</li>
+            <li className="text-black">{t("Seamless, bi-directional integration to your PBS Dealer Management System")}</li> 
+            <li className="text-black">{t("Saves valuable time and reduces errors")}</li> 
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Eliminate Double Entry</li>
-            <li className="text-black">Enter the information in BodyshopConnect and let everything transfer to the Dealership System</li>
+            <li className="text-black">{t("Eliminate Double Entry")}</li> 
+            <li className="text-black">{t("Enter the information in BodyshopConnect and let everything transfer to the Dealership System")}</li>
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Automatically Creates the Repair Order in the PBS Dealer Management System</li>
-            <li className="text-black">Automatically sends costs</li>
+            <li className="text-black">{t("Automatically Creates the Repair Order in the PBS Dealer Management System")}</li>
+            <li className="text-black">{t("Automatically sends costs")}</li> 
           </ul>
         </div>
       </div>
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect-DealerConnect
+        {t("Customized Solutions From BodyshopConnect-DealerConnect")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. The DealerConnect Interface to the PBS Dealership Software allows dealers to manage their body shops within BodyshopConnect while not losing any valuable information in their dealership system.
+        {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. The DealerConnect Interface to the PBS Dealership Software allows dealers to manage their body shops within BodyshopConnect while not losing any valuable information in their dealership system.")}
       </h4>
 
                 
@@ -92,10 +98,10 @@ const dealerShip = () => {
         {/* Buttons */}
         <div className="text-center my-8 flex justify-center gap-4">
           <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-            Schedule a Demo
+             {t("Schedule a Demo")}
           </button>
           <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-            Contact Us
+             {t("Contact Us")}
           </button>
         </div>
 

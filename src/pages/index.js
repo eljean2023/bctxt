@@ -4,10 +4,13 @@ import Principal from "../components/Principal";
 import Footer from "../components/Footer";
 import Gallery from "@/components/Gallery";
 import Loader from "../components/Loader"; // Import Loader
+import { useTranslation } from 'react-i18next';
+import '../utils/i18n';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const { t, i18n } = useTranslation();
 
   // Simulate a loading delay
   useEffect(() => {
@@ -18,6 +21,7 @@ export default function Home() {
 
   return (
     <div className="relative">
+     
       {/* Show Loader before main content */}
       {isLoading ? (
         <Loader />
@@ -37,6 +41,7 @@ export default function Home() {
           </div>
         </>
       )}
+
     </div>
   );
 }

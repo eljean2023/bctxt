@@ -3,11 +3,15 @@ import ImageSlider from '@/components/sliderAnalytic';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const analytic = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -42,11 +46,11 @@ const closeModal = () => {
       
       */}
 
-      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Data Analytics
+      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5"> 
+      {t("Data Analytics")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      This interface has been built for shops that would like their data pushed to a 3rd party for reports and/or compliance for certain Networks, Paint Companies and/or OE Certification Programs.
+      {t("This interface has been built for shops that would like their data pushed to a 3rd party for reports and/or compliance for certain Networks, Paint Companies and/or OE Certification Programs.")}
       </h4>
 
       {/* Image Slider */}
@@ -56,16 +60,16 @@ const closeModal = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Once authorized will automatically sync key repair metrics. </li>
-            <li className="text-black">Allow Benchmarking between shops in your network.</li>
+            <li className="text-black">{t("Once authorized will automatically sync key repair metrics.")}</li>
+            <li className="text-black">{t("Allow Benchmarking between shops in your network.")}</li>
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Data will sync with Triggers to certain dates selected. (Picked up, Car Ready) </li>
-            <li className="text-black">Reduce data entry. Ensure compliance with your paint company and shop network.  </li>
+            <li className="text-black">{t("Data will sync with Triggers to certain dates selected. (Picked up, Car Ready)")}</li>
+            <li className="text-black">{t("Reduce data entry. Ensure compliance with your paint company and shop network.")}</li>
           </ul>
         </div>
 
@@ -73,10 +77,10 @@ const closeModal = () => {
       </div>
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- Data Analytics
+      {t("Customized Solutions From BodyshopConnect -- Data Analytics")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.")}
       </h4>
                 
       {/* Reusable Modal */}
@@ -100,8 +104,8 @@ const closeModal = () => {
           Schedule a Demo
         </button>
         */}
-        <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+        <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg"> 
+            {t("Contact Us")}
         </button>
       </div>
 

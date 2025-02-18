@@ -3,10 +3,14 @@ import ImageSlider from '@/components/sliderQStimate';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const quickStimate = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
@@ -33,10 +37,10 @@ const quickStimate = () => {
     <div className="container mx-auto max-w-dvw px-12">
       
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Create 'Quick Estimates' Easily
+        {t("Create 'Quick Estimates' Easily")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Your shop can set up menu price lists & Paintless Dent Repair Calculations. Using Custom Profiles,  Custom Lines & Digital Authorization for Quick Estimates on the go. In addition, the system also includes AUTOMATIC Import and Updates from AdjustRite, Audatex, CCC, WebEst, or Mitchell Estimating Systems saving you time.
+      {t("Your shop can set up menu price lists & Paintless Dent Repair Calculations. Using Custom Profiles, Custom Lines & Digital Authorization for Quick Estimates on the go. In addition, the system also includes AUTOMATIC Import and Updates from AdjustRite, Audatex, CCC, WebEst, or Mitchell Estimating Systems saving you time.")}
       </h4>
 
       {/* Image Slider */}
@@ -46,33 +50,33 @@ const quickStimate = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Quick Estimating designed for PDR and Menu Priced Items</li>
-            <li className="text-black">Great for Mobile Repairers and Shops with Fast Lane Specialty Repairs</li>
+            <li className="text-black">{t("Quick Estimating designed for PDR and Menu Priced Items")}</li>
+            <li className="text-black">{t("Great for Mobile Repairers and Shops with Fast Lane Specialty Repairs")}</li>
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Access ‘on the go’ from anywhere with internet access</li>
-            <li className="text-black">Take Pictures and upload them directly to a file</li>
+            <li className="text-black">{t("Access ‘on the go’ from anywhere with internet access")}</li>
+            <li className="text-black">{t("Take Pictures and upload them directly to a file")}</li> 
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Quick and Easy Photo Management</li>
-            <li className="text-black">With or Without the use of bar-codes</li>
+            <li className="text-black">{t("Quick and Easy Photo Management")}</li>
+            <li className="text-black">{t("With or Without the use of bar-codes")}</li>  
           </ul>
         </div>
       </div>
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect 
+      {t("Customized Solutions From BodyshopConnect")}
       </h2>
-      <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. Quick Estimate allows a shop to write a quick estimate using Paintless Dent Repair Calculations or Menu Priced Items within the Web application. BodyshopConnect also imports and updates estimates from AdjustRite, Audatex, CCC, WebEst and/or Mitchell Estimating Systems.
+      <h4 className="text-xl text-center text-gray-700 mt-2"> 
+        {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. Quick Estimate allows a shop to write a quick estimate using Paintless Dent Repair Calculations or Menu Priced Items within the Web application. BodyshopConnect also imports and updates estimates from AdjustRite, Audatex, CCC, WebEst and/or Mitchell Estimating Systems.")}
       </h4>
 
       {/* Reusable Modal */}
@@ -91,10 +95,10 @@ const quickStimate = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+          {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+          {t("Contact Us")}
         </button>
       </div>
 

@@ -3,11 +3,15 @@ import ImageSlider from '@/components/sliderPaintscaleInterface';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const painScaleInterface = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -44,10 +48,10 @@ const closeModal = () => {
       */}
 
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Paint Scale Interfaces
+        {t("Paint Scale Interfaces")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Automated Job Costs from the Paint Scale. Akzo Nobel, BASF, PPG, Axalta, Sherwin Williams . No More Guessing. Know your true Job Costs. Real-Time.
+      {t("Automated Job Costs from the Paint Scale. Akzo Nobel, BASF, PPG, Axalta, Sherwin Williams . No More Guessing. Know your true Job Costs. Real-Time.")}
       </h4>
 
       {/* Image Slider */}
@@ -66,7 +70,7 @@ const closeModal = () => {
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
             <li className="text-black">Axalta™</li>
-            <li className="text-black">Avoid Double Entry / Real Time Costing</li>
+            <li className="text-black">{t("Avoid Double Entry / Real Time Costing")}</li> 
           </ul>
         </div>
 
@@ -80,10 +84,10 @@ const closeModal = () => {
       </div>
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- PaintScaleConnect
+       {t("Customized Solutions From BodyshopConnect -- PaintScaleConnect")}
       </h2>
-      <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. Shops are different; so why be forced into a process by other body shop management tools available. PaintScaleConnect allows shops to automaically track the cost of their paint per repair
+      <h4 className="text-xl text-center text-gray-700 mt-2"> 
+        {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. Shops are different; so why be forced into a process by other body shop management tools available. PaintScaleConnect allows shops to automaically track the cost of their paint per repair")}
       </h4>
 
                 
@@ -103,10 +107,10 @@ const closeModal = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+          {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+          {t("Contact Us")}
         </button>
       </div>
 

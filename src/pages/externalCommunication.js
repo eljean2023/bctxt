@@ -4,11 +4,16 @@ import DemoModal from '@/components/DemoModal';
 
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
 const externalCummunication = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -33,14 +38,11 @@ const externalCummunication = () => {
   return (
     <div className="container mx-auto max-w-dvw px-12">
 
-      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      Real Time Communication-External
+      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5"> 
+      {t("Real Time Communication-External")}
       </h1>
-      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Automated or ‘on the fly’ communications to customers and rental companies
-      Two Way Texting - Send messages to your customer, if they respond it copies the response to the notes on the repair order.
-     Two Way emails - Send automatic or generated emails to update anyone related to the repair. Update the customer, insurance company, rental company and more.
-     Keep everyone in the loop about the status of some or all repairs
+      <h4 className="text-xl text-center text-gray-700 mt-2 mb-8"> 
+        {t("Automated or ‘on the fly’ communications to customers and rental companies Two Way Texting - Send messages to your customer, if they respond it copies the response to the notes on the repair order. Two Way emails - Send automatic or generated emails to update anyone related to the repair. Update the customer, insurance company, rental company and more.Keep everyone in the loop about the status of some or all repairs")}
       </h4>
 
       {/* Image Slider */}
@@ -50,19 +52,19 @@ const externalCummunication = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Quickly Notify Customer Of Repair Status</li>
-            <li className="text-black">Quickly Update Customer of Part Delays, Production Issues and more</li>
-            <li className="text-black">Quickly Update Customer of Part Delays, Production Issues and more</li>
-            <li className="text-black">Automatic Messages Can be Generated When Cars move through Departments</li>
+            <li className="text-black">{t("Quickly Notify Customer Of Repair Statusl")}</li>
+            <li className="text-black">{t("Real Time Communication-External")}</li>
+            <li className="text-black">{t("Quickly Update Customer of Part Delays, Production Issues and more")}</li> 
+            <li className="text-black">{t("Automatic Messages Can be Generated When Cars move through Departments")}</li>
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">Messages Are All Documented in the file</li>
-            <li className="text-black">Updates Can Be Setup By Company. </li>
-            <li className="text-black">Two Way Messaging </li>
+            <li className="text-black">{t("Messages Are All Documented in the file")}</li>
+            <li className="text-black">{t("Updates Can Be Setup By Company.")}</li>
+            <li className="text-black">{t("Two Way Messaging")}</li>
            
           </ul>
         </div>
@@ -70,13 +72,12 @@ const externalCummunication = () => {
       </div>
 
       <h2 className="text-3xl font-bold text-center text-gray-500">
-      Customized Solutions From BodyshopConnect -- External Communications
+      {t("Customized Solutions From BodyshopConnect -- External Communications")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other  body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.")}
       </h4>
-
-                
+        
      {/* Reusable Modal */}
      {isModalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center backdrop-blur-lg" onClick={closeModal}>
@@ -93,10 +94,10 @@ const externalCummunication = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+          {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+          {t(" Contact Us")}
         </button>
       </div>
 

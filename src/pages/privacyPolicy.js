@@ -3,11 +3,16 @@ import ImageSlider from '@/components/sliderjobCosting';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
+
+
 const privacyPolicy = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
   const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
@@ -34,62 +39,58 @@ const privacyPolicy = () => {
     <div className="container mx-auto max-w-dvw px-12">
       
       <h1 className="text-3xl font-bold text-center text-blue-500 mb-5">
-      Your Privacy Is Important to Us
+       {t("Your Privacy Is Important to Us")}
       </h1>
       <h2 className="text-xl text-center text-blue-800 mt-2 mb-8">
-      GENERAL
+      {t("GENERAL")}
       </h2>
 
       <h5 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      BodyshopConnect by Micazen Consulting & Technologies Inc is very sensitive to the issue of protection of trade secrets and proprietary information.  Micazen Consulting & Technologies Inc employees are expected to use good judgment, to adhere to high ethical standards, and to abide by any confidentiality obligations to former employers. Micazen Consulting & Technologies Inc employees shall not use, bring on the premises or otherwise disclose any proprietary or trade secret information of former employers or other third parties. All employees share responsibility to ensure that proper security is maintained.
+      {t("BodyshopConnect by Micazen Consulting & Technologies Inc is very sensitive to the issue of protection of trade secrets and proprietary information. Micazen Consulting & Technologies Inc employees are expected to use good judgment, to adhere to high ethical standards, and to abide by any confidentiality obligations to former employers. Micazen Consulting & Technologies Inc employees shall not use, bring on the premises or otherwise disclose any proprietary or trade secret information of former employers or other third parties. All employees share responsibility to ensure that proper security is maintained.")}
       </h5>
       <h2 className="text-xl text-center text-blue-800 mt-2 mb-8">
-      YOUR CONFIDENTIALITY
+      {t("YOUR CONFIDENTIALITY")}
       </h2>
       <h5 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      We believe your business is no one else’s. Your privacy is important to you and to us. Therefore, we will protect the information you share with us. To protect your privacy, Micazen Consulting & Technologies Inc follows different principles in accordance with worldwide practices for customer privacy and data protection.
-      We won’t sell or give away your name, mail address, phone number, email address or any other information to anyone.
-      We’ll use state-of-the-art security measures to protect your information from unauthorized users.
+      {t("We believe your business is no one else’s. Your privacy is important to you and to us. Therefore, we will protect the information you share with us. To protect your privacy, Micazen Consulting & Technologies Inc follows different principles in accordance with worldwide practices for customer privacy and data protection. We won’t sell or give away your name, mail address, phone number, email address or any other information to anyone. We’ll use state-of-the-art security measures to protect your information from unauthorized users.")}
+      
       </h5>
       <h2 className="text-xl text-center text-blue-800 mt-2 mb-8">
-      COLLECTION & USE OF PERSONAL INFORMATION
+      {t("COLLECTION & USE OF PERSONAL INFORMATION")}
       </h2>
       <h5 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      You may be asked to provide your personal information anytime you are in contact with BodyshopConnect or a Micazen affiliated company. Micazen and its affiliates may share this personal information with each other and use it in accordance with this Privacy Policy.
-      Personal Information may include business name, client names, phone numbers, addresses, etc.
+      {t("You may be asked to provide your personal information anytime you are in contact with BodyshopConnect or a Micazen affiliated company. Micazen and its affiliates may share this personal information with each other and use it in accordance with this Privacy Policy. Personal Information may include business name, client names, phone numbers, addresses, etc.")}
       </h5>
       <h4 className="text-xl text-center text-gray-500 mt-2 mb-8">
-      We do not store or retain any Google user data information.
+      {t("We do not store or retain any Google user data information.")}
       </h4>
       <h2 className="text-xl text-center text-blue-800 mt-2 mb-8">
-      PROTECTION OF PERSONAL INFORMATION
+      {t("PROTECTION OF PERSONAL INFORMATION")}
       </h2>
       <h5 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Micazen and its affiliates will take every precaution including administrative, technical and physical measures to safeguard your personal information against loss, theft and misuse.
-      BodyshopConnect data uses multiple level encryption platform in order to help safeguard against unauthorized access, disclosure and destruction of your data.
+      {t("Micazen and its affiliates will take every precaution including administrative, technical and physical measures to safeguard your personal information against loss, theft and misuse. BodyshopConnect data uses multiple level encryption platform in order to help safeguard against unauthorized access, disclosure and destruction of your data.")}
+      
       </h5>
       <h2 className="text-xl text-center text-blue-800 mt-2 mb-8">
-      THIRD PARTY APPLICATIONS
+      {t("THIRD PARTY APPLICATIONS")}
       </h2>
       <h5 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      BodyshopConnect may contain links to third party software applications. Which applications are connected can be viewed in the administration section of your software under the Third Party Application section.
-      Each Third Party Application is different and therefore the transfer of your data to each of the third party applications may contain different personal information.
-      Third Party Applications must be authorized by the user and can be disconnected at any time.
-      It is recommended that you check with the third party provider as to their privacy policy.
+      {t("BodyshopConnect may contain links to third party software applications. Which applications are connected can be viewed in the administration section of your software under the Third Party Application section. Each Third Party Application is different and therefore the transfer of your data to each of the third party applications may contain different personal information. Third Party Applications must be authorized by the user and can be disconnected at any time. It is recommended that you check with the third party provider as to their privacy policy.")}
       </h5>
       <h2 className="text-xl text-center text-blue-800 mt-2 mb-8">
-      APPS & NOTICE TO PARENTS
+        {t("APPS & NOTICE TO PARENTS")}
       </h2>
       <h5 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Micazen Consulting & Technologies Inc APPS may access the Camera on your device. The pictures inside the APP cannot access your personal pictures unless you add them through the APP.
-      Parents or guardians: we want to help you guard your children’s privacy. We encourage you to talk to your children about safe and responsible use of their Personal Information while using APPS or the Internet.
-      The Micazen Consulting & Technologies Inc APPS and website does not publish content that is targeted to children.
+      {t("Micazen Consulting & Technologies Inc APPS may access the Camera on your device. The pictures inside the APP cannot access your personal pictures unless you add them through the APP. Parents or guardians: we want to help you guard your children’s privacy. We encourage you to talk to your children about safe and responsible use of their Personal Information while using APPS or the Internet. The Micazen Consulting & Technologies Inc APPS and website does not publish content that is targeted to children.")}
+      
       </h5>
       <h2 className="text-xl text-center text-blue-800 mt-2 mb-8">
-      UPDATES & ENFORCEMENT
+      {t("UPDATES & ENFORCEMENT")}
+      
       </h2>
       <h5 className="text-xl text-center text-gray-700 mt-2 mb-8">
-      Occasionally, we may change this privacy policy. If for some reason you believe Micazen Consulting & Technologies Inc has not adhered to these principles, please notify us by email at privacy@bodyshopconnect.com and we will do our best to determine and correct the problem promptly. Please make sure the words Privacy Policy are in the Subject line. Thank you.
+      {t("Occasionally, we may change this privacy policy. If for some reason you believe Micazen Consulting & Technologies Inc has not adhered to these principles, please notify us by email at privacy@bodyshopconnect.com and we will do our best to determine and correct the problem promptly. Please make sure the words Privacy Policy are in the Subject line. Thank you.")}
+     
       </h5>
       
 {/* 
@@ -116,10 +117,10 @@ const privacyPolicy = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+           {t("weSchedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-          Contact Us
+           {t("Contact Us")}
         </button>
       </div>
 

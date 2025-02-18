@@ -4,6 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Flag from "react-world-flags";
+import Navbar2 from "./navbar2";
+
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
 
 
 import DemoModal from "./DemoModal"; 
@@ -29,14 +33,19 @@ import Inventory from "@/pages/inventory";
 import Analytic from "@/pages/analytic";
 
 
+
 export default function Navbar() {
   const languages = [
-    { code: "CA", label: "EN", fullLabel: "English" },
+    { label: "languages", fullLabel: "English", code: "en"},
+    { label: "FR", fullLabel: "FRANÇAIS", code: "fr", Flag: "ca" },  
+    
+    {/*
+      { code: "CA", label: "EN", fullLabel: "English" },
     { code: "CA", label: "FR", fullLabel: "Français" },
-    { code: "ES", label: "ES", fullLabel: "Español" },
+      { code: "ES", label: "ES", fullLabel: "Español" },
     { code: "RO", label: "RO", fullLabel: "Română" },
+      */}
   ];
-
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isProductionModalOpen, setIsProductionModalOpen] = useState(false); 
@@ -60,7 +69,7 @@ export default function Navbar() {
   const [isiventoryModalOpen, setInventoryModalOpen] = useState(false);
   const [isanalyticModalOpen, setAnalyticModalOpen] = useState(false);
 
-
+  const { t, i18n } = useTranslation();
 
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,9 +85,18 @@ export default function Navbar() {
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
   const toggleSubDropdown = () => setIsSubDropdownOpen((prev) => !prev);
 
-  const handleLanguageSelect = (language) => {
+  const handleLanguageSelectw = (language) => {
     setSelectedLanguage(language);
     setIsLangOpen(false);
+  };
+
+  const handleLanguageSelect = (language) => {
+    i18n.changeLanguage(language.code) // Change language
+      .then(() => {
+        setSelectedLanguage(language); // Update selected language
+        setIsLangOpen(false); // Close dropdown
+      })
+      .catch((error) => console.error("Error changing language:", error));
   };
 
   useEffect(() => {
@@ -97,7 +115,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 p-5 bg-black shadow-md">
+    <nav className="fixed top-0 left-0 w-full z-50 p-2 bg-black shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
         {/* Logo */}
         <Image
@@ -113,185 +131,190 @@ export default function Navbar() {
 
         {/* Links Menu */}
         <div className="hidden md:flex space-x-6 text-lg font-medium">
-          
+      
         <button 
                 onClick={() => setAccountingModalOpen(true)} 
                 className="hover:text-orange-400 transition"
-              >
-                ACCOUNTING
+              > 
+                {t("ACCOUNTING")}
               </button>
           
           <button 
                 onClick={() => setIsSchedulingModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                SCHEDULE
+                {t("SCHEDULE")}
               </button>
           
               <button 
                 onClick={() => setIsProductionModalOpen(true)} 
                 className="hover:text-orange-400 transition"
-              >
-                PRODUCTION
+              > 
+                 {t("PRODUCTION")}
               </button>
-            
+
               <button 
                 onClick={() => setMultiLocationModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                MULTI-STORE
+                {t("MULTI-STORE")}
               </button>
               <button 
                 onClick={() => setPartsModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                PARTS
+                 {t("PARTS")}
               </button>
+
+              
+
      
           <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
           {/* Dropdown for Extra Links */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={toggleDropdown}
-              className="flex items-center hover:text-orange-500 transition"
+              className="flex items-center hover:text-orange-500 transition "
             >
               ...
-              <ChevronDown className="ml-1 w-4 h-4" />
+              <ChevronDown className="ml-1 w-4 h-4"/>
             </button>
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 bg-gray-900 text-white p-4 rounded-lg shadow-lg w-48">
                 <ul>
-                  <li className="py-2 px-4 cursor-pointer hover:bg-orange-500 hover:text-black">
+                  <li className="py-2 px-4 cursor-pointer  hover:text-orange">
                   <button 
                 onClick={() =>setPartsModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                PARTS TRACKING
+               TRACKING {t("PARTS")} 
               </button>
                   </li>
-                  <li className="py-2 px-4 cursor-pointer hover:bg-orange-500 hover:text-black">
+                  <hr/>
+                  <li className="py-2 px-4 cursor-pointer  hover:text-orange">
                   <button 
                 onClick={() => setJobCostingModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                JOB Costing
+                 {t("JOB Costing")} 
               </button>
                   </li>
-                
-
+                  <hr/>
+            
                   {/* Sub-dropdown for Tracking Parts */}
                   <li className="relative group">
                     <button
                      onMouseOver={toggleSubDropdown} 
-                      className="w-full flex justify-between py-2 px-14 cursor-pointer hover:bg-orange-500 hover:text-black"
+                      className="w-88 flex justify-between py-2 px-14 cursor-pointer  hover:text-orange"
                     >
-                      ....<ChevronRight className="w-4 h-4" />
+                       <button onMouseOver={toggleSubDropdown} >.... </button>
+
                     </button>
                     {isSubDropdownOpen && (
-                      <div className="absolute left-full top-0 ml-2 bg-gray-800 text-white p-6 rounded-lg shadow-lg w-68">
+                      <div className="absolute left-full top-0 ml-2 bg-gray-800 text-white p-4 rounded-lg shadow-lg w-88">
               <button 
                 onClick={() => setPaintScaleInterfaceModalOpen(true)} 
-                className="hover:text-orange-400 transition text-white-500 mb-2 text-ms"
+                className="hover:text-orange-400 transition text-white-500 mb-2 text-ms w-full text-left mb-2"
               >
-                PAINT SCALE
+                 {t("PAINT SCALE")}
               </button>
-              <hr/>       
+              <hr/>
               <button 
                 onClick={() => setQuickEstimateModalOpen(true)} 
-                className="hover:text-orange-400 transition text-ms mb-2"
+                className="hover:text-orange-400 transition text-ms w-full text-left mb-2"
               >
-                ESTIMATING
-              </button>
-              <hr/>        
+                  {t("ESTIMATING")}
+              </button>    
+              <hr/>  
               <button 
                 onClick={() => setInternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition text-ms mb-2"
+                className="hover:text-orange-400 transition text-ms w-full text-left mb-2"
               >
-                TECHNICIAN TRACKING 
+                  {t("TECHNICIAN TRACKING")}
               </button>
               <hr/>
               <button 
                 onClick={() => setDealearShipModalOpen(true)} 
-                className="hover:text-orange-400 text-ms transition mb-2"
+                className="hover:text-orange-400 text-ms transition w-full text-left mb-2"
               >
-                DEALERSHIP
+               {t("PAINT SCALE")}
               </button>
               <hr/>
               <button 
                 onClick={() => setInternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                INTERNAL COMMUNICATIONS
+                 {t("INTERNAL COMMUNICATIONS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setExternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                EXTERNAL COMMUNICATIONS
+                 {t("EXTERNAL COMMUNICATIONS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setMediaManagementModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                MEDIA
+                 {t("MEDIA")}
               </button>
               <hr/>
               <button 
                 onClick={() => setRentalCarModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2 "
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                RENTAL CAR
+                 {t("RENTAL CAR")}
               </button>
               <hr/>
               <button 
                 onClick={() => setAnalyticModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                ANALYTICS
+                 {t("ANALYTICS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setInventoryModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                INVENTORY
+               {t("INVENTORY")}
               </button>
               <hr/>
               <button 
                 onClick={() => setSupportModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                SUPPORT 
+                {t("SUPPORT")}
               </button>
               <hr/>
               <button 
                 onClick={() => setExternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2 "
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                CSI-CONNECT
+                 {t("CSI-CONNECT")}
               </button>
               <hr/>
               <button 
                 onClick={() => setPrivatePolicyModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2 "
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                PRIVACY POLICY
+                {t("PRIVACY POLICY")}
               </button>
               <hr/>
               <button 
                 onClick={() => setSupportModalOpen(true)} 
-                className="hover:text-orange-400 transition mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                SUPPORT 
+                {t("SUPPORT")}
               </button>
               <hr/>
               <button 
-                onClick={() => setExternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                onClick={() => setAboutUsModalOpen(true)} 
+                className="hover:text-orange-400 transition w-full text-left mb-2"
               >
-                ABOUT US
+                 {t("ABOUT US")}
               </button>
                       </div>
                     )}
@@ -301,7 +324,6 @@ export default function Navbar() {
               </div>
               
             )}
-
 
              {/* Production Modal with Blur Effect */}
       {isProductionModalOpen && (
@@ -725,7 +747,7 @@ export default function Navbar() {
                     onClick={() => handleLanguageSelect(lang)}
                     className="py-2 cursor-pointer hover:bg-orange-500 hover:text-black px-4 flex items-center"
                   >
-                    <Flag code={lang.code} style={{ width: 30, height: 20 }} className="mr-2" />
+                    <Flag code={lang.id} style={{ width: 30, height: 15 }} className="mr-2" />
                     {lang.fullLabel}
                   </li>
                 ))}
@@ -779,6 +801,7 @@ export default function Navbar() {
         </motion.div>
           
       )}
+      
     </nav>
     
   );

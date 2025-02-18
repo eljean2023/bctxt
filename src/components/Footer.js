@@ -17,9 +17,10 @@ import CsiSurvey from "@/pages/csi";
 import RentalCar from "@/pages/rentalCarInterface";
 import PrivacyPolicy from "@/pages/privacyPolicy";
 import Support from "@/pages/support";
-import AboutUs from "@/pages/aboutUs";
+import AboutUs from "@/pages/aboutUs"
 
-
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,7 +42,7 @@ const Footer = () => {
   const [isprivatePolicyModalOpen, setPrivatePolicyModalOpen] = useState(false);
   const [issupportModalOpen, setSupportModalOpen] = useState(false);
   const [isaboutUsModalOpen, setAboutUsModalOpen] = useState(false);
-
+  const { t, i18n } = useTranslation();
 
 
   return (
@@ -56,7 +57,7 @@ const Footer = () => {
                 onClick={() => setIsProductionModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Production
+                {t("Production")}
               </button>
             </li>
             <li>
@@ -64,7 +65,7 @@ const Footer = () => {
                 onClick={() => setIsSchedulingModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Scheduling
+                 {t("Scheduling")}
               </button>
             </li>
             <li>
@@ -72,7 +73,7 @@ const Footer = () => {
                 onClick={() => setMediaManagementModalOpen (true)} 
                 className="hover:text-orange-400 transition"
               >
-                Media Management
+                {t("Media Management")}
               </button>
             </li>
             <li>
@@ -80,7 +81,7 @@ const Footer = () => {
                 onClick={() => setTechTrackingModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Technician Tracking
+                {t("Technician Tracking")}
               </button>
             </li>
             <li>
@@ -88,7 +89,7 @@ const Footer = () => {
                 onClick={() => setJobCostingModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Job Costing
+               {t("Job Costing")}
               </button>
             </li>
           </ul>
@@ -102,7 +103,7 @@ const Footer = () => {
                 onClick={() => setPartsModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Parts Management
+              {t("Parts Management")}
               </button>
             </li>
             <li>
@@ -110,7 +111,7 @@ const Footer = () => {
                 onClick={() => setQuickEstimateModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Quick EStimate
+                 {t("Quick EStimate")}
               </button>
             </li>
             <li>
@@ -118,7 +119,7 @@ const Footer = () => {
                 onClick={() => setExternalCommunicationModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                External Communications
+                {t("External Communications")}
               </button>
             </li>
             <li>
@@ -126,7 +127,7 @@ const Footer = () => {
                 onClick={() => setInternalCommunicationModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Internal Communicatios
+                {t("Internal Communications")}
               </button>
             </li>
             <li>
@@ -134,7 +135,7 @@ const Footer = () => {
                 onClick={() => setAccountingModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Accounting
+                {t("Accounting")}
               </button>
             </li>
           </ul>
@@ -148,7 +149,7 @@ const Footer = () => {
                 onClick={() => setMultiLocationModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Multi Store Location 
+                {t("Multi Store Location")}
               </button>
             </li>
             <li>
@@ -156,7 +157,7 @@ const Footer = () => {
                 onClick={() => setDealearShipModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Dealer System Integration
+                {t("Dealer System Integration")}
               </button>
             </li>
             <li>
@@ -164,7 +165,7 @@ const Footer = () => {
                 onClick={() => setPaintScaleInterfaceModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Paint Scale Interfaces
+                  {t("Paint Scale Interfaces")}
               </button>
             </li>
             <li>
@@ -172,7 +173,7 @@ const Footer = () => {
                 onClick={() => setCsiSurveyModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                CSI-Google Servey
+              {t("CSI-Google Servey")}
               </button>
             </li>
             <li>
@@ -180,7 +181,7 @@ const Footer = () => {
                 onClick={() => setRentalCarModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-                Rental Car
+                 {t("Rental Car")} 
               </button>
             </li>
           </ul>
@@ -194,12 +195,12 @@ const Footer = () => {
                 onClick={() => setIsModalOpen(true)} 
                 className="mt-4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition"
               >
-                SCHEDULE A DEMONSTRATION
+                {t("schedule_demo")}
               </button>
             </li>
             <li>
               <button className="mt-4 px-14 py-2 text-2xl text-orange-600 font-semibold rounded-full hover:bg-white-600 transition">
-                1-888-691-6887
+                1-888-691-6887  
               </button>
             </li>
           </ul>
@@ -211,13 +212,13 @@ const Footer = () => {
       {/* Horizontal Links Section */}
       <div className="border-t border-gray-700 mt-8 pt-6">
         <nav className="flex flex-wrap justify-center gap-6 text-sm">
-          <a onClick={() => setIsModalOpen(true)}  className="hover:text-orange-400 transition cursor-pointer">Contact Us</a>
+          <a onClick={() => setIsModalOpen(true)}  className="hover:text-orange-400 transition cursor-pointer">{t("Contact Us")} </a>
           <li>
               <button 
                 onClick={() => setSupportModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-              Support
+                {t("Support")} 
               </button>
             </li>
           <li>
@@ -225,21 +226,23 @@ const Footer = () => {
                 onClick={() => setPrivatePolicyModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-               Privacy Policy
+                {t("Privacy Policy")} 
               </button>
             </li>
+            <li>
             <button 
                 onClick={() => setAboutUsModalOpen(true)} 
                 className="hover:text-orange-400 transition"
               >
-               About Us
+                {t("About Us")}  
               </button>
+              </li>
         </nav>
       </div>
 
       {/* Copyright Section */}
       <div className="mt-6 text-gray-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} BodyshopConnect. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()}{t("BodyshopConnect. All Rights Reserved.")}</p>   
       </div>
 
       {/* Production Modal with Blur Effect */}
