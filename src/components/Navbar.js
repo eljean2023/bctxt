@@ -17,6 +17,7 @@ import MediaManagement from "@/pages/mediaManagement";
 import TechTraking from "@/pages/techTracking";
 import JobCosting from "@/pages/jobCosting";
 import Parts from "@/pages/partsManagement";
+import PartsTracking from "@/pages/partsTracking";
 import QuickStimate from "@/pages/quickStimate";
 import ExternalCummunication from "@/pages/externalCommunication";
 import InternalCummunication from "@/pages/internalCommucation";
@@ -33,19 +34,18 @@ import Inventory from "@/pages/inventory";
 import Analytic from "@/pages/analytic";
 
 
-
 export default function Navbar() {
   const languages = [
-    { label: "languages", fullLabel: "English", code: "en"},
-    { label: "FR", fullLabel: "FRANÇAIS", code: "fr", Flag: "ca" },  
-    
-    {/*
+    { label: "LANGUAGES", fullLabel: "English", code: "en", flag: "CA" }, // Canadian flag 
+    { label: "FR", fullLabel: "FRANÇAIS", code: "fr", flag: "CA" }, // Canadian flag
+  ];
+
+   {/*
       { code: "CA", label: "EN", fullLabel: "English" },
     { code: "CA", label: "FR", fullLabel: "Français" },
       { code: "ES", label: "ES", fullLabel: "Español" },
     { code: "RO", label: "RO", fullLabel: "Română" },
       */}
-  ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isProductionModalOpen, setIsProductionModalOpen] = useState(false); 
@@ -54,6 +54,7 @@ export default function Navbar() {
   const [istechTrakigModalOpen, setTechTrackingModalOpen] = useState(false); 
   const [isjobCostingModalOpen, setJobCostingModalOpen] = useState(false); 
   const [ispartsModalOpen, setPartsModalOpen] = useState(false); 
+  const [ispartsTrackingModalOpen, setPartsTrackingModalOpen] = useState(false); 
   const [isquickEstimateModalOpen, setQuickEstimateModalOpen] = useState(false); 
   const [isexternalCommunicationModalOpen, setExternalCommunicationModalOpen] = useState(false); 
   const [isinternalCommunicationModalOpen, setInternalCommunicationModalOpen] = useState(false); 
@@ -90,6 +91,10 @@ export default function Navbar() {
     setIsLangOpen(false);
   };
 
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang); // Keep "fr" for translation
+  };
+
   const handleLanguageSelect = (language) => {
     i18n.changeLanguage(language.code) // Change language
       .then(() => {
@@ -116,12 +121,12 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 p-2 bg-black shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
+      <div className="max-w-7xl mx-auto flex justify-between items-center text-white mb-3">
         {/* Logo */}
         <Image
           src="/BCLogo1.png"
           alt="ModernBrand Logo"
-          width={280}
+          width={260}
           height={40}
           className="object-contain"
         />
@@ -130,73 +135,70 @@ export default function Navbar() {
            {/*<h1 className="text-2xl font-bold text-orange-500">1-888-691-6887</h1>*/}
 
         {/* Links Menu */}
-        <div className="hidden md:flex space-x-6 text-lg font-medium">
+        <div className="hidden md:flex space-x-6 text-white-100 font-medium ">
       
         <button 
                 onClick={() => setAccountingModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               > 
                 {t("ACCOUNTING")}
               </button>
           
           <button 
                 onClick={() => setIsSchedulingModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("SCHEDULE")}
               </button>
           
               <button 
                 onClick={() => setIsProductionModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               > 
                  {t("PRODUCTION")}
               </button>
 
               <button 
                 onClick={() => setMultiLocationModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("MULTI-STORE")}
               </button>
               <button 
                 onClick={() => setPartsModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                  {t("PARTS")}
               </button>
-
               
-
-     
           <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
           {/* Dropdown for Extra Links */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={toggleDropdown}
-              className="flex items-center hover:text-orange-500 transition "
+              className="flex items-center hover:text-orange-500 transition hover:underline decoration-white"
             >
               ...
               <ChevronDown className="ml-1 w-4 h-4"/>
             </button>
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 bg-gray-900 text-white p-4 rounded-lg shadow-lg w-48">
+              <div className="absolute right-0 mt-2 bg-gray-900 text-white-100 p-4 rounded-lg shadow-lg w-48">
                 <ul>
-                  <li className="py-2 px-4 cursor-pointer  hover:text-orange">
+                  <li className="py-2 px-4 cursor-pointer  hover:text-orange text-white-10">
                   <button 
-                onClick={() =>setPartsModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                onClick={() =>setPartsTrackingModalOpen(true)} 
+                className="hover:text-orange-400 transition w-full text-left mb-2 text-white-100"
               >
-               TRACKING {t("PARTS")} 
+                {t("PARTS TRACKING")} 
               </button>
                   </li>
                   <hr/>
-                  <li className="py-2 px-4 cursor-pointer  hover:text-orange">
+                  <li className="py-2 px-4 cursor-pointer  hover:text-orange text-white-100">
                   <button 
                 onClick={() => setJobCostingModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 text-white-100"
               >
-                 {t("JOB Costing")} 
+                 {t("JOB COSTING")} 
               </button>
                   </li>
                   <hr/>
@@ -214,105 +216,105 @@ export default function Navbar() {
                       <div className="absolute left-full top-0 ml-2 bg-gray-800 text-white p-4 rounded-lg shadow-lg w-88">
               <button 
                 onClick={() => setPaintScaleInterfaceModalOpen(true)} 
-                className="hover:text-orange-400 transition text-white-500 mb-2 text-ms w-full text-left mb-2"
+                className="hover:text-orange-400 transition text-white-100 mb-2 text-ms w-full text-left mb-2 mt-2"
               >
                  {t("PAINT SCALE")}
               </button>
               <hr/>
               <button 
                 onClick={() => setQuickEstimateModalOpen(true)} 
-                className="hover:text-orange-400 transition text-ms w-full text-left mb-2"
+                className="hover:text-orange-400 transition text-ms w-full text-left mb-2 mt-2"
               >
                   {t("ESTIMATING")}
               </button>    
               <hr/>  
               <button 
                 onClick={() => setInternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition text-ms w-full text-left mb-2"
+                className="hover:text-orange-400 transition text-ms w-full text-left mb-2 mt-2"
               >
                   {t("TECHNICIAN TRACKING")}
               </button>
               <hr/>
               <button 
                 onClick={() => setDealearShipModalOpen(true)} 
-                className="hover:text-orange-400 text-ms transition w-full text-left mb-2"
+                className="hover:text-orange-400 text-ms transition w-full text-left mb-2 mt-2"
               >
                {t("PAINT SCALE")}
               </button>
               <hr/>
               <button 
                 onClick={() => setInternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                  {t("INTERNAL COMMUNICATIONS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setExternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                  {t("EXTERNAL COMMUNICATIONS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setMediaManagementModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                  {t("MEDIA")}
               </button>
               <hr/>
               <button 
                 onClick={() => setRentalCarModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                  {t("RENTAL CAR")}
               </button>
               <hr/>
               <button 
                 onClick={() => setAnalyticModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                  {t("ANALYTICS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setInventoryModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                {t("INVENTORY")}
               </button>
               <hr/>
               <button 
                 onClick={() => setSupportModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                 {t("SUPPORT")}
               </button>
               <hr/>
               <button 
                 onClick={() => setExternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                  {t("CSI-CONNECT")}
               </button>
               <hr/>
               <button 
                 onClick={() => setPrivatePolicyModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                 {t("PRIVACY POLICY")}
               </button>
               <hr/>
               <button 
                 onClick={() => setSupportModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                 {t("SUPPORT")}
               </button>
               <hr/>
               <button 
                 onClick={() => setAboutUsModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
               >
                  {t("ABOUT US")}
               </button>
@@ -723,34 +725,67 @@ export default function Navbar() {
         </div>
       )} 
 
+       {/* Media Management with Blur Effect */}
+     {ispartsTrackingModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() =>setPartsTrackingModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <PartsTracking /> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
 
            
           </div>
         </div>
 
         {/* Language Selector */}
-        <div className="relative flex items-center  ml-6" ref={langRef}>
+        <div className="relative flex items-center text-white-100   ml-6" ref={langRef}>
           <button
             onClick={toggleLang}
-            className="text-xl p-2 hover:text-orange-500 transition flex items-center"
+            className="text-white-100 p-4 hover:text-orange-500 transition flex items-center hover:underline decoration-white"
           >
             <Flag code={selectedLanguage.code} style={{ width: 30, height: 20 }} className="mr-2" />
             {selectedLanguage.label}
           </button>
 
           {isLangOpen && (
-            <div className="absolute right-0 mt-2 bg-gray-900 text-white p-4 rounded-lg shadow-lg w-48">
+            <div className="absolute right-0 mt-2 bg-gray-900 text-white-100 p-4 rounded-lg shadow-lg w-48">
               <ul>
-                {languages.map((lang) => (
-                  <li
-                    key={lang.label}
-                    onClick={() => handleLanguageSelect(lang)}
-                    className="py-2 cursor-pointer hover:bg-orange-500 hover:text-black px-4 flex items-center"
-                  >
-                    <Flag code={lang.id} style={{ width: 30, height: 15 }} className="mr-2" />
-                    {lang.fullLabel}
-                  </li>
-                ))}
+              {languages.map((lang) => (
+        <button
+          key={lang.code}
+          onClick={() => changeLanguage(lang.code)}
+          style={{
+            padding: "10px",
+            fontSize: "16px",
+            cursor: "pointer",
+            background: i18n.language === lang.code ? "#0000" : "#0000",
+            borderRadius: "5px",
+          
+            color: "orange",
+            textDecoration: "underline",
+            transition: "text-decoration-color 0.3s ease-in-out", // Smooth transition
+          }}
+          onMouseEnter={(e) => (e.target.style.textDecorationColor = "white")}
+          onMouseLeave={(e) => (e.target.style.textDecorationColor = "orange")}
+        >  
+
+          {/* Show the flag opposite of the current language */}
+          {i18n.language === "en" && lang.code === "fr" ? "FRENCH" : null}
+          {i18n.language === "fr" && lang.code === "en" ? "ENGLISH" : null}
+        </button>
+      ))}
               </ul>
             </div>
           )}

@@ -55,7 +55,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setIsProductionModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Production")}
               </button>
@@ -63,7 +63,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setIsSchedulingModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                  {t("Scheduling")}
               </button>
@@ -71,7 +71,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setMediaManagementModalOpen (true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Media Management")}
               </button>
@@ -79,7 +79,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setTechTrackingModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Technician Tracking")}
               </button>
@@ -87,7 +87,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setJobCostingModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                {t("Job Costing")}
               </button>
@@ -101,7 +101,7 @@ const Footer = () => {
           <li>
               <button 
                 onClick={() => setPartsModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
               {t("Parts Management")}
               </button>
@@ -109,7 +109,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setQuickEstimateModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                  {t("Quick EStimate")}
               </button>
@@ -117,7 +117,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setExternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("External Communications")}
               </button>
@@ -125,7 +125,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setInternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Internal Communications")}
               </button>
@@ -133,7 +133,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setAccountingModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Accounting")}
               </button>
@@ -147,7 +147,7 @@ const Footer = () => {
           <li>
               <button 
                 onClick={() => setMultiLocationModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Multi Store Location")}
               </button>
@@ -155,7 +155,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setDealearShipModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Dealer System Integration")}
               </button>
@@ -163,7 +163,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setPaintScaleInterfaceModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                   {t("Paint Scale Interfaces")}
               </button>
@@ -171,7 +171,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setCsiSurveyModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
               {t("CSI-Google Servey")}
               </button>
@@ -179,7 +179,7 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setRentalCarModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                  {t("Rental Car")} 
               </button>
@@ -193,13 +193,13 @@ const Footer = () => {
             <li>
               <button 
                 onClick={() => setIsModalOpen(true)} 
-                className="mt-4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition"
+                className="mt-4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition hover:underline decoration-white"
               >
                 {t("schedule_demo")}
               </button>
             </li>
             <li>
-              <button className="mt-4 px-14 py-2 text-2xl text-orange-600 font-semibold rounded-full hover:bg-white-600 transition">
+              <button className="mt-4 px-14 py-2 text-2xl text-orange-600 font-semibold rounded-full hover:bg-white-600 transition hover:underline decoration-white">
                 1-888-691-6887  
               </button>
             </li>
@@ -212,11 +212,11 @@ const Footer = () => {
       {/* Horizontal Links Section */}
       <div className="border-t border-gray-700 mt-8 pt-6">
         <nav className="flex flex-wrap justify-center gap-6 text-sm">
-          <a onClick={() => setIsModalOpen(true)}  className="hover:text-orange-400 transition cursor-pointer">{t("Contact Us")} </a>
+          <a onClick={() => setIsModalOpen(true)}  className="hover:text-orange-400 transition cursor-pointer hover:underline decoration-white">{t("Contact Us")} </a>
           <li>
               <button 
                 onClick={() => setSupportModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Support")} 
               </button>
@@ -224,7 +224,7 @@ const Footer = () => {
           <li>
               <button 
                 onClick={() => setPrivatePolicyModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Privacy Policy")} 
               </button>
@@ -232,7 +232,7 @@ const Footer = () => {
             <li>
             <button 
                 onClick={() => setAboutUsModalOpen(true)} 
-                className="hover:text-orange-400 transition"
+                className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("About Us")}  
               </button>
@@ -242,7 +242,7 @@ const Footer = () => {
 
       {/* Copyright Section */}
       <div className="mt-6 text-gray-500 text-sm">
-        <p>&copy; {new Date().getFullYear()}{t("BodyshopConnect. All Rights Reserved.")}</p>   
+        <p>&copy; {new Date().getFullYear()} {t("BodyshopConnect. All Rights Reserved.")}</p>   
       </div>
 
       {/* Production Modal with Blur Effect */}

@@ -65,7 +65,7 @@ export default function Principal() {
               {texts[currentText].button && (
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="mt-4 px-6 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition"
+                  className="mt-4 px-6 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition hover:underline decoration-white"
                 >
                   {t("schedule_demo")}
                 </button>

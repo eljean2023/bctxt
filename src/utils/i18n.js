@@ -370,7 +370,15 @@ i18n.use(initReactI18next).init({
     "Support": "Support",
     "Privacy Policy" : "Privacy Policy",
     "About Us" : "About Us",
-    
+
+    /* Parts Tracking */
+    "Parts Tracking Connect" : "Parts Tracking Connect",
+    "The application allows one to scan parts, identify their location in the Bodyshop and track their movements. It also helps to organize all storage places within the facility. Finding parts has never been easier." : "The application allows one to scan parts, identify their location in the Bodyshop and track their movements. It also helps to organize all storage places within the facility. Finding parts has never been easier.",
+    "Download the APP for any user in the shop." : "Download the APP for any user in the shop.",
+    "Assign QR codes to part storage locations in your shop." : "Assign QR codes to part storage locations in your shop.",
+    "Scan parts by barcode to assign their location right from the APP" : "Scan parts by barcode to assign their location right from the APP",
+    "Locate parts easily when ready to install." : "Locate parts easily when ready to install.",
+    "JOB COSTING" :  "JOB COSTING",
 
       }
     },
@@ -737,40 +745,27 @@ i18n.use(initReactI18next).init({
 
     "Contact Us" : "Contactez-nous",
 
-    "BodyshopConnect. All Rights Reserved." : "Copyright BodyshopConnect 2024 Tous droits réservés.",
+    "BodyshopConnect. All Rights Reserved." : "BodyshopConnect Tous droits réservés.",
     
       "Support": "Soutien",
       "PRIVACY POLICY": "POLITIQUE DE CONFIDENTIALITÉ", 
      "Privacy Policy" : "Politique de Confidentialité",
-     "About Us" : "Contactez-nous"
-    
+     "About Us" : "Contactez-nous",
 
-
-
-    
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     /* Parts Tracking */
+    "Parts Tracking Connect" : "Suivi des pièces Connect",
+    "The application allows one to scan parts, identify their location in the Bodyshop and track their movements. It also helps to organize all storage places within the facility. Finding parts has never been easier." : "L'application permet de scanner les pièces, d'identifier leur emplacement dans l'atelier de carrosserie et de suivre leurs mouvements. Elle permet également d'organiser tous les lieux de stockage au sein de l'établissement. Il n'a jamais été aussi facile de trouver des pièces.",
+    "Download the APP for any user in the shop." : "Télécharger l'APP pour tous les utilisateurs du magasin.",
+    "Assign QR codes to part storage locations in your shop." : "Attribuez des codes QR aux emplacements de stockage des pièces dans votre magasin.",
+    "Scan parts by barcode to assign their location right from the APP" : "Scannez les pièces à l'aide d'un code-barres pour leur assigner un emplacement directement à partir de l'application.",
+    "Locate parts easily when ready to install." : "Localiser facilement les pièces lorsqu'elles sont prêtes à être installées.",
+    "JOB COSTING" :  "COÚT DE TRAVAIL", 
+      
     
     }
     }
   },
-  lng: "en", // Default language
+  lng: "en" , // Default language
   fallbackLng: "en", // Use English if translation is missing
   interpolation: {
     escapeValue: false // React already does escaping

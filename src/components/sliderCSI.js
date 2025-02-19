@@ -36,7 +36,7 @@ export default function ImageSlider() {
               key={img}
               src={img}
               alt={`Slide ${index}`}
-              className="w-1/5 h-auto rounded-lg shadow-lg overflow-hidden"
+              className="w-1/4 h-auto rounded-lg shadow-lg overflow-hidden"
               layout // Helps with smooth transitions
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

@@ -11,7 +11,7 @@ const images = [
 ];
 
 export default function ImageSlider() {
-  const [visibleImages, setVisibleImages] = useState(images.slice(0, 5));
+  const [visibleImages, setVisibleImages] = useState(images.slice(0, 6));
 
   useEffect(() => {
     const interval = setInterval(() => {
