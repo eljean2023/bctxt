@@ -751,13 +751,33 @@ export default function Navbar() {
 
         {/* Language Selector */}
         <div className="relative flex items-center text-white-100   ml-6" ref={langRef}>
-          <button
-            onClick={toggleLang}
-            className="text-white-100 p-4 hover:text-orange-500 transition flex items-center hover:underline decoration-white"
-          >
-            <Flag code={selectedLanguage.code} style={{ width: 30, height: 20 }} className="mr-2" />
-            {selectedLanguage.label}
-          </button>
+          
+        <ul>
+              {languages.map((lang) => (
+        <button
+          key={lang.code}
+          onClick={() => changeLanguage(lang.code)}
+          style={{
+            padding: "10px",
+            fontSize: "16px",
+            cursor: "pointer",
+            background: i18n.language === lang.code ? "#0000" : "#0000",
+            borderRadius: "5px",
+          
+            color: "orange",
+            textDecoration: "underline",
+            transition: "text-decoration-color 0.3s ease-in-out", // Smooth transition
+          }}
+          onMouseEnter={(e) => (e.target.style.textDecorationColor = "white")}
+          onMouseLeave={(e) => (e.target.style.textDecorationColor = "orange")}
+        >  
+
+          {/* Show the flag opposite of the current language */}
+          {i18n.language === "en" && lang.code === "fr" ? "FRENCH" : null}
+          {i18n.language === "fr" && lang.code === "en" ? "ENGLISH" : null}
+        </button>
+      ))}
+              </ul>
 
           {isLangOpen && (
             <div className="absolute right-0 mt-2 bg-gray-900 text-white-100 p-4 rounded-lg shadow-lg w-48">
@@ -792,7 +812,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden ml-4"  onMouseMove={toggleMenu}> 
+        <button className="md:hidden ml-4"  onClick={toggleMenu}> 
           {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
       </div>
@@ -804,34 +824,492 @@ export default function Navbar() {
           animate={{ y: 0, opacity: 1 }}
           className="absolute top-16 left-0 w-full bg-black shadow-md p-5 flex flex-col space-y-5 text-center text-white"
         >
-          {["Accounting", "Scheduling", "Production", "Multi-Store", "Parts"].map((item) => (
-            <a key={item} href="#" className="text-lg font-semibold hover:text-orange-500">
-              {item}
-            </a>
-          ))}
-
-          {/* Dropdown in Mobile Menu */}
-          <button onClick={toggleDropdown} className="text-lg font-semibold hover:text-orange-500">
-            More...
-          </button>
-          {isDropdownOpen && (
-            <div className="mt-2 bg-gray-800 p-3 rounded-lg">
-              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">PARTS</a>
-              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">INCOMING PARTS</a>
-              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Job Costing</a>
-
-              {/* Submenu in Mobile */}
-              <button onMouseMove={toggleSubDropdown} className="block w-full py-1 hover:bg-orange-500 hover:text-black"> 
-                MUCH MORE
+          
+          {isMenuOpen && (
+            <div>
+            <ul className="space-y-2">
+              <li>
+                <button 
+                  onClick={() => setIsProductionModalOpen(true)} 
+                  className="hover:text-orange-400 transition hover:underline decoration-white"
+                >
+                  {t("Production")}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => setIsSchedulingModalOpen(true)} 
+                  className="hover:text-orange-400 transition hover:underline decoration-white"
+                >
+                   {t("Scheduling")}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => setMediaManagementModalOpen (true)} 
+                  className="hover:text-orange-400 transition hover:underline decoration-white"
+                >
+                  {t("Media Management")}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => setTechTrackingModalOpen(true)} 
+                  className="hover:text-orange-400 transition hover:underline decoration-white"
+                >
+                  {t("Technician Tracking")}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => setJobCostingModalOpen(true)} 
+                  className="hover:text-orange-400 transition hover:underline decoration-white"
+                >
+                 {t("Job Costing")}
+                </button>
+              </li>
+            </ul>
+            <ul className="space-y-2">
+          <li>
+              <button 
+                onClick={() => setPartsModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+              {t("Parts Management")}
               </button>
-              {isSubDropdownOpen && (
-                <div className="mt-2 bg-gray-700 p-3 rounded-lg">
-                  <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Incoming Parts</a>
-                  <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Outgoing Parts</a>
-                </div>
-              )}  
-            </div>
-            
+            </li>
+            <li>
+              <button 
+                onClick={() => setQuickEstimateModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+                 {t("Quick EStimate")}
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setExternalCommunicationModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+                {t("External Communications")}
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setInternalCommunicationModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+                {t("Internal Communications")}
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setAccountingModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+                {t("Accounting")}
+              </button>
+            </li>
+          </ul>
+          <ul className="space-y-2">
+          <li>
+              <button 
+                onClick={() => setMultiLocationModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+                {t("Multi Store Location")}
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setDealearShipModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+                {t("Dealer System Integration")}
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setPaintScaleInterfaceModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+                  {t("Paint Scale Interfaces")}
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setCsiSurveyModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+              {t("CSI-Google Servey")}
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setRentalCarModalOpen(true)} 
+                className="hover:text-orange-400 transition hover:underline decoration-white"
+              >
+                 {t("Rental Car")} 
+              </button>
+            </li>
+          </ul>
+          <ul className="space-y-2">
+            <li>
+              <button 
+                onClick={() => setIsModalOpen(true)} 
+                className="mt-4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition hover:underline decoration-white"
+              >
+                {t("schedule_demo")}
+              </button>
+            </li>
+            <li>
+              <button className="mt-4 px-14 py-2 text-2xl text-orange-600 font-semibold rounded-full hover:bg-white-600 transition hover:underline decoration-white">
+                1-888-691-6887  
+              </button>
+            </li>
+          </ul>
+
+              {/* Production Modal with Blur Effect */}
+      {isProductionModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setIsProductionModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <Production /> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )}
+      {/* Scheduling Modal with Blur Effect */}
+      {isSchedulingModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setIsSchedulingModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <Scheduling /> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )}
+
+       {/* Media Management Modal with Blur Effect */}
+       {ismediaManagementModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setMediaManagementModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <MediaManagement /> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )}
+
+      {/* Media Tecth Tracking Modal with Blur Effect */}
+      {istechTrakigModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setTechTrackingModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <TechTraking /> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )}
+
+      {/* Media Tecth Tracking Modal with Blur Effect */}
+      {isjobCostingModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setJobCostingModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <JobCosting/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )}
+
+      {/* Media Part Management Modal with Blur Effect */}
+      {ispartsModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setPartsModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <Parts/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )}
+
+      {/* Media Quick Estimate Modal with Blur Effect */}
+           {isquickEstimateModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setQuickEstimateModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <QuickStimate/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )}
+
+     {/* Media External Communication Modal with Blur Effect */}
+     {isexternalCommunicationModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setExternalCommunicationModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <ExternalCummunication/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+      {/* Media Internal Communication Modal with Blur Effect */}
+     {isinternalCommunicationModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setInternalCommunicationModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <InternalCummunication/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+       {/* Media Accounting Modal with Blur Effect */}
+     {isaccountingModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setAccountingModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <Accounting/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+       {/* Multi Store Location Modal with Blur Effect */}
+     {ismultiLocationModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setMultiLocationModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <MultiLocation/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+      {/* Dealer System Integration Modal with Blur Effect */}
+     {isdealerShipModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setDealearShipModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <DealerShip/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+       {/* Paint Scales Interfaces Modal with Blur Effect */}
+     {ispaintScaleInterfaceModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setPaintScaleInterfaceModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <PainScaleInterface/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+       {/* CSI Survey Modal with Blur Effect */}
+     {iscsiSurveyModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setCsiSurveyModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <CsiSurvey/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+       {/* Rental Car Modal with Blur Effect */}
+     {isrentalCarModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setRentalCarModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <RentalCar/> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+       {/* Private Policy with Blur Effect */}
+     {isprivatePolicyModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setPrivatePolicyModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <PrivacyPolicy /> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+        {/* Support with Blur Effect */}
+     {issupportModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() => setSupportModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <Support /> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+       {/* Support with Blur Effect */}
+     {isaboutUsModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Blurred background */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+          
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
+            <button 
+              onClick={() =>setAboutUsModalOpen(false)} 
+              className="absolute top-4 right-4 text-black text-lg"
+            >
+              ✖
+            </button>
+            <AboutUs /> {/* Render the Production component inside the modal */}
+          </div>
+        </div>
+      )} 
+
+          </div>
           )}
         </motion.div>
           
@@ -842,6 +1320,38 @@ export default function Navbar() {
   );
 }
 
+
+/*
+
+<div className="mt-2 bg-gray-800 p-3 rounded-lg">
+              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">PARTS</a>
+              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">INCOMING PARTS</a>
+              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Job Costing</a>
+
+              {/* Submenu in Mobile *//*}
+              <button onClick={toggleSubDropdown} className="block w-full py-1 hover:bg-orange-500 hover:text-black"> 
+                MUCH MORE
+              </button>
+              {isSubDropdownOpen && (
+                <div className="mt-2 bg-gray-700 p-3 rounded-lg">
+                  <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Incoming Parts</a>
+                  <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Outgoing Parts</a>
+                </div>
+              )}  
+            </div>
+
+{["Accounting", "Scheduling", "Production", "Multi-Store", "Parts"].map((item) => (
+            <a key={item} href="#" className="text-lg font-semibold hover:text-orange-500">
+              {item}
+            </a>
+          ))}
+
+          {/* Dropdown in Mobile Menu *//*}
+          /*</*button onClick={toggleDropdown/*} className="text-lg font-semibold hover:text-orange-500">
+            More...
+          </button>
+
+*/
 
 
 /*
