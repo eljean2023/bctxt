@@ -7,7 +7,7 @@ const images = [
     '/csi2.png',
     '/csi3.png',
     '/csi4.jpg',
-  
+    '/chatter.png'
 ];
 
 export default function ImageSlider() {
@@ -28,8 +28,8 @@ export default function ImageSlider() {
   }, []);
 
   return (
-    <div className="relative w-full flex justify-center items-center bg-gray-100 py-6">
-      <div className="flex space-x-4 screen-md overflow-hidden">
+    <div className="relative w-full flex justify-center items-center bg-gray-100 py-6 flex flex-col sm:flex-row justify-center items-center gap-4">
+      <div className="flex space-x-4 screen-md overflow-hidden flex flex-col sm:flex-row justify-center items-center gap-4">
         <AnimatePresence>
           {visibleImages.map((img, index) => (
             <motion.img

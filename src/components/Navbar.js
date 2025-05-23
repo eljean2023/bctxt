@@ -1,10 +1,9 @@
 "use client";
-import Image from "next/image";
+
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
-import Flag from "react-world-flags";
-import Navbar2 from "./navbar2";
+import Link from "next/link";
 
 import { useTranslation } from "react-i18next";
 import '../utils/i18n';
@@ -28,7 +27,6 @@ import PainScaleInterface from "@/pages/paintScaleInterface";
 import CsiSurvey from "@/pages/csi";
 import RentalCar from "@/pages/rentalCarInterface";
 import PrivacyPolicy from "@/pages/privacyPolicy";
-import Support from "@/pages/support";
 import AboutUs from "@/pages/aboutUs";
 import Inventory from "@/pages/inventory";
 import Analytic from "@/pages/analytic";
@@ -36,16 +34,9 @@ import Analytic from "@/pages/analytic";
 
 export default function Navbar() {
   const languages = [
-    { label: "LANGUAGES", fullLabel: "English", code: "en", flag: "CA" }, // Canadian flag 
-    { label: "FR", fullLabel: "FRANÇAIS", code: "fr", flag: "CA" }, // Canadian flag
+    { label: "LANGUAGES", fullLabel: "English", code: "en", flag: "CA" }, 
+    { label: "FR", fullLabel: "FRANÇAIS", code: "fr", flag: "CA" }, 
   ];
-
-   {/*
-      { code: "CA", label: "EN", fullLabel: "English" },
-    { code: "CA", label: "FR", fullLabel: "Français" },
-      { code: "ES", label: "ES", fullLabel: "Español" },
-    { code: "RO", label: "RO", fullLabel: "Română" },
-      */}
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isProductionModalOpen, setIsProductionModalOpen] = useState(false); 
@@ -65,7 +56,7 @@ export default function Navbar() {
   const [iscsiSurveyModalOpen, setCsiSurveyModalOpen] = useState(false);
   const [isrentalCarModalOpen, setRentalCarModalOpen] = useState(false);
   const [isprivatePolicyModalOpen, setPrivatePolicyModalOpen] = useState(false);
-  const [issupportModalOpen, setSupportModalOpen] = useState(false);
+  const [isprivatePolicyxModalOpen, setPrivatePolicyxModalOpen] = useState(false);
   const [isaboutUsModalOpen, setAboutUsModalOpen] = useState(false);
   const [isiventoryModalOpen, setInventoryModalOpen] = useState(false);
   const [isanalyticModalOpen, setAnalyticModalOpen] = useState(false);
@@ -76,33 +67,18 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSubDropdownOpen, setIsSubDropdownOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   const langRef = useRef(null);
   const dropdownRef = useRef(null);
-
-  const toggleLang = () => setIsLangOpen((prev) => !prev);
+  
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
   const toggleSubDropdown = () => setIsSubDropdownOpen((prev) => !prev);
-
-  const handleLanguageSelectw = (language) => {
-    setSelectedLanguage(language);
-    setIsLangOpen(false);
-  };
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang); // Keep "fr" for translation
   };
 
-  const handleLanguageSelect = (language) => {
-    i18n.changeLanguage(language.code) // Change language
-      .then(() => {
-        setSelectedLanguage(language); // Update selected language
-        setIsLangOpen(false); // Close dropdown
-      })
-      .catch((error) => console.error("Error changing language:", error));
-  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -122,18 +98,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 p-2 bg-black shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center text-white mb-3">
-        {/* Logo */}
-        <Image
-          src="/BCLogo1.png"
-          alt="ModernBrand Logo"
-          width={260}
-          height={40}
-          className="object-contain"
-        />
-
-         {/* Phone Number */}
-           {/*<h1 className="text-2xl font-bold text-orange-500">1-888-691-6887</h1>*/}
-
+    
+      <img src="/BCLogo2.png" alt="ModernBrand Logo" width="260" height="40" />
+      
         {/* Links Menu */}
         <div className="hidden md:flex space-x-6 text-white-100 font-medium ">
       
@@ -171,6 +138,7 @@ export default function Navbar() {
                  {t("PARTS")}
               </button>
               
+              
           <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
           {/* Dropdown for Extra Links */}
           <div className="relative" ref={dropdownRef}>
@@ -182,12 +150,12 @@ export default function Navbar() {
               <ChevronDown className="ml-1 w-4 h-4"/>
             </button>
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 bg-gray-900 text-white-100 p-4 rounded-lg shadow-lg w-48">
+              <div className="absolute right-95 mt-2 bg-gray-900 text-white-100 p-4 rounded-lg shadow-lg w-48">
                 <ul>
-                  <li className="py-2 px-4 cursor-pointer  hover:text-orange text-white-10">
+                  <li className="py-2 px-4 cursor-pointer hover:text-orange text-white-10">
                   <button 
                 onClick={() =>setPartsTrackingModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 text-white-100"
+                className="hover:text-orange-400 transition w-full text-left mb-2 text-white-100 text-center"
               >
                 {t("PARTS TRACKING")} 
               </button>
@@ -196,132 +164,106 @@ export default function Navbar() {
                   <li className="py-2 px-4 cursor-pointer  hover:text-orange text-white-100">
                   <button 
                 onClick={() => setJobCostingModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 text-white-100"
+                className="hover:text-orange-400 transition w-full text-left mb-2 text-white-100 text-center"
               >
                  {t("JOB COSTING")} 
               </button>
                   </li>
                   <hr/>
-            
-                  {/* Sub-dropdown for Tracking Parts */}
-                  <li className="relative group">
-                    <button
-                     onMouseOver={toggleSubDropdown} 
-                      className="w-88 flex justify-between py-2 px-14 cursor-pointer  hover:text-orange"
-                    >
-                       <button onMouseOver={toggleSubDropdown} >.... </button>
 
-                    </button>
-                    {isSubDropdownOpen && (
-                      <div className="absolute left-full top-0 ml-2 bg-gray-800 text-white p-4 rounded-lg shadow-lg w-88">
-              <button 
+
+                  <button 
                 onClick={() => setPaintScaleInterfaceModalOpen(true)} 
-                className="hover:text-orange-400 transition text-white-100 mb-2 text-ms w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition text-white-100 mb-2 text-ms w-full text-left mb-2 mt-2 text-center"
               >
                  {t("PAINT SCALE")}
               </button>
               <hr/>
               <button 
                 onClick={() => setQuickEstimateModalOpen(true)} 
-                className="hover:text-orange-400 transition text-ms w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition text-ms w-full text-left mb-2 mt-2 text-center"
               >
                   {t("ESTIMATING")}
               </button>    
               <hr/>  
               <button 
-                onClick={() => setInternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition text-ms w-full text-left mb-2 mt-2"
+                onClick={() => setTechTrackingModalOpen(true)} 
+                className="hover:text-orange-400 transition text-ms w-full text-left mb-2 mt-2 text-center"
               >
                   {t("TECHNICIAN TRACKING")}
               </button>
               <hr/>
               <button 
                 onClick={() => setDealearShipModalOpen(true)} 
-                className="hover:text-orange-400 text-ms transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 text-ms transition w-full text-left mb-2 mt-2 text-center"
               >
-               {t("PAINT SCALE")}
+               {t("DEALERSHIPS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setInternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2 text-center"
               >
                  {t("INTERNAL COMMUNICATIONS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setExternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2 text-center"
               >
                  {t("EXTERNAL COMMUNICATIONS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setMediaManagementModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2 text-center"
               >
                  {t("MEDIA")}
               </button>
               <hr/>
               <button 
                 onClick={() => setRentalCarModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2 text-center"
               >
                  {t("RENTAL CAR")}
               </button>
               <hr/>
               <button 
                 onClick={() => setAnalyticModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2 text-center"
               >
                  {t("ANALYTICS")}
               </button>
               <hr/>
               <button 
                 onClick={() => setInventoryModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2 text-center"
               >
                {t("INVENTORY")}
               </button>
               <hr/>
               <button 
-                onClick={() => setSupportModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
-              >
-                {t("SUPPORT")}
-              </button>
-              <hr/>
-              <button 
                 onClick={() => setExternalCommunicationModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2 text-center"
               >
-                 {t("CSI-CONNECT")}
+                 {t("CSI & REVIEWS")}
               </button>
               <hr/>
+
               <button 
                 onClick={() => setPrivatePolicyModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2 text-center"
               >
                 {t("PRIVACY POLICY")}
               </button>
-              <hr/>
-              <button 
-                onClick={() => setSupportModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
-              >
-                {t("SUPPORT")}
-              </button>
-              <hr/>
+              <hr />
               <button 
                 onClick={() => setAboutUsModalOpen(true)} 
-                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2"
+                className="hover:text-orange-400 transition w-full text-left mb-2 mt-2 text-center"
               >
                  {t("ABOUT US")}
               </button>
-                      </div>
-                    )}
-                  </li>
-                 
+            
                 </ul>
               </div>
               
@@ -629,24 +571,6 @@ export default function Navbar() {
         </div>
       )} 
 
-        {/* Support with Blur Effect */}
-     {issupportModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          {/* Blurred background */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
-          
-          {/* Modal Content */}
-          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
-            <button 
-              onClick={() => setSupportModalOpen(false)} 
-              className="absolute top-4 right-4 text-black text-lg"
-            >
-              ✖
-            </button>
-            <Support /> {/* Render the Production component inside the modal */}
-          </div>
-        </div>
-      )} 
 
        {/* Support with Blur Effect */}
      {isaboutUsModalOpen && (
@@ -744,8 +668,6 @@ export default function Navbar() {
         </div>
       )} 
 
-
-           
           </div>
         </div>
 
@@ -773,8 +695,8 @@ export default function Navbar() {
         >  
 
           {/* Show the flag opposite of the current language */}
-          {i18n.language === "en" && lang.code === "fr" ? "FRENCH" : null}
-          {i18n.language === "fr" && lang.code === "en" ? "ENGLISH" : null}
+         {i18n.language === "en" && lang.code === "fr"  ? "FRENCH" : null}
+        {i18n.language === "fr" && lang.code === "en" ? "ENGLISH" : null}
         </button>
       ))}
               </ul>
@@ -822,7 +744,7 @@ export default function Navbar() {
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="absolute top-16 left-0 w-full bg-black shadow-md p-5 flex flex-col space-y-5 text-center text-white"
+          className="absolute top-16 left-0 w-full bg-black shadow-md p-5 flex flex-col space-y-5 text-center text-white md:hidden"
         >
           
           {isMenuOpen && (
@@ -1271,24 +1193,7 @@ export default function Navbar() {
         </div>
       )} 
 
-        {/* Support with Blur Effect */}
-     {issupportModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          {/* Blurred background */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
-          
-          {/* Modal Content */}
-          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
-            <button 
-              onClick={() => setSupportModalOpen(false)} 
-              className="absolute top-4 right-4 text-black text-lg"
-            >
-              ✖
-            </button>
-            <Support /> {/* Render the Production component inside the modal */}
-          </div>
-        </div>
-      )} 
+       
 
        {/* Support with Blur Effect */}
      {isaboutUsModalOpen && (
@@ -1321,195 +1226,3 @@ export default function Navbar() {
 }
 
 
-/*
-
-<div className="mt-2 bg-gray-800 p-3 rounded-lg">
-              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">PARTS</a>
-              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">INCOMING PARTS</a>
-              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Job Costing</a>
-
-              {/* Submenu in Mobile *//*}
-              <button onClick={toggleSubDropdown} className="block w-full py-1 hover:bg-orange-500 hover:text-black"> 
-                MUCH MORE
-              </button>
-              {isSubDropdownOpen && (
-                <div className="mt-2 bg-gray-700 p-3 rounded-lg">
-                  <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Incoming Parts</a>
-                  <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Outgoing Parts</a>
-                </div>
-              )}  
-            </div>
-
-{["Accounting", "Scheduling", "Production", "Multi-Store", "Parts"].map((item) => (
-            <a key={item} href="#" className="text-lg font-semibold hover:text-orange-500">
-              {item}
-            </a>
-          ))}
-
-          {/* Dropdown in Mobile Menu *//*}
-          /*</*button onClick={toggleDropdown/*} className="text-lg font-semibold hover:text-orange-500">
-            More...
-          </button>
-
-*/
-
-
-/*
-"use client";
-import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
-import Flag from "react-world-flags";
-
-export default function Navbar() {
-  const languages = [
-    { code: "CA", label: "EN", fullLabel: "English" },
-    { code: "CA", label: "FR", fullLabel: "Français" },
-    { code: "ES", label: "ES", fullLabel: "Español" },
-    { code: "RO", label: "RO", fullLabel: "Română" },
-  ];
-
-  const [isLangOpen, setIsLangOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
-
-  const langRef = useRef(null);
-  const dropdownRef = useRef(null);
-
-  const toggleLang = () => setIsLangOpen((prev) => !prev);
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
-  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
-
-  const handleLanguageSelect = (language) => {
-    setSelectedLanguage(language);
-    setIsLangOpen(false);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (langRef.current && !langRef.current.contains(event.target)) {
-        setIsLangOpen(false);
-      }
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  return (
-    <nav className="fixed top-0 left-0 w-full z-50 p-5 bg-black shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
-        {/* Logo *//*}
-        <Image
-          src="/BCLogo1.png"
-          alt="ModernBrand Logo"
-          width={380}
-          height={40}
-          className="object-contain"
-        />
-
-        {/* Phone Number *//*}
-        <h1 className="text-2xl font-bold text-orange-500">1-888-691-6887</h1>
-
-        {/* Links Menu *//*}
-        <div className="hidden md:flex space-x-6 text-lg font-medium">
-          <a href="#" className="hover:text-orange-500 transition">ACCOUNTING</a>
-          <a href="#" className="hover:text-orange-500 transition">SCHEDULE</a>
-          <a href="#" className="hover:text-orange-500 transition">PRODUCTION</a>
-          <a href="#" className="hover:text-orange-500 transition">MULTI-STORE  </a>
-          
-
-          {/* Dropdown for Extra Links *//*}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={toggleDropdown}
-              className="flex items-center hover:text-orange-500 transition"
-            >
-              ...
-              <ChevronDown className="ml-1 w-4 h-4" />
-            </button>
-            {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 bg-gray-900 text-white p-4 rounded-lg shadow-lg w-48">
-                <ul>
-                <li className="py-2 px-4 cursor-pointer hover:bg-orange-500 hover:text-black">
-                    <a href="#">PARTS </a>
-                  </li>
-                  <li className="py-2 px-4 cursor-pointer hover:bg-orange-500 hover:text-black">
-                    <a href="#">TRACKING Parts </a>
-                  </li>
-                  <li className="py-2 px-4 cursor-pointer hover:bg-orange-500 hover:text-black">
-                    <a href="#">Job Costing</a>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Language Selector *//*}
-        <div className="relative flex items-center ml-6" ref={langRef}>
-          <button
-            onClick={toggleLang}
-            className="text-xl p-2 hover:text-orange-500 transition flex items-center"
-          >
-            <Flag code={selectedLanguage.code} style={{ width: 30, height: 20 }} className="mr-2" />
-            {selectedLanguage.label}
-          </button>
-
-          {isLangOpen && (
-            <div className="absolute right-0 mt-2 bg-gray-900 text-white p-4 rounded-lg shadow-lg w-48">
-              <ul>
-                {languages.map((lang) => (
-                  <li
-                    key={lang.label}
-                    onClick={() => handleLanguageSelect(lang)}
-                    className="py-2 cursor-pointer hover:bg-orange-500 hover:text-black px-4 flex items-center"
-                  >
-                    <Flag code={lang.code} style={{ width: 30, height: 20 }} className="mr-2" />
-                    {lang.fullLabel}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-
-        {/* Mobile Menu Button *//*}
-        <button className="md:hidden ml-4" onClick={toggleMenu}>
-          {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu *//*}
-      {isMenuOpen && (
-        <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="absolute top-16 left-0 w-full bg-black shadow-md p-5 flex flex-col space-y-5 text-center text-white"
-        >
-          {["Accounting", "Scheduling", "Production", "Multi-Store", "Parts"].map((item) => (
-            <a key={item} href="#" className="text-lg font-semibold hover:text-orange-500">
-              {item}
-            </a>
-          ))}
-          {/* Dropdown in Mobile Menu *//*}
-          <button onClick={toggleDropdown} className="text-lg font-semibold hover:text-orange-500">
-            More...
-          </button>
-          {isDropdownOpen && (
-            <div className="mt-2 bg-gray-800 p-3 rounded-lg">
-              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Parts Tracking</a>
-              <a href="#" className="block py-1 hover:bg-orange-500 hover:text-black">Job Costing</a>
-            </div>
-          )}
-        </motion.div>
-      )}
-    </nav>
-  );
-}
-*/

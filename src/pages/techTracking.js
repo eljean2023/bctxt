@@ -39,7 +39,7 @@ const techTraking = () => {
     <div className="container mx-auto max-w-dvw px-12">
       
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
-      {t("TechnicianConnect Will Connect The Back Of The Shop To The Front Office.")}
+      {t("Technician Tracking Helping Connect The Production Floor With The Front Office.")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">  
       {t("It's more than just a time clock.")}
@@ -54,7 +54,7 @@ const techTraking = () => {
           <ul className="space-y-2 list-disc pl-6">
             <li className="text-black">{t("wClock in and out of Repair Orders")}</li>  
             <li className="text-black">{t("Clock in and out of Other Tasks")} </li> 
-            <li className="text-black">{t("AView and Add Media")}</li> 
+            <li className="text-black">{t("View and Add Media")}</li> 
           </ul>
         </div>
 
@@ -81,7 +81,7 @@ const techTraking = () => {
       {t("Customized Solutions From BodyshopConnect -- TechnicianConnect")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. TechnicianConnect ties the back shop to the front office in order to give live time information to the people who need it ... when they need it.")}.
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. TechnicianConnect Web connects the production to the office, giving real time information to the technicians or admin employees when they need it.")}.
       </h4>
 
                 
@@ -101,7 +101,7 @@ const techTraking = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          {t("tSchedule a Demo")}
+          {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
            {t("Contact Us")}

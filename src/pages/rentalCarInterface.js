@@ -13,8 +13,6 @@ const rentalCar = () => {
   const { t, i18n } = useTranslation();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
-  const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);

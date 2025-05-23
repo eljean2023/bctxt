@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ImageSlider from '@/components/sliderjobCosting';
 import DemoModal from '@/components/DemoModal';
 import ContactUs from '@/components/ContactForm';
 
@@ -12,9 +11,7 @@ const privacyPolicy = () => {
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
-  const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
+  const { t} = useTranslation();
 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
@@ -92,17 +89,11 @@ const privacyPolicy = () => {
       {t("Occasionally, we may change this privacy policy. If for some reason you believe Micazen Consulting & Technologies Inc has not adhered to these principles, please notify us by email at privacy@bodyshopconnect.com and we will do our best to determine and correct the problem promptly. Please make sure the words Privacy Policy are in the Subject line. Thank you.")}
      
       </h5>
-      
-{/* 
-
-
-      {/* Image Slider *//*}
-      <ImageSlider />
-
-*/}
+    
           
      {/* Reusable Modal */}
-     {isModalOpen && (
+
+        {isModalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center backdrop-blur-lg" onClick={closeModal}>
           <div className="bg-white p-6 rounded-lg w-96 relative" onClick={(e) => e.stopPropagation()}>
             <button onClick={closeModal} className="text-red-500 absolute top-4 right-4 font-bold">
@@ -117,7 +108,7 @@ const privacyPolicy = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-           {t("weSchedule a Demo")}
+           {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
            {t("Contact Us")}

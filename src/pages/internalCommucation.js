@@ -10,10 +10,8 @@ const internalCummunication = () => {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
-  const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
@@ -39,7 +37,7 @@ const internalCummunication = () => {
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5"> 
       {t("Real Time Communication - Internal")}
       </h1>
-      <h3 className="text-3xl font-bold text-center text-gray-500 mb-5">{t("welcome")}
+      <h3 className="text-3xl font-bold text-center text-gray-500 mb-5">
        {/*   View External Communications */}
       </h3>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
@@ -72,7 +70,7 @@ const internalCummunication = () => {
       {t("Customized Solutions From BodyshopConnect -- Internal Communications")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Internal communications enables shops to communicate with each other internally, privately, and within BodyshopConnect.")}
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. Internal communications enables shops to communicate with each other internally, privately, and within BodyshopConnect.")}
       </h4>
 
                 

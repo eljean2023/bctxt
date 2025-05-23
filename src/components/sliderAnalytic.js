@@ -27,7 +27,7 @@ export default function ImageSlider() {
   }, []);
 
   return (
-    <div className="relative w-full flex justify-center items-center bg-white-100 py-6">
+    <div className="relative w-full flex justify-center items-center bg-white-100 py-6 flex flex-col sm:flex-row justify-center items-center gap-4 mb-5">
       <div className="flex space-x-4 screen-md overflow-hidden">
         <AnimatePresence>
           {visibleImages.map((img, index) => (

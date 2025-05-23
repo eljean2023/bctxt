@@ -10,7 +10,7 @@ const partsTracking = () => {
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
@@ -36,7 +36,7 @@ const partsTracking = () => {
     <div className="container mx-auto max-w-dvw px-12">
       
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5"> 
-      {t("Parts Tracking Connect")}
+      {t("Parts Track Connect")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8"> 
       {t("The application allows one to scan parts, identify their location in the Bodyshop and track their movements. It also helps to organize all storage places within the facility. Finding parts has never been easier.")}
@@ -54,8 +54,6 @@ const partsTracking = () => {
           </ul>
         </div>
 
-        
-
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
@@ -69,7 +67,7 @@ const partsTracking = () => {
       {t("Customized Solutions From BodyshopConnect -- Data Analytics")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. PartsConnect allows shops to manage the status of their parts quickly and easily.")}
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. Parts Track Connect allows shops to manage the status of their parts quickly and easily.")}
       
       </h4>
         

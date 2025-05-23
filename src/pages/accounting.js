@@ -11,9 +11,8 @@ const accounting = () => {
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
-  const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
+  const { t} = useTranslation();
+
 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
@@ -37,7 +36,7 @@ const accounting = () => {
   return (
     <div className="container mx-auto max-w-dvw px-12">
       
-      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
+      <h1 className="text-3xl font-bold text-center text-gray-500 mb-5 ">
       {t("Accounting Interfaces, A/R Management. BodyshopConnect's Insurance Bulk Payment Control, Is The Best In The Industry.")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
@@ -52,8 +51,8 @@ const accounting = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">{t("Interface avec Acomba X")}</li>  
-            <li className="text-black">{t("Interface to Advantage X")}</li>
+            <li className="text-black">{t("Interface to Acomba X")}</li>  
+            <li className="text-black">{t("Interface to Avantage")}</li>
             <li className="text-black">{t("Interface to QuickBooks Desktop")}</li>
             <li className="text-black">{t("Interface to Xero Accounting")}</li> 
           </ul>
@@ -61,7 +60,7 @@ const accounting = () => {
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6"> {t("welcome")} 
+          <ul className="space-y-2 list-disc pl-6"> 
             <li className="text-black">{t("Receive Payments for Specific Repair Orders")}</li> 
             <li className="text-black">{t("Receive Bulk Checks for Multiple Repair Orders")}</li> 
             <li className="text-black">{t("Outstanding Receivables View Quick & Simple")}</li>
@@ -83,7 +82,7 @@ const accounting = () => {
       {t("Customized Solutions From BodyshopConnect -- AccountingConnect")}
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. AccountConnect allows easy management of Accounts Receivables within the management system. In addition AccountConnect interfaces with multiple accounting systems allowing export of Accounts Receivables, Payments and / or Accounts Payable which saves time by removing double entry of data.")}
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. AccountingConnect allows easy management of Accounts Receivables within the management system. In addition AccountingConnect interfaces with multiple accounting systems allowing export of Accounts Receivables, Payments and / or Accounts Payable which saves time by removing double entry of data.")}
       </h4>
 
                 

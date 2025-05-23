@@ -28,15 +28,15 @@ export default function ImageSlider() {
   }, []);
 
   return (
-    <div className="relative w-full flex justify-center items-center bg-gray-100 py-6">
-      <div className="flex space-x-8 screen-md overflow-hidden">
+    <div className="relative w-full flex justify-center items-center bg-gray-100 py-6 flex flex-col sm:flex-row justify-center items-center gap-4 mb-5">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <AnimatePresence>
           {visibleImages.map((img, index) => (
             <motion.img
               key={img}
               src={img}
               alt={`Slide ${index}`}
-              className="w-1/5 max-w-[15%] h-auto rounded-lg shadow-lg overflow-hidden"
+              className="w-[150px] sm:w-[120px] h-[80px] sm:h-[80px] flex justify-center items-center overflow-hidden rounded-lg shadow-lg"
               layout // Helps with smooth transitions
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

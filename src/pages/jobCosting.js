@@ -11,9 +11,7 @@ const jobCosting = () => {
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
-  const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
+  const { t} = useTranslation();
 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
@@ -51,25 +49,24 @@ const jobCosting = () => {
         {/* Left Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">{t("Parts Management Dashboard")}</li> 
-            <li className="text-black">{t("Parts List By Repair Order")}</li>  
-            <li className="text-black">{t("Outstanding Vendor Credits")} </li> 
+            <li className="text-black">{t("Job Cost Management Dashboard")}</li> 
+            <li className="text-black">{t("Job Cost List by Repair Order")}</li>   
           </ul>
         </div>
 
         {/* Middle Column (Company Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">  
-            <li className="text-black">{t("Order, Receive, Return, Back Order, IOU & More")} </li>
-            <li className="text-black">{t("Partial Credits, Labor & Cost Credit")} </li> 
+            <li className="text-black">{t("Quick Vendor Cost Posting")} </li>
+            <li className="text-black">{t("Quick Labor Cost Posting")} </li> 
           </ul>
         </div>
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">{t("Part Labels")} </li> 
-            <li className="text-black">{t("Electronic Check In")} </li> 
+            <li className="text-black">{t("Flag Labor Management")} </li> 
+            <li className="text-black">{t("Timesheet Item Management")} </li> 
           </ul>
         </div>
       </div>
@@ -98,10 +95,10 @@ const jobCosting = () => {
       {/* Buttons */}
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          {("Schedule a Demo")}
+            {t("Schedule a Demo")}
         </button>
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-         {("Contact Us")} 
+           {t("Contact Us")}
         </button>
       </div>
 

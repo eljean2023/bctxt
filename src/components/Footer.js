@@ -16,11 +16,12 @@ import PainScaleInterface from "@/pages/paintScaleInterface";
 import CsiSurvey from "@/pages/csi";
 import RentalCar from "@/pages/rentalCarInterface";
 import PrivacyPolicy from "@/pages/privacyPolicy";
-import Support from "@/pages/support";
 import AboutUs from "@/pages/aboutUs"
 
 import { useTranslation } from "react-i18next";
 import '../utils/i18n';
+
+import Link from "next/link";
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,9 +41,8 @@ const Footer = () => {
   const [iscsiSurveyModalOpen, setCsiSurveyModalOpen] = useState(false);
   const [isrentalCarModalOpen, setRentalCarModalOpen] = useState(false);
   const [isprivatePolicyModalOpen, setPrivatePolicyModalOpen] = useState(false);
-  const [issupportModalOpen, setSupportModalOpen] = useState(false);
   const [isaboutUsModalOpen, setAboutUsModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
 
 
   return (
@@ -111,7 +111,7 @@ const Footer = () => {
                 onClick={() => setQuickEstimateModalOpen(true)} 
                 className="hover:text-orange-400 transition hover:underline decoration-white"
               >
-                 {t("Quick EStimate")}
+                 {t("Quick Estimate")}
               </button>
             </li>
             <li>
@@ -173,7 +173,7 @@ const Footer = () => {
                 onClick={() => setCsiSurveyModalOpen(true)} 
                 className="hover:text-orange-400 transition hover:underline decoration-white"
               >
-              {t("CSI-Google Servey")}
+              {t("CSI & Reviews")}
               </button>
             </li>
             <li>
@@ -213,21 +213,21 @@ const Footer = () => {
       <div className="border-t border-gray-700 mt-8 pt-6">
         <nav className="flex flex-wrap justify-center gap-6 text-sm">
           <a onClick={() => setIsModalOpen(true)}  className="hover:text-orange-400 transition cursor-pointer hover:underline decoration-white">{t("Contact Us")} </a>
+        
           <li>
-              <button 
-                onClick={() => setSupportModalOpen(true)} 
-                className="hover:text-orange-400 transition hover:underline decoration-white"
-              >
-                {t("Support")} 
-              </button>
-            </li>
-          <li>
-              <button 
+            <Link href="/privacy" className="hover:text-orange-400">
+              {t("Privacy Policy")} 
+            </Link>
+            {
+              /*
+                <button 
                 onClick={() => setPrivatePolicyModalOpen(true)} 
                 className="hover:text-orange-400 transition hover:underline decoration-white"
               >
                 {t("Privacy Policy")} 
               </button>
+              */
+            }
             </li>
             <li>
             <button 
@@ -547,24 +547,7 @@ const Footer = () => {
         </div>
       )} 
 
-        {/* Support with Blur Effect */}
-     {issupportModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          {/* Blurred background */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
-          
-          {/* Modal Content */}
-          <div className="bg-white p-6 rounded-lg w-3/4 h-3/4 overflow-auto relative z-10">
-            <button 
-              onClick={() => setSupportModalOpen(false)} 
-              className="absolute top-4 right-4 text-black text-lg"
-            >
-              ✖
-            </button>
-            <Support /> {/* Render the Production component inside the modal */}
-          </div>
-        </div>
-      )} 
+       
 
        {/* Support with Blur Effect */}
      {isaboutUsModalOpen && (
@@ -580,7 +563,7 @@ const Footer = () => {
             >
               ✖
             </button>
-            <AboutUs /> {/* Render the Production component inside the modal */}
+            <AboutUs/> {/* Render the Production component inside the modal */}
           </div>
         </div>
       )} 
@@ -589,106 +572,9 @@ const Footer = () => {
   );
 };
 
-
-
-
 export default Footer;
 
 
 
 
 
-/*
-import DemoModal from "./DemoModal"; // Import the reusable modal
-import { useState} from "react";
-import Production from "@/pages/production";
-import Link from "next/link";
-
-const Footer = () => {
-   const [isModalOpen, setIsModalOpen] = useState(false);
-  return (
-    <footer className="py-10 bg-black text-white text-center">
-      {/* 3 Column Section *//*}
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-left px-6 md:px-20">
-        {/* Column 1 *//*}
-        <div>
-          <ul className="space-y-2">
-          <Link href="/production" className="hover:text-orange-400 transition">
-                 Production
-               </Link>
-            <li><a href="#" className="hover:text-orange-400 transition">Scheduling</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">Media Management</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">Technician Tracking</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">Job Costing</a></li>
-          </ul>
-        </div>
-
-        {/* Column 2 *//*}
-        <div>
-          <ul className="space-y-2">
-            <li><a  href="#" className="hover:text-orange-400 transition">Parts Management</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">Quick Estimate</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">External Communications</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">Internal Communications</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">Accounting</a></li>
-          </ul>
-        </div>
-
-        {/* Column 3 *//*}
-        <div>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-orange-400 transition">Multi Store Locations</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">Dealer System Integration</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">Paint Scale Interfaces</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">CSI - Google Survey</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition">Rental Car Interface</a></li>
-          </ul>
-        </div>
-
-
-    
-                    
-                        
-                      
-
-      <div>    {/* Phone Number *//*}
-     
-          <ul className="space-y-2">
-            <li><button onClick={() => setIsModalOpen(true)} className="mt-4 px-5 py-2 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition">
-              SCHEDULE A DEMONSTRATION
-            </button>
-            </li>
-            <li><button className="mt-4 px-14 py-2  text-2xl text-orange-600 font-semibold rounded-full hover:bg-white-600 transition">
-                   1-888-691-6887
-            </button>
-            </li>
-
-          </ul>
-           {/* Reusable Modal *//*}
-                <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-
-        </div>
-        </div>
-      
-
-      {/* Horizontal Links Section *//*}
-      <div className="border-t border-gray-700 mt-8 pt-6">
-        <nav className="flex flex-wrap justify-center gap-6 text-sm">
-          <a href="#" className="hover:text-orange-400 transition">Contact Us</a>
-          <a href="#" className="hover:text-orange-400 transition">Support</a>
-          <a href="#" className="hover:text-orange-400 transition">Privacy Policy</a>
-          <a href="#" className="hover:text-orange-400 transition">About Us</a>
-        </nav>
-      </div>
-
-      {/* Copyright Section *//*}
-      <div className="mt-6 text-gray-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} BodyshopConnect. All Rights Reserved.</p>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
-
-*/

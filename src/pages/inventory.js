@@ -11,17 +11,18 @@ const inventory = () => {
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
-  const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
+  const { t} = useTranslation();
+
 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
 
-const openScheduleModal = () => {
-  setModalType('demo'); // Set modal type to demo
-  setIsModalOpen(true); // Open modal
-};
+
+  const openScheduleModal = () => {
+    setModalType('demo'); // Set modal type to demo
+    setIsModalOpen(true); // Open modal
+  };
+  
 
 const openContactModal = () => {
   setModalType('contact'); // Set modal type to contact
@@ -35,21 +36,13 @@ const closeModal = () => {
 
   return (
     <div className="container mx-auto max-w-dvw px-12">
-      
-      {/*
-      
-      {/* Logo Image 
-      <div className="text-center mb-8 bg-black shadow-md rounded-3xl py-5">
-        <img src="/BCLogo1.png" alt="Company Logo" width={280} height={40} className="object-contain mx-auto bg-black-500" />
-      </div>
-      
-      
-      */}
+    
 
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5">
         {t("Inventory")}
       </h1>
       <h4 className="text-xl text-center text-gray-700 mt-2 mb-8">
+        
       {t("A two-way interface allowing shops to track inventory. BodyshopConnect will send repair order data to the inventory system and the inventory system will send back the cost data.")}
       </h4>
 
@@ -61,14 +54,14 @@ const closeModal = () => {
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
             <li className="text-black">{t("Repair order data flows out from BodyshopConnect.")}</li>   
-            <li className="text-black">{t("3M RepairStack™ & Wurth™ SIS will import the repair order data automatically.")} </li> 
+            <li className="text-black">{t("3M RepairStack™ & Wurth™ ORSY, SKYLINE TOOLS will import the repair order data automatically.")} </li> 
           </ul>
         </div>
-
-        {/* Middle Column (Company Logos) */}
+        
+        {/* Middle Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
-            <li className="text-black">{t("Cost data from Leantec and Wurth's inventory systems update the costs of the repair orders in BodyshopConnect.")}</li>
+            <li className="text-black">{t("Cost data and Wurth's inventory systems update the costs of the repair orders in BodyshopConnect.")}</li>
             <li className="text-black">{t("Reduce data entry and get more accurate job costs")}  </li> 
           </ul>
         </div>
@@ -80,7 +73,7 @@ const closeModal = () => {
        {t("Customized Solutions From BodyshopConnect -- Inventory")} 
       </h2>
       <h4 className="text-xl text-center text-gray-700 mt-2">
-      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available. External Communications are vital. Automated communications that keep everyone informed during the repair process not only saves time, but also helps improve Customer Satisfaction.")} 
+      {t("BodyshopConnect by Micazen is an auto body shop management software designed to be customized for the Collision Repair Process. No two repairs are the same so why be forced into a process by other body shop management tools available.")} 
       </h4>
                 
       {/* Reusable Modal */}
@@ -96,18 +89,16 @@ const closeModal = () => {
         </div>
       )}
 
-      {/* Buttons */}
-      <div className="text-center my-8 flex justify-center gap-4">
-        {/*
-        
+       {/* Buttons */}
+       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
-          Schedule a Demo
+            {t("Schedule a Demo")}
         </button>
-        */}
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
-         {t("Contact Us")}
+           {t("Contact Us")}
         </button>
       </div>
+
 
       {/* Schedule Modal */}
       {isScheduleModalOpen && (
@@ -169,6 +160,5 @@ const closeModal = () => {
     </div>
   );
 };
-
 
 export default inventory;

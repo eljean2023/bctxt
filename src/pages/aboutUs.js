@@ -10,17 +10,16 @@ const csiSurvey = () => {
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
-  const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
-
+  const { t} = useTranslation();
+ 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
 
-const openScheduleModal = () => {
-  setModalType('demo'); // Set modal type to demo
-  setIsModalOpen(true); // Open modal
-};
+  const openScheduleModal = () => {
+    setModalType('demo'); // Set modal type to demo
+    setIsModalOpen(true); // Open modal
+  };
+  
 
 const openContactModal = () => {
   setModalType('contact'); // Set modal type to contact
@@ -34,16 +33,6 @@ const closeModal = () => {
 
   return (
     <div className="container mx-auto max-w-dvw px-12">
-      
-      {/*
-      
-      {/* Logo Image 
-      <div className="text-center mb-8 bg-black shadow-md rounded-3xl py-5">
-        <img src="/BCLogo1.png" alt="Company Logo" width={280} height={40} className="object-contain mx-auto bg-black-500" />
-      </div>
-      
-      
-      */}
 
       <h1 className="text-3xl font-bold text-center text-gray-400 mb-8"> 
         {t("BodyshopConnect Puts You in Drivers Seat Allowing You To Run Your Collision Repair Facility Efficiently")}
@@ -120,12 +109,24 @@ const closeModal = () => {
         </div>
       )}
 
-      {/* Buttons */}
+       {/* Buttons */}
+       <div className="text-center my-8 flex justify-center gap-4">
+        <button onClick={openScheduleModal} className="bg-orange-500 text-white py-2 px-6 rounded-lg">
+           {t("Schedule a Demo")}
+        </button>
+        <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
+           {t("Contact Us")}
+        </button>
+      </div>
+
+     {/*
+      {/* Buttons 
       <div className="text-center my-8 flex justify-center gap-4">
         <button onClick={openContactModal} className="bg-blue-500 text-white py-2 px-6 rounded-lg">
          {t("Contact Us")}
         </button>
       </div>
+     */}
 
       {/* Schedule Modal */}
       {isScheduleModalOpen && (

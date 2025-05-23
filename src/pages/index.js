@@ -4,15 +4,12 @@ import Principal from "../components/Principal";
 import Footer from "../components/Footer";
 import Gallery from "@/components/Gallery";
 import Loader from "../components/Loader"; // Import Loader
-import { useTranslation } from 'react-i18next';
 import '../utils/i18n';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const { t, i18n } = useTranslation();
-
-  // Simulate a loading delay
+ 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -49,54 +46,3 @@ export default function Home() {
 
 
 
-
-/*
-import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Principal from "../components/Principal";
-import Footer from "../components/Footer";
-import Gallery from "@/components/Gallery";
-
-export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  return (
-    <div className="relative">
-      {/* Dark Blur Overlay *//*}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-500 z-40"></div>
-      )}
-
-      {/* Main Content *//*}
-      <div className={`${isModalOpen ? "blur-lg opacity-50" : "opacity-100"} transition-all duration-500`}>
-        <Navbar />
-        <Principal />
-        <Gallery setIsModalOpen={setIsModalOpen} />
-        <Footer />
-      </div>
-    </div>
-  );
-}
-*/
-
-
-/*
-import Navbar from "../components/Navbar";
-import Hero from "../components/Principal";
-import Principal from "../components/Principal";
-import Footer from "../components/Footer";
-import VerticalSlider from "@/components/VerticalSlider";
-import Gallery from "@/components/Gallery";
-
-
-export default function Home() {
-  return (
-    <div>
-      <Navbar />
-      <Principal/>
-      <Gallery/>
-      <Footer />
-    </div>
-  );
-}
-*/

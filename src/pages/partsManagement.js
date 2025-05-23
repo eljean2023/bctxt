@@ -10,10 +10,7 @@ const parts = () => {
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-
-  const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
-  const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
+  const { t} = useTranslation();
 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
@@ -48,9 +45,9 @@ const parts = () => {
       {/* Image Slider */}
       <ImageSlider />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 py-2">
         {/* Left Column */}
-        <div className="p-6 rounded-lg shadow bg-white">   {t("Complete Parts Management")}
+        <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
             <li className="text-black">{t("Parts Management Dashboard")}</li>  
             <li className="text-black">{t("Parts Location APP")}</li>   
@@ -58,7 +55,7 @@ const parts = () => {
           </ul>
         </div>
 
-        {/* Middle Column (Company Logos) */}
+        {/* Middle Column */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6">
             <li className="text-black">{t("Part Labels")}</li> 
@@ -68,8 +65,8 @@ const parts = () => {
 
         {/* Right Column */}
         <div className="p-6 rounded-lg shadow bg-white">
-          <ul className="space-y-2 list-disc pl-6"> {t("Part Labels")}
-            <li className="text-black">{t("Order, Receive, Return, Back Order, IOU & More")}</li> 
+          <ul className="space-y-2 list-disc pl-6">
+          <li className="text-black">{t("Order, Receive, Return, Back Order, IOU & More")}</li> 
             <li className="text-black">{t("Partial Credits, Labor & Cost Credit")}</li> 
           </ul>
         </div>

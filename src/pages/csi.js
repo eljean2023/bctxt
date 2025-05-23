@@ -11,9 +11,7 @@ const csiSurvey = () => {
   const [modalType, setModalType] = useState(''); // 'demo' or 'contact'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const toggleScheduleModal = () => setIsScheduleModalOpen(!isScheduleModalOpen);
-  const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
+  const { t} = useTranslation();
 
   const closeScheduleModal = () => setIsScheduleModalOpen(false);
   const closeContactModal = () => setIsContactModalOpen(false);
@@ -35,16 +33,6 @@ const closeModal = () => {
 
   return (
     <div className="container mx-auto max-w-dvw px-12">
-      
-      {/*
-      
-      {/* Logo Image 
-      <div className="text-center mb-8 bg-black shadow-md rounded-3xl py-5">
-        <img src="/BCLogo1.png" alt="Company Logo" width={280} height={40} className="object-contain mx-auto bg-black-500" />
-      </div>
-      
-      
-      */}
 
       <h1 className="text-3xl font-bold text-center text-gray-500 mb-5"> 
       {t("Managing reviews and prompting customers to tell you about great service is not easy.")}
@@ -64,7 +52,7 @@ const closeModal = () => {
           </ul>
         </div>
 
-        {/* Middle Column (Company Logos) */}
+        {/* Middle Column ( Logos) */}
         <div className="p-6 rounded-lg shadow bg-white">
           <ul className="space-y-2 list-disc pl-6"> 
             <li className="text-black">{t("Reduce Data Re-Keying By Allowing Information To Transfer Directly From The Repair Order Into A Customer Survey.")}</li>
